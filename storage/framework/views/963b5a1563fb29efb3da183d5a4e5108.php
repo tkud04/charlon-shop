@@ -75,12 +75,14 @@ $bday = $isLoggedIn ? $user->bday : '';
                         <span class="hide-for-xs">My Cart</span>
                       </a>
                     </li>
+                    <?php if($isAdmin): ?>
                     <li>
-                      <a href="<?php echo e(url('checkout')); ?>" title="Checkout">
+                      <a href="<?php echo e(url('admin')); ?>" title="Admin">
                         <span class="top-icon top-icon-check"></span>
-                        <span class="hide-for-xs">Checkout</span>
+                        <span class="hide-for-xs">Admin Dashboard</span>
                       </a>
                     </li>
+                    <?php endif; ?>
                   </ul>
                   <?php endif; ?>
                 </div>
@@ -773,85 +775,6 @@ if (isset($signals)) {
 <!------------------------------------->
 
 
-
-  <?php
-  /*
-  <header>
-   
-     <!-- tp-header-area-start -->
-     <div id="header-sticky" class="tp-header-area pre-header sticky-white-bg tp-header-blur header-transparent tp-header-lg-spacing">
-        <div class="container-fluid container-1800">
-           <div class="row align-items-center">
-              <div class="col-12">
-              <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{{url('/')}}">Sender 26</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
-        </li>
-       <li class="nav-item dropdown">
-         @if($isLoggedIn)
-         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome back, {{$user->username}}
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{url('profile')}}">Profile</a></li>
-            <li><a class="dropdown-item" href="{{url('smtp')}}">SMTP settings</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{{url('bye')}}">Sign out</a></li>
-          </ul>
-         @else
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome,
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{url('login')}}">Login</a></li>
-            <li><a class="dropdown-item" href="{{url('apply')}}">Apply</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Version: 2.0.1</a></li>
-          </ul>
-         @endif
-          
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-              </div>
-           </div>
-        </div>
-     </div>
-     <!-- tp-header-area-end -->
-      
-  </header>
-
-        <main>
-           @yield('content')
-
-            <!-- tp-footer area start -->
-         <div class="fixed-bottom">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-12">
-                    
-                  </div>
-               </div>
-            </div>
-         </div>
-            <!-- tp-footer area end -->
-        </main>
-
-    */
-    ?>    
 
 
   

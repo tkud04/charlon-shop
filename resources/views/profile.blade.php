@@ -85,28 +85,6 @@ $userMode = "dashboard";
                         </div>
 
                      </div>
-                     <div class="col-md-6">
-                        <div class="input-group xs-margin">
-                            <span class="input-group-addon">
-                               <span class="input-icon input-icon-password"></span>
-                               <span class="input-text">Password*</span>
-                            </span> 
-                           <input type="password" required="" class="form-control input-lg" id="p" placeholder="Your Password">
-                          
-                        </div>
-
-                     </div>
-                     <div class="col-md-6">
-                        <div class="input-group xs-margin">
-                            <span class="input-group-addon">
-                               <span class="input-icon input-icon-password"></span>
-                               <span class="input-text">Confirm Password*</span>
-                            </span> 
-                           <input type="password" required="" class="form-control input-lg" id="p2" placeholder="Confirm Password">
-                          
-                        </div>
-
-                     </div>
                   </div>
 
                </form>
