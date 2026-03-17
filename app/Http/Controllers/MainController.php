@@ -52,8 +52,8 @@ class MainController extends Controller {
 		array_push($c,'faqs','contactDetails');
 
 
-        //return view('index',compact($c));
-        return view('temp',compact($c));
+        return view('index',compact($c));
+       // return view('temp',compact($c));
 		
     }
 

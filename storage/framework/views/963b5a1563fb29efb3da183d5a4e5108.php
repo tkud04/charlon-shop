@@ -1,78 +1,88 @@
-<!DOCTYPE html>
-<!--[if IE 8]>
-<html class="ie8">
-	<![endif]-->
-<!--[if IE 9]>
-	<html class="ie9">
-		<![endif]-->
-<!--[if !IE]>
-		<!-->
-<html>
-  <!--
-			<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <title>Venedor - Responsive eCommerce Template</title>
-    <meta name="description" content="Responsive modern ecommerce Html5 Template">
-    <!--[if IE]>
-						<meta http-equiv="X-UA-Compatible" content="IE=edge">
-							<![endif]-->
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic%7CPT+Gudea:400,700,400italic%7CPT+Oswald:400,700,300" rel="stylesheet" id="googlefont">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+<?php
+$void = "javascript:void(0)";
+$isDevMode = false;
+?>
+
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title><?php echo $__env->yieldContent('title'); ?> | Charlon Shop</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+   <link href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic%7CPT+Gudea:400,700,400italic%7CPT+Oswald:400,700,300" rel="stylesheet" id="googlefont">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/prettyPhoto.css">
     <link rel="stylesheet" href="css/colpick.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="icon" type="image/png" href="images/icons/icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
-      window.jQuery || document.write(' < script src = "js/jquery-1.11.1.min.js" > < \/script>');
-    </script>
-    <!--[if lt IE 9]>
-																				<script src="js/html5shiv.js"></script>
-																				<script src="js/respond.min.js"></script>
-																				<![endif]-->
-    <style id="custom-style"></style>
-  </head>
-  <body>
-    <div id="wrapper">
-      <header id="header">
+   <link rel="stylesheet" href="lib/sweet-alert/sweetalert2.css">
+   <link rel="stylesheet" href="css/mmm.css?ver=<?php echo e(rand(999, 9999999)); ?>">
+
+   <?php echo $__env->yieldContent('styles'); ?>
+</head>
+
+
+
+
+<?php
+$v = isset($isDashboard) && $isDashboard;
+$isLoggedIn = isset($user);
+$isAdmin = $isLoggedIn && ($user->role === 'admin' || $user->role === 'su');
+$bday = $isLoggedIn ? $user->bday : ''; 
+?>
+
+<body>
+  <!--[if lte IE 9]>
+     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+<div id='wrapper'>
+<header id="header">
         <div id="header-top">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
                 <div class="header-top-left">
+                  <?php if($isLoggedIn): ?>
                   <ul id="top-links" class="clearfix">
                     <li>
-                      <a href="#" title="My Wishlist">
+                      <a href="<?php echo e(url('wishlist')); ?>" title="My Wishlist">
                         <span class="top-icon top-icon-pencil"></span>
                         <span class="hide-for-xs">My Wishlist</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#" title="My Account">
+                      <a href="<?php echo e(url('profile')); ?>" title="My Account">
                         <span class="top-icon top-icon-user"></span>
-                        <span class="hide-for-xs">My Account</span>
+                        <span class="hide-for-xs">My Profile</span>
                       </a>
                     </li>
                     <li>
-                      <a href="cart.html" title="My Cart">
+                      <a href="<?php echo e(url('cart')); ?>" title="My Cart">
                         <span class="top-icon top-icon-cart"></span>
                         <span class="hide-for-xs">My Cart</span>
                       </a>
                     </li>
                     <li>
-                      <a href="checkout.html" title="Checkout">
+                      <a href="<?php echo e(url('checkout')); ?>" title="Checkout">
                         <span class="top-icon top-icon-check"></span>
                         <span class="hide-for-xs">Checkout</span>
                       </a>
                     </li>
                   </ul>
+                  <?php endif; ?>
                 </div>
                 <div class="header-top-right">
                   <div class="header-top-dropdowns pull-right">
@@ -141,9 +151,11 @@
                   </div>
                   <div class="header-text-container pull-right">
                     <p class="header-text">Welcome to Venedor!</p>
+                    <?php if(!$isLoggedIn): ?>
                     <p class="header-link">
-                      <a href="#">login</a>&nbsp;or&nbsp; <a href="#">create an account</a>
+                      <a href="<?php echo e(url('login')); ?>">login</a>&nbsp;or&nbsp; <a href="<?php echo e(url('signup')); ?>">create an account</a>
                     </p>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -155,22 +167,19 @@
             <div class="row">
               <div class="col-md-5 col-sm-5 col-xs-12 logo-container">
                 <h1 class="logo clearfix">
-                  <span>Responsive eCommerce Template</span>
-                  <a href="index.html" title="Venedor eCommerce Template">
-                    <img src="images/logo.png" alt="Venedor Commerce Template" width="238" height="76">
+                  <a href="<?php echo e(url('/')); ?>" title="Charlon Shop">
+                    <img src="images/favicon.png" alt="Charlon Shop" width="80" height="80">
                   </a>
+                  Charlon Shop
                 </h1>
               </div>
               <div class="col-md-7 col-sm-7 col-xs-12 header-inner-right">
                 <div class="header-box contact-infos pull-right">
                   <ul>
                     <li>
-                      <span class="header-box-icon header-box-icon-skype"></span>venedor_support
-                    </li>
-                    <li>
                       <span class="header-box-icon header-box-icon-email"></span>
-                      <a href="/cdn-cgi/l/email-protection#abddcec5cecfc4d9ebccc6cac2c785c8c4c6">
-                        <span class="__cf_email__" data-cfemail="d5a3b0bbb0b1baa795b2b8b4bcb9fbb6bab8">[email&#160;protected]</span>
+                      <a href="#">
+                        <span class="__cf_email__">[email&#160;protected]</span>
                       </a>
                     </li>
                   </ul>
@@ -178,7 +187,6 @@
                 <div class="header-box contact-phones pull-right clearfix">
                   <span class="header-box-icon header-box-icon-earphones"></span>
                   <ul class="pull-left">
-                    <li>+(404) 158 14 25 78</li>
                     <li>+(404) 851 21 48 15</li>
                   </ul>
                 </div>
@@ -623,19 +631,12 @@
           </div>
         </div>
       </header>
-      <section id="content" class="no-content">
+
+      <section id="content" class="">
         <div class="lg-margin"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="no-content-comment">
-                <h2>404</h2>
-                <h3>It's not my fault buddy! <br>I think you got lost. </h3>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php echo $__env->yieldContent('content'); ?>
       </section>
+
       <footer id="footer">
         <div id="footer-top">
           <div class="container">
@@ -1047,34 +1048,140 @@
                 </ul>
               </div>
               <div class="col-md-5 col-sm-5 col-xs-12 footer-text-container">
-                <p>&copy; 2014 Powered by Company&trade;. All Rights Reserved.</p>
+                <p>&copy; <?php echo e(date('Y')); ?> Powered by Charlon Shop&trade;. All Rights Reserved.</p>
               </div>
             </div>
           </div>
         </div>
       </footer>
-    </div>
-    <a href="#" id="scroll-top" title="Scroll to Top">
+</div>
+
+<a href="#" id="scroll-top" title="Scroll to Top">
       <i class="fa fa-angle-up"></i>
     </a>
    
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/jquery.debouncedresize.js"></script>
-    <script src="js/retina.min.js"></script>
-    <script src="js/jquery.placeholder.js"></script>
-    <script src="js/jquery.hoverIntent.min.js"></script>
-    <script src="js/twitter/jquery.tweet.min.js"></script>
-    <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jflickrfeed.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/colpick.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-      $(function() {
-            function n(n, t, a, o) {
-              for (var i = 0; n > i; i++) a += "!" == t[i] ? " < span > "+t[i]+" < br > < /span>":" < span > "+t[i]+" < /span>";o.html(a)}var t=$(".no-content-comment"),a=t.find("h2"),o=a.text(),i=t.find("h3"),e=i.text(),c=o.length,f=e.length,h="",d="",p=50;n(c,o,h,a),n(f,e,d,i),$(window).on("load",function(){t.find("span").each(function(){p+=80,$(this).delay(200).animate({opacity:1},p)})})});
-    </script>
-   </body>
-</html>
+ <!-- JS here -->
+ <script src="js/jquery.js"></script>
+   <script src="js/bootstrap.min.js"></script> 
+   <script src="js/main.js"></script>
+   <script src="js/helpers.js?ver=<?php echo e(rand(999, 9999999)); ?>"></script>
+   <script src="lib/sweet-alert/sweetalert2.js"></script>
+   <?php echo $__env->yieldContent('scripts'); ?>
+
+    <!--------- Session notifications: : DO NOT EDIT -------------->
+ <?php
+$pop = "";
+$val = "";
+
+if (isset($signals)) {
+    foreach ($signals['okays'] as $key => $value) {
+        if (session()->has($key)) {
+            $pop = $key;
+            $val = session()->get($key);
+        }
+    }
+}
+             ?> 
+
+                 <?php if($pop != "" && $val != ""): ?>
+                   <?php echo $__env->make('session-status', ['pop' => $pop, 'val' => $val], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                 <?php endif; ?>
+
+
+<!--------- Plugins: DO NOT EDIT ------>
+<?php
+    foreach ($plugins as $p) {
+?>
+<?php echo $p['value']; ?>
+
+<?php
+    }
+?>
+<!------------------------------------->
+
+
+
+  <?php
+  /*
+  <header>
+   
+     <!-- tp-header-area-start -->
+     <div id="header-sticky" class="tp-header-area pre-header sticky-white-bg tp-header-blur header-transparent tp-header-lg-spacing">
+        <div class="container-fluid container-1800">
+           <div class="row align-items-center">
+              <div class="col-12">
+              <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{url('/')}}">Sender 26</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+        </li>
+       <li class="nav-item dropdown">
+         @if($isLoggedIn)
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome back, {{$user->username}}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url('profile')}}">Profile</a></li>
+            <li><a class="dropdown-item" href="{{url('smtp')}}">SMTP settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{url('bye')}}">Sign out</a></li>
+          </ul>
+         @else
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome,
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url('login')}}">Login</a></li>
+            <li><a class="dropdown-item" href="{{url('apply')}}">Apply</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Version: 2.0.1</a></li>
+          </ul>
+         @endif
+          
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- tp-header-area-end -->
+      
+  </header>
+
+        <main>
+           @yield('content')
+
+            <!-- tp-footer area start -->
+         <div class="fixed-bottom">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-12">
+                    
+                  </div>
+               </div>
+            </div>
+         </div>
+            <!-- tp-footer area end -->
+        </main>
+
+    */
+    ?>    
+
+
+  
+</body>
+
+</html><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/layout.blade.php ENDPATH**/ ?>
