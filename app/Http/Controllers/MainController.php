@@ -35,6 +35,7 @@ class MainController extends Controller {
 		if($vu['check'])
 		{
 			$user = $vu['user'];
+		}
 
 			$signals = $this->helpers->signals;
 		$ads = $this->helpers->getAds();
@@ -51,14 +52,8 @@ class MainController extends Controller {
 		array_push($c,'faqs','contactDetails');
 
 
-        return view('index',compact($c));
-        //return view('temp',compact($c));
-		}
-		else
-		{
-			return redirect()->intended('login');
-		}
-
+        //return view('index',compact($c));
+        return view('temp',compact($c));
 		
     }
 

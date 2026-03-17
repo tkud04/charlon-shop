@@ -1,0 +1,2 @@
+# safebets
+Safebets app
