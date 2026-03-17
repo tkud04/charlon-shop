@@ -407,7 +407,7 @@ const apply = async (payload={f:'',l:'',e:'',ph:''},successCallback,errorCallbac
 }
 
 
-const signup = async (payload={f:'',l:'',e:'',t:'',ph:'',p:'',p2:'',g:'',d:'',m:'',t2:''},successCallback,errorCallback) => {
+const signup = async (payload={f:'',l:'',e:'',t:'',ph:'',p:'',p2:'',g:''},successCallback,errorCallback) => {
   const url = 'api/complete-registration';
 
   await fetchWithJson(
@@ -422,9 +422,6 @@ const signup = async (payload={f:'',l:'',e:'',t:'',ph:'',p:'',p2:'',g:'',d:'',m:
         {key: 'phone',value: payload.ph},
         {key: 'email',value: `${payload.e}`},
         {key: 'gender',value: `${payload.g}`},
-        {key: 'username',value: `${payload.t}`},
-        {key: 'day',value: `${payload.d}`},
-        {key: 'month',value: `${payload.m}`},
       ],
     },
     successCallback,

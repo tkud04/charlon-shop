@@ -8,35 +8,50 @@ $title = 'Reset Password';
 
 
 @section('content')
-  @include('components.generic-banner',['title' => $title])
+@include('components.generic-banner',[
+    'title' => $title,
+    'description' => "Reset your password"
+    ])
 
   <!-- Sign Up -->
-  <div class="contact-form dark-section order-lg-1 order-1">
-                             
-                            <!-- Sign up Form Start -->
-                            <form  action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.2s" novalidate="true" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                <div class="row">
-                                         
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="password"  class="form-control" id="pass" placeholder="Enter new Password" required="">
-                                        @include('components.form-validation',['id' => 'pass'])
-                                    </div>
-                                    <div class="form-group col-md-6 mb-4">
-                                        <input type="password" class="form-control" id="pass2" placeholder="Confirm new Password" required="">
-                                        @include('components.form-validation',['id' => 'pass2'])
-                                    </div>
-                                    
-            
-                                    <div class="col-lg-12">
-                                        <div class="contact-form-btn">
-                                        @include('components.button',['id' => 'reset'])
-                                        </div>
-                                        @include('components.form-loading',['id' => 'reset'])
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- Contact Form End -->
+  <div class="container mt-4">
+
+     <div class="row">
+     <div class="col-md-12">
+               <div class="xs-margin"></div>
+               <form id="login-form" method="get" action="#">
+                  <div class="row">
+                  <div class="col-md-6">
+                        <div class="input-group xs-margin">
+                            <span class="input-group-addon">
+                               <span class="input-icon input-icon-password"></span>
+                               <span class="input-text">Password*</span>
+                            </span> 
+                           <input type="password" required="" class="form-control input-lg" id="pass" placeholder="Your Password">
+                          
                         </div>
+                         @include('components.form-validation',['id' => 'pass'])
+                     </div>
+                     <div class="col-md-6">
+                        <div class="input-group xs-margin">
+                            <span class="input-group-addon">
+                               <span class="input-icon input-icon-password"></span>
+                               <span class="input-text">Confirm Password*</span>
+                            </span> 
+                           <input type="password" required="" class="form-control input-lg" id="pass2" placeholder="Confirm Password">
+                          
+                        </div>
+                        @include('components.form-validation',['id' => 'pass2'])
+                     </div>
+                  </div>
+                 
+                  @include('components.button',['id' => 'reset','title' => "Submit"])
+                   @include('components.form-loading',['id' => 'reset'])
+               </form>
+               <div class="sm-margin"></div>
+            </div>
+     </div>
+  </div>
   <!-- Login END -->
 @stop
 

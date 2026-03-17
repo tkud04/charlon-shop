@@ -1,6 +1,6 @@
 <?php
 $text = (isset($title) && strlen($title) > 0) ? $title : "Charlon Shop";
-$d = (isset($description) && strlen($description) > 0) ? $description : "Official Website for Ukpor Unique Club";
+$d = (isset($description) && strlen($description) > 0) ? $description : "Buy your favorite items here";
 ?>
 
 <div id="breadcrumb-container">

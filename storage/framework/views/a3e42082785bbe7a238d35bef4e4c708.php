@@ -10,4 +10,4 @@ $sty = isset($style) ? "{$style}" : "";
 <?php
 //<a style="{!! $sty !!}" class="btn btn-outline-{{$ty}}"{!!$oc!!}{{$hh}}{{$idd}}>{{$t}}</a>
 ?>
-<button style="{!! $sty !!}" class="btn btn-custom-2"{!!$oc!!}{{$hh}}{{$idd}}>{{$t}}</button>
+<button style="<?php echo $sty; ?>" class="btn btn-custom-2"<?php echo $oc; ?><?php echo e($hh); ?><?php echo e($idd); ?>><?php echo e($t); ?></button><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/components/button.blade.php ENDPATH**/ ?>

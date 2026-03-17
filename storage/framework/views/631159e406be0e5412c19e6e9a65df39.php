@@ -2,16 +2,16 @@
 $void = 'javascript:void(0)';
 $title = "Forgot Password";
 ?>
-@extends('layout')
-
-@section('title',$title)
 
 
-@section('content')
-  @include('components.generic-banner',[
+<?php $__env->startSection('title',$title); ?>
+
+
+<?php $__env->startSection('content'); ?>
+  <?php echo $__env->make('components.generic-banner',[
     'title' => $title,
     'description' => "Confirm your email to reset your password"
-    ])
+    ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
   <!-- Login -->
   <div class="container mt-4">
@@ -30,23 +30,23 @@ $title = "Forgot Password";
                           <input type="text" required="" class="form-control input-lg" id="u" placeholder="Your Email">
                          
                         </div>
-                         @include('components.form-validation',['id' => 'u'])
+                         <?php echo $__env->make('components.form-validation',['id' => 'u'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                      </div>
                     
                     
                   </div>
                  
-                  @include('components.button',['id' => 'fp','title' => "Submit"])
-                   @include('components.form-loading',['id' => 'fp'])
+                  <?php echo $__env->make('components.button',['id' => 'fp','title' => "Submit"], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                   <?php echo $__env->make('components.form-loading',['id' => 'fp'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                </form>
                <div class="sm-margin"></div>
             </div>
      </div>
   </div>
   <!-- Login END -->
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
  <script>
     $(() => {
         hideFormValidations();
@@ -86,4 +86,5 @@ $title = "Forgot Password";
         });
     });
  </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/forgot-password.blade.php ENDPATH**/ ?>

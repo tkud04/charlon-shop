@@ -2,15 +2,15 @@
 $void = 'javascript:void(0)';
 $title = 'Create Account';
 ?>
-@extends('layout')
 
-@section('title',$title)
 
-@section('content')
-@include('components.generic-banner',[
+<?php $__env->startSection('title',$title); ?>
+
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('components.generic-banner',[
 'title' => $title,
 'description' => "Create an account to start shopping"
-])
+], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
   <!-- Sign Up -->
   <div class="container mt-4">
@@ -30,7 +30,7 @@ $title = 'Create Account';
                           <input type="text" required="" class="form-control input-lg" id="f" placeholder="Your first name">
                          
                         </div>
-                         @include('components.form-validation',['id' => 'f'])
+                         <?php echo $__env->make('components.form-validation',['id' => 'f'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                      </div>
                      <div class="col-md-6">
                         <div class="input-group">
@@ -41,7 +41,7 @@ $title = 'Create Account';
                           <input type="text" required="" class="form-control input-lg" id="l" placeholder="Your last name">
                          
                         </div>
-                         @include('components.form-validation',['id' => 'l'])
+                         <?php echo $__env->make('components.form-validation',['id' => 'l'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                      </div>
                      <div class="col-md-6">
                         <div class="input-group">
@@ -52,7 +52,7 @@ $title = 'Create Account';
                           <input type="text" required="" class="form-control input-lg" id="u" placeholder="Your Email">
                          
                         </div>
-                         @include('components.form-validation',['id' => 'u'])
+                         <?php echo $__env->make('components.form-validation',['id' => 'u'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                      </div>
                      <div class="col-md-6">
                         <div class="input-group">
@@ -67,7 +67,7 @@ $title = 'Create Account';
                           </select>
                          
                         </div>
-                         @include('components.form-validation',['id' => 'g'])
+                         <?php echo $__env->make('components.form-validation',['id' => 'g'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                      </div>
                      <div class="col-md-6">
                         <div class="input-group xs-margin">
@@ -78,7 +78,7 @@ $title = 'Create Account';
                            <input type="password" required="" class="form-control input-lg" id="p" placeholder="Your Password">
                           
                         </div>
-                         @include('components.form-validation',['id' => 'p'])
+                         <?php echo $__env->make('components.form-validation',['id' => 'p'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                      </div>
                      <div class="col-md-6">
                         <div class="input-group xs-margin">
@@ -89,22 +89,22 @@ $title = 'Create Account';
                            <input type="password" required="" class="form-control input-lg" id="p2" placeholder="Confirm Password">
                           
                         </div>
-                        @include('components.form-validation',['id' => 'p2'])
+                        <?php echo $__env->make('components.form-validation',['id' => 'p2'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                      </div>
                   </div>
                  
-                  <span class="help-block text-right">Existing user? <a href="{{url('login')}}">Log in</a></span>
-                   @include('components.button',['id' => 'signup','title' => "Submit"])
-                   @include('components.form-loading',['id' => 'signup'])
+                  <span class="help-block text-right">Existing user? <a href="<?php echo e(url('login')); ?>">Log in</a></span>
+                   <?php echo $__env->make('components.button',['id' => 'signup','title' => "Submit"], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                   <?php echo $__env->make('components.form-loading',['id' => 'signup'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                </form>
                <div class="sm-margin"></div>
             </div>
      </div>
   </div>
   <!-- Sign Up END -->
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
  <script>
 
 
@@ -164,4 +164,5 @@ $title = 'Create Account';
         });
     });
  </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/signup.blade.php ENDPATH**/ ?>

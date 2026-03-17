@@ -77,7 +77,7 @@ class MainController extends Controller {
 		}
 
 		
-
+dd($user);
 		$signals = $this->helpers->signals;
 		$ads = $this->helpers->getAds();
 		$senders = $this->helpers->getSenders();

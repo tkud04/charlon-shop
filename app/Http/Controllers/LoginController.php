@@ -221,13 +221,13 @@ class LoginController extends Controller {
                              //'xf' => 'required',
                              'password' => 'required|min:6|confirmed',
                              'email' => 'required|email|not_in:users', 
-                             //'fname' => 'required', 
-                             //'lname' => 'required',
+                             'fname' => 'required', 
+                             'lname' => 'required',
                              //'phone' => 'required',
                              //'day' => 'required',
                              //'month' => 'required',
-                             //'gender' => 'required|not_in:none',
-                              'username' => 'required|not_in:users',
+                             'gender' => 'required|not_in:none',
+                              //'username' => 'required|not_in:users',
                              #'g-recaptcha-response' => 'required',
                            # 'terms' => 'accepted',
          ]);
@@ -241,27 +241,12 @@ class LoginController extends Controller {
          else
          {
              $return = isset($req['return']) ? $req['return'] : '/';
-            $existingUser = $this->helpers->getUser($req['email']);
-            //$existingRequest = $this->helpers->getMemberRequest($req['email']);
-            $existingRequest = ['HIM'];
-
-            if(count($existingUser) > 0)
-            {
-              $ret['message'] = "existing-user";
-            }
-            else if(count($existingRequest) < 1)
-            {
-                $ret['message'] = "invalid-member-request";
-            }
-            else
-            {
-             $req['fname'] = '';//$existingRequest['fname'];
-             $req['lname'] = '';//$existingRequest['lname'];
-             $req['phone'] = '';//$existingRequest['phone'];
+           
+              $req['phone'] = '';//$existingRequest['phone'];
              $req['bday'] = '';//$req['month']."-".$req['day'];
-             $req['role'] = "admin"; //"user";
+             $req['role'] = "user";
+             $req['username'] = "";
              $req['avatar'] = "";
-             $req['gender'] = "";
               $req['tier'] = 1;
              $req['status'] = "ok";  
              $req['verified'] = "yes";       			
@@ -271,12 +256,10 @@ class LoginController extends Controller {
 
                                                       
                //after creating the user, delete the request, and send back to the registration view with a success message
-               //$this->helpers->removeMemberRequest($existingRequest['id']);
-               #$this->helpers->sendEmail($user->email,'Welcome To Ukpor Unique Club!',['name' => $user->fname, 'id' => $user->id],'emails.welcome','view');
+              #$this->helpers->sendEmail($user->email,'Welcome To Ukpor Unique Club!',['name' => $user->fname, 'id' => $user->id],'emails.welcome','view');
                 $ret = ['status'=> "ok",'data' => $return];
             }
-			
-          }
+
           return json_encode($ret);    
     }
 
@@ -327,7 +310,7 @@ class LoginController extends Controller {
 
                 if(is_null($user))
                 {
-                    $ret['error'] = 'invalid-user';
+                    $ret['message'] = 'invalid-user';
                 }
                 else
                 {
@@ -336,6 +319,7 @@ class LoginController extends Controller {
                     $l = url('reset-password')."?xf=".$code;
 
                     //send email
+                   /*
                     $emailContent = $this->helpers->getEmailContent([
                       'type' => 'forgot-password',
                       'data' => [
@@ -348,6 +332,7 @@ class LoginController extends Controller {
                     $payload['htmlContent'] = $emailContent;
                     $payload['subject'] = "Reset your password";
                     $this->helpers->symfonySendMail($payload);
+                    */
                     $ret = ['status' => 'ok'];
                 }
         }
