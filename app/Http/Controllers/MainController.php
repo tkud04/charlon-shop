@@ -96,6 +96,12 @@ dd($user);
 		$activeClass = "dashboard";
 		$contactDetails = $this->helpers->contactDetails;
 		array_push($c,'activeClass','userInfo','upcomingEvents','contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 	    return view('dashboard',compact($c));	
     }
 
@@ -125,6 +131,12 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
 		$activeClass = "profile";
 		$profile = $this->helpers->getUser($user->email);
@@ -160,6 +172,12 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
 		return view('set-password',compact($c));	
 
@@ -290,6 +308,12 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
 		return view('delete-accounts',compact($c));	
     }
@@ -371,6 +395,12 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
 		$addressSetting = $this->helpers->getSetting('address');
 		$emailSetting = $this->helpers->getSetting('email');
@@ -653,6 +683,12 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
 
 		
@@ -680,6 +716,12 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
 		
     	return view('privacy',compact($c));
@@ -721,6 +763,14 @@ dd($user);
 		#dd($items);
 
 		array_push($c,'items','fee');
+		$contactDetails = $this->helpers->contactDetails;
+        array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 	    return view('cart',compact($c));	
 		
     }
@@ -837,7 +887,14 @@ dd($user);
 		$items = $this->helpers->getCartItems();
 		$fee = 0;
 		#dd($items);
-
+		$contactDetails = $this->helpers->contactDetails;
+        array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 		array_push($c,'items','fee','pmodes');
 	    return view('checkout',compact($c));	
 		
@@ -928,6 +985,14 @@ dd($user);
 			{
 			 array_push($c,'o');
 			 dd($o);
+			 $contactDetails = $this->helpers->contactDetails;
+        array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 	           return view('order',compact($c));	
 			}
 			else
@@ -1072,6 +1137,13 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
+
 
 		$activeClass = "add-fund";
 		array_push($c,'activeClass');

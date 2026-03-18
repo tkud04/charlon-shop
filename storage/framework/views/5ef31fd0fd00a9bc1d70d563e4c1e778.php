@@ -16,8 +16,8 @@ $data = [
      foreach($data as $d)
      {
    ?>
-       <a href="{{$d['url']}}" class="list-group-item list-group-item-action"> <i class="fa {{$d['icon']}}" style="margin-right: 5px;"></i> {{$d['label']}}</a> 
+       <a href="<?php echo e($d['url']); ?>" class="list-group-item list-group-item-action"> <i class="fa <?php echo e($d['icon']); ?>" style="margin-right: 5px;"></i> <?php echo e($d['label']); ?></a> 
     <?php
      }
     ?>
-</div>
+</div><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/components/admin-sidebar.blade.php ENDPATH**/ ?>

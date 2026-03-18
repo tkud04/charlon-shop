@@ -3,37 +3,37 @@ $void = 'javascript:void(0)';
 $title = "Admin Dashboard";
 $iap = true;
 ?>
-@extends('layout')
-
-@section('title',$title)
 
 
-@section('styles')
+<?php $__env->startSection('title',$title); ?>
+
+
+<?php $__env->startSection('styles'); ?>
 <link rel="stylesheet" href="lib/datatables/datatables.min.css"/>
-@stop
+<?php $__env->stopSection(); ?>
 
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
-@include('components.generic-banner',[
+<?php echo $__env->make('components.generic-banner',[
    'title' => "Admin Dashboard",
    'description' => "Welcome to the Admin Center. Here you can configure the settings for the website. You can also view/manage members information, site setttings, contact info and much more!"
-  ])
+  ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <!-- Stats start -->
-  @include('components.admin-dashboard-stats',[
+  <?php echo $__env->make('components.admin-dashboard-stats',[
       'total_users' => count($users),
       'total_products' => count($products),
       'total_orders' => count($orders),
       'total_refunds' => count($refunds),
-    ])                          
+    ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>                          
 <!-- Stats end -->
 
 <div class="container mt-4">
 
 <div class="row">
   <div class="col-md-4">
-      @include('components.admin-sidebar')
+      <?php echo $__env->make('components.admin-sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
   </div>
   <div class="col-md-8" style="height: 400px; overflow:scroll;">
      <h3>Quick Actions</h3>
@@ -46,13 +46,13 @@ $iap = true;
                                  <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                     <input type="email" class="form-control" id="cl-xf" placeholder="Email address or username" required="">
-                                         @include('components.form-validation',['id' => 'cl-xf'])
+                                         <?php echo $__env->make('components.form-validation',['id' => 'cl-xf'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                      
              
                                      <div class="col-md-6">
                                          <a href="#" id="cl-btn" class="tp-login-btn w-100">Submit</a>
-                                         @include('components.form-loading',['id' => 'cl'])
+                                         <?php echo $__env->make('components.form-loading',['id' => 'cl'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                      <div class="col-md-12" id="cl-result"></div>
                                  </div>
@@ -69,17 +69,17 @@ $iap = true;
                                  <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                     <input type="text" class="form-control" id="aa-title" placeholder="Title or date" required="">
-                                         @include('components.form-validation',['id' => 'aa-title'])
+                                         <?php echo $__env->make('components.form-validation',['id' => 'aa-title'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                      <div class="form-group col-md-6 mb-4">
                                     <input type="text" class="form-control" id="aa-msg" placeholder="Message" required="">
-                                         @include('components.form-validation',['id' => 'aa-msg'])
+                                         <?php echo $__env->make('components.form-validation',['id' => 'aa-msg'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                      
              
                                      <div class="col-md-12">
                                          <a href="#" id="aa-btn" class="tp-login-btn w-100">Submit</a>
-                                         @include('components.form-loading',['id' => 'aa'])
+                                         <?php echo $__env->make('components.form-loading',['id' => 'aa'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                  </div>
                              </form>
@@ -90,9 +90,9 @@ $iap = true;
 </div>
 </div>
 
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 <script src="lib/datatables/datatables.min.js"></script>
 
 <script>
@@ -235,4 +235,5 @@ $iap = true;
         });
     });
  </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/admin-dashboard.blade.php ENDPATH**/ ?>

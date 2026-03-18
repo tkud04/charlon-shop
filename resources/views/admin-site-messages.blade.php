@@ -2,6 +2,7 @@
 $void = 'javascript:void(0)';
 $title = "Site Messages";
 $mode = "admin";
+$iap = true;
 ?>
 @extends('layout')
 

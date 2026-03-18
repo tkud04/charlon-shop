@@ -43,6 +43,16 @@ class AdminController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
+				$sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				$users = $this->helpers->getUsers();
+				$products = [];//$this->helpers->getProducts();
+				$orders = [];//$this->helpers->getOrders();
+				$refunds = [];//$this->helpers->getRefunds();
+				array_push($c,'sliderData','products','orders','refunds','users');
 			   return view('admin-dashboard',compact($c));
             }
 		}
@@ -131,6 +141,12 @@ class AdminController extends Controller {
 				array_push($c,'data');
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
+				$sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
 			   return view('admin-site-messages',compact($c));
             }
 		}
@@ -223,6 +239,12 @@ class AdminController extends Controller {
 				array_push($c,'categories');
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
+				$sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
 			   return view('admin-categories',compact($c));
             }
 		}
@@ -253,8 +275,12 @@ class AdminController extends Controller {
             if($user->role === "admin" || $user->role === "su")
             {
 				
-
-				array_push($c);
+                $sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
 				return view('admin-add-product-category',compact($c));
             }
 		}
@@ -339,6 +365,12 @@ class AdminController extends Controller {
 					if(count($category) > 0)
 					{
 						array_push($c,'category');
+						$sliderData = [
+							'popular' => $this->helpers->testProducts,
+							'specials' => $this->helpers->testProducts,
+							'featured' => $this->helpers->testProducts,
+						];
+						array_push($c,'sliderData');
 						 return view('admin-product-category',compact($c));
 					}
 				}
@@ -419,6 +451,12 @@ class AdminController extends Controller {
 				$products = $this->helpers->getProducts();
 				//dd($products);
 				array_push($c,'products');
+				$sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
 			   return view('admin-products',compact($c));
             }
 		}
@@ -450,6 +488,12 @@ class AdminController extends Controller {
 				$statuses = $this->helpers->productStatuses;
 
 				array_push($c,'statuses','categories');
+				$sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
 				return view('admin-add-product',compact($c));
             }
 		}
@@ -543,6 +587,12 @@ class AdminController extends Controller {
 						$statuses = $this->helpers->productStatuses;
 						$categories = $this->helpers->getProductCategories();
 						array_push($c,'product','statuses','categories');
+						$sliderData = [
+							'popular' => $this->helpers->testProducts,
+							'specials' => $this->helpers->testProducts,
+							'featured' => $this->helpers->testProducts,
+						];
+						array_push($c,'sliderData');
 
 						 return view('admin-product',compact($c));
 					}
@@ -676,6 +726,12 @@ class AdminController extends Controller {
 				$orders = $this->helpers->getOrders();
 				dd($orders);
 				array_push($c,'orders');
+				$sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
 			   return view('admin-orders',compact($c));
             }
 		}
@@ -713,7 +769,12 @@ class AdminController extends Controller {
 					if(count($o) > 0)
 					{
 						array_push($c,'o');
-
+                        $sliderData = [
+							'popular' => $this->helpers->testProducts,
+							'specials' => $this->helpers->testProducts,
+							'featured' => $this->helpers->testProducts,
+						];
+						array_push($c,'sliderData');
 						 return view('admin-order',compact($c));
 					}
 				}

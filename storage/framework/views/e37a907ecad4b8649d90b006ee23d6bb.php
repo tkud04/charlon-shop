@@ -4,32 +4,32 @@ $title = "Settings";
 $mode = "admin";
 $iap = true;
 ?>
-@extends('layout')
 
-@section('title',$title)
 
-@section('styles')
+<?php $__env->startSection('title',$title); ?>
+
+<?php $__env->startSection('styles'); ?>
 <link rel="stylesheet" href="lib/datatables/datatables.min.css"/>
-@stop
+<?php $__env->stopSection(); ?>
 
 
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
-@include('components.generic-banner',[
+<?php echo $__env->make('components.generic-banner',[
    'title' => "Settings",
    'description' => "Here you can view and manage site settings"
-  ])
+  ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
   <div class=" tp-portfolio-area pb-10">
   <div class="container">
 <div class="row">
 <div class="col-md-12 my-4">
-<a class="btn btn-primary mb-2" href="{{url('add-setting')}}">+ Add Setting</a>
+<a class="btn btn-primary mb-2" href="<?php echo e(url('add-setting')); ?>">+ Add Setting</a>
 </div>
 <div class="col-md-4 mt-4">
      <div class="row">
         <div class="col-md-12 my-4">
-           @include('components.admin-sidebar')
+           <?php echo $__env->make('components.admin-sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         </div>
      </div>
   </div>
@@ -56,11 +56,11 @@ $iap = true;
                        $ru = url('remove-setting')."?xf=".$sid;
                  ?>
 				  <tr>
-				     <td> <p>Title: {{ucwords($setting['name'])}} </p>   </td>
-				     <td>  <p>Value: {{ucwords($setting['value'])}} </p> </td>
+				     <td> <p>Title: <?php echo e(ucwords($setting['name'])); ?> </p>   </td>
+				     <td>  <p>Value: <?php echo e(ucwords($setting['value'])); ?> </p> </td>
                     <td>
-                        <a href="#" id="rs-{{$sid}}-btn" onclick="confirmRemoveSetting({xf:'{{$sid}}'}); return false;" class="btn btn-danger"><i class="fa-light fa-trash"></i></a>
-                        @include('components.form-loading',['id' => 'rs-'.$sid])
+                        <a href="#" id="rs-<?php echo e($sid); ?>-btn" onclick="confirmRemoveSetting({xf:'<?php echo e($sid); ?>'}); return false;" class="btn btn-danger"><i class="fa-light fa-trash"></i></a>
+                        <?php echo $__env->make('components.form-loading',['id' => 'rs-'.$sid], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                     </td>
 				  </tr>
 				<?php
@@ -76,10 +76,10 @@ $iap = true;
             <input type="hidden" id="xx" value=""/>
   </div>
   </div>
-@stop
+<?php $__env->stopSection(); ?>
 
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 <script src="lib/datatables/datatables.min.js"></script>
 
 <script>
@@ -122,4 +122,5 @@ alert('Setting removed!');
     }
   );
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/admin-settings.blade.php ENDPATH**/ ?>

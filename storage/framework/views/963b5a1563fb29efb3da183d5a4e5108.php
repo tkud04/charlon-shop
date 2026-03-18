@@ -2,6 +2,7 @@
 $void = "javascript:void(0)";
 $isDevMode = false;
 $shopTitle = "Charlon Shop";
+
 ?>
 
 
@@ -42,6 +43,7 @@ $v = isset($isDashboard) && $isDashboard;
 $isLoggedIn = isset($user);
 $isAdmin = $isLoggedIn && ($user->role === 'admin' || $user->role === 'su');
 $bday = $isLoggedIn ? $user->bday : ''; 
+$isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'admin');
 ?>
 
 <body>
@@ -305,7 +307,9 @@ $bday = $isLoggedIn ? $user->bday : '';
 
       <footer id="footer">
         <div id="footer-top">
-         <?php echo $__env->make('components.products-slider',$sliderData, array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+          <?php if(!$isAdminPage): ?>
+            <?php echo $__env->make('components.products-slider',$sliderData, array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+         <?php endif; ?>
         </div>
         <div id="inner-footer">
           <div class="container">

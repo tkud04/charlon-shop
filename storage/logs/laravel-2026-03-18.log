@@ -760,3 +760,1252 @@
 #73 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
 #74 {main}
 "} 
+[2026-03-18 12:39:03] local.ERROR: Undefined variable $sliderData {"view":{"view":"/Users/tobikudayisi/repos/charlon-shop/resources/views/layout.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-2062561541 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#448</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-2062561541\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","user":"<pre class=sf-dump id=sf-dump-2102473773 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-2102473773\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","plugins":"<pre class=sf-dump id=sf-dump-1222816639 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1222816639\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","senders":"<pre class=sf-dump id=sf-dump-1398672882 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1398672882\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","signals":"<pre class=sf-dump id=sf-dump-1046543365 data-indent-pad=\"  \"><span class=sf-dump-note>array:2</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>okays</span>\" => <span class=sf-dump-note>array:7</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Sign in successful</span>\"
+    \"<span class=sf-dump-key>add-sender-status</span>\" => \"<span class=sf-dump-str title=\"13 characters\">Sender added!</span>\"
+    \"<span class=sf-dump-key>update-profile-status</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Profile updated!</span>\"
+    \"<span class=sf-dump-key>new-tracking-status</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Tracking added!</span>\"
+    \"<span class=sf-dump-key>tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking updated!</span>\"
+    \"<span class=sf-dump-key>remove-tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking removed!</span>\"
+    \"<span class=sf-dump-key>contact-status</span>\" => \"<span class=sf-dump-str title=\"80 characters\">Message sent! Our customer service representatives will get back to you shortly.</span>\"
+  </samp>]
+  \"<span class=sf-dump-key>errors</span>\" => <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status-error</span>\" => \"<span class=sf-dump-str title=\"55 characters\">There was a problem signing in, please contact support.</span>\"
+    \"<span class=sf-dump-key>add-sender-status-error</span>\" => \"<span class=sf-dump-str title=\"34 characters\">There was a problem adding sender.</span>\"
+    \"<span class=sf-dump-key>update-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem updating the account, please contact support.</span>\"
+    \"<span class=sf-dump-key>contact-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem sending your message, please contact support.</span>\"
+    \"<span class=sf-dump-key>tracking-status-error</span>\" => \"<span class=sf-dump-str title=\"29 characters\">Tracking info does not exist!</span>\"
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1046543365\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","contactDetails":"<pre class=sf-dump id=sf-dump-1395633858 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"36 characters\">Test Address&lt;br&gt; Lagos State, NG&lt;br&gt;</span>\"
+  \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"11 characters\">08012345678</span>\"
+  \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"20 characters\">info@ukporunique.com</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1395633858\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","void":"<pre class=sf-dump id=sf-dump-668829986 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"18 characters\">javascript:void(0)</span>\"
+</pre><script>Sfdump(\"sf-dump-668829986\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","title":"<pre class=sf-dump id=sf-dump-2116846193 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"26 characters\">Login or Create an Account</span>\"
+</pre><script>Sfdump(\"sf-dump-2116846193\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined variable $sliderData at /Users/tobikudayisi/repos/charlon-shop/resources/views/layout.blade.php:307)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#1 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#7 /Users/tobikudayisi/repos/charlon-shop/resources/views/login.blade.php(118): Illuminate\\View\\View->render()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#9 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#60 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#63 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#64 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#65 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#66 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#67 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $sliderData at /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/963b5a1563fb29efb3da183d5a4e5108.php:308)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', '/Users/tobikuda...', 308)
+#1 /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/963b5a1563fb29efb3da183d5a4e5108.php(308): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', '/Users/tobikuda...', 308)
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#7 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#9 /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/d8ca47565d12c7cb602ea4f95eb38224.php(119): Illuminate\\View\\View->render()
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#60 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#63 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#64 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#65 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#66 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#67 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#68 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#69 {main}
+"} 
+[2026-03-18 13:03:10] local.ERROR: count(): Argument #1 ($value) must be of type Countable|array, null given {"view":{"view":"/Users/tobikudayisi/repos/charlon-shop/resources/views/admin-dashboard.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1917542189 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#460</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1917542189\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","user":"<pre class=sf-dump id=sf-dump-1175698449 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\User</span> {<a class=sf-dump-ref>#1168</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"5 characters\">users</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"27 characters\">uwantbrendacolson@gmail.com</span>\"
+    \"<span class=sf-dump-key>fname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Brenda</span>\"
+    \"<span class=sf-dump-key>lname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Colson</span>\"
+    \"<span class=sf-dump-key>username</span>\" => \"\"
+    \"<span class=sf-dump-key>phone</span>\" => \"\"
+    \"<span class=sf-dump-key>gender</span>\" => \"<span class=sf-dump-str title=\"6 characters\">female</span>\"
+    \"<span class=sf-dump-key>tier</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>bday</span>\" => \"\"
+    \"<span class=sf-dump-key>role</span>\" => \"<span class=sf-dump-str title=\"5 characters\">admin</span>\"
+    \"<span class=sf-dump-key>avatar</span>\" => \"\"
+    \"<span class=sf-dump-key>verified</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>complete_signup</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>password</span>\" => \"<span class=sf-dump-str title=\"60 characters\">$2y$10$J2o6/ySlzUc41mK/xPRre.6HvCtFeYlTQU7eiZRk3ptEccwvJDWLy</span>\"
+    \"<span class=sf-dump-key>remember_token</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>reset_code</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:18:59</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:26:27</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"27 characters\">uwantbrendacolson@gmail.com</span>\"
+    \"<span class=sf-dump-key>fname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Brenda</span>\"
+    \"<span class=sf-dump-key>lname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Colson</span>\"
+    \"<span class=sf-dump-key>username</span>\" => \"\"
+    \"<span class=sf-dump-key>phone</span>\" => \"\"
+    \"<span class=sf-dump-key>gender</span>\" => \"<span class=sf-dump-str title=\"6 characters\">female</span>\"
+    \"<span class=sf-dump-key>tier</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>bday</span>\" => \"\"
+    \"<span class=sf-dump-key>role</span>\" => \"<span class=sf-dump-str title=\"5 characters\">admin</span>\"
+    \"<span class=sf-dump-key>avatar</span>\" => \"\"
+    \"<span class=sf-dump-key>verified</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>complete_signup</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>password</span>\" => \"<span class=sf-dump-str title=\"60 characters\">$2y$10$J2o6/ySlzUc41mK/xPRre.6HvCtFeYlTQU7eiZRk3ptEccwvJDWLy</span>\"
+    \"<span class=sf-dump-key>remember_token</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>reset_code</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:18:59</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:26:27</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>email_verified_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:16</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">fname</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"5 characters\">lname</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"5 characters\">email</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"8 characters\">username</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"5 characters\">phone</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+    <span class=sf-dump-index>6</span> => \"<span class=sf-dump-str title=\"6 characters\">gender</span>\"
+    <span class=sf-dump-index>7</span> => \"<span class=sf-dump-str title=\"4 characters\">role</span>\"
+    <span class=sf-dump-index>8</span> => \"<span class=sf-dump-str title=\"6 characters\">avatar</span>\"
+    <span class=sf-dump-index>9</span> => \"<span class=sf-dump-str title=\"4 characters\">tier</span>\"
+    <span class=sf-dump-index>10</span> => \"<span class=sf-dump-str title=\"4 characters\">bday</span>\"
+    <span class=sf-dump-index>11</span> => \"<span class=sf-dump-str title=\"6 characters\">status</span>\"
+    <span class=sf-dump-index>12</span> => \"<span class=sf-dump-str title=\"8 characters\">verified</span>\"
+    <span class=sf-dump-index>13</span> => \"<span class=sf-dump-str title=\"15 characters\">complete_signup</span>\"
+    <span class=sf-dump-index>14</span> => \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+    <span class=sf-dump-index>15</span> => \"<span class=sf-dump-str title=\"10 characters\">reset_code</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">authPasswordName</span>: \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">rememberTokenName</span>: \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">accessToken</span>: <span class=sf-dump-const>null</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1175698449\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","plugins":"<pre class=sf-dump id=sf-dump-575661491 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-575661491\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","senders":"<pre class=sf-dump id=sf-dump-1695371182 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1695371182\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","signals":"<pre class=sf-dump id=sf-dump-89888673 data-indent-pad=\"  \"><span class=sf-dump-note>array:2</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>okays</span>\" => <span class=sf-dump-note>array:7</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Sign in successful</span>\"
+    \"<span class=sf-dump-key>add-sender-status</span>\" => \"<span class=sf-dump-str title=\"13 characters\">Sender added!</span>\"
+    \"<span class=sf-dump-key>update-profile-status</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Profile updated!</span>\"
+    \"<span class=sf-dump-key>new-tracking-status</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Tracking added!</span>\"
+    \"<span class=sf-dump-key>tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking updated!</span>\"
+    \"<span class=sf-dump-key>remove-tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking removed!</span>\"
+    \"<span class=sf-dump-key>contact-status</span>\" => \"<span class=sf-dump-str title=\"80 characters\">Message sent! Our customer service representatives will get back to you shortly.</span>\"
+  </samp>]
+  \"<span class=sf-dump-key>errors</span>\" => <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status-error</span>\" => \"<span class=sf-dump-str title=\"55 characters\">There was a problem signing in, please contact support.</span>\"
+    \"<span class=sf-dump-key>add-sender-status-error</span>\" => \"<span class=sf-dump-str title=\"34 characters\">There was a problem adding sender.</span>\"
+    \"<span class=sf-dump-key>update-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem updating the account, please contact support.</span>\"
+    \"<span class=sf-dump-key>contact-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem sending your message, please contact support.</span>\"
+    \"<span class=sf-dump-key>tracking-status-error</span>\" => \"<span class=sf-dump-str title=\"29 characters\">Tracking info does not exist!</span>\"
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-89888673\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ads":"<pre class=sf-dump id=sf-dump-1538259457 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1538259457\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","contactDetails":"<pre class=sf-dump id=sf-dump-770942098 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"36 characters\">Test Address&lt;br&gt; Lagos State, NG&lt;br&gt;</span>\"
+  \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"11 characters\">08012345678</span>\"
+  \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"20 characters\">info@ukporunique.com</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-770942098\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":2,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): count(): Argument #1 ($value) must be of type Countable|array, null given at /Users/tobikudayisi/repos/charlon-shop/resources/views/admin-dashboard.blade.php:23)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require()
+#1 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#7 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#59 {main}
+
+[previous exception] [object] (TypeError(code: 0): count(): Argument #1 ($value) must be of type Countable|array, null given at /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/ef88c9fa3d4622e443f81afabb2b4277.php:24)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require()
+#1 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#7 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#59 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $members at /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/ef88c9fa3d4622e443f81afabb2b4277.php:24)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', '/Users/tobikuda...', 24)
+#1 /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/ef88c9fa3d4622e443f81afabb2b4277.php(24): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', '/Users/tobikuda...', 24)
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#7 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#9 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#59 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#60 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#61 {main}
+"} 
+[2026-03-18 13:15:05] local.ERROR: count(): Argument #1 ($value) must be of type Countable|array, int given {"view":{"view":"/Users/tobikudayisi/repos/charlon-shop/resources/views/admin-dashboard.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1630128703 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#460</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1630128703\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","user":"<pre class=sf-dump id=sf-dump-99475163 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\User</span> {<a class=sf-dump-ref>#1168</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"5 characters\">users</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"27 characters\">uwantbrendacolson@gmail.com</span>\"
+    \"<span class=sf-dump-key>fname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Brenda</span>\"
+    \"<span class=sf-dump-key>lname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Colson</span>\"
+    \"<span class=sf-dump-key>username</span>\" => \"\"
+    \"<span class=sf-dump-key>phone</span>\" => \"\"
+    \"<span class=sf-dump-key>gender</span>\" => \"<span class=sf-dump-str title=\"6 characters\">female</span>\"
+    \"<span class=sf-dump-key>tier</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>bday</span>\" => \"\"
+    \"<span class=sf-dump-key>role</span>\" => \"<span class=sf-dump-str title=\"2 characters\">su</span>\"
+    \"<span class=sf-dump-key>avatar</span>\" => \"\"
+    \"<span class=sf-dump-key>verified</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>complete_signup</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>password</span>\" => \"<span class=sf-dump-str title=\"60 characters\">$2y$10$J2o6/ySlzUc41mK/xPRre.6HvCtFeYlTQU7eiZRk3ptEccwvJDWLy</span>\"
+    \"<span class=sf-dump-key>remember_token</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>reset_code</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:18:59</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:26:27</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"27 characters\">uwantbrendacolson@gmail.com</span>\"
+    \"<span class=sf-dump-key>fname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Brenda</span>\"
+    \"<span class=sf-dump-key>lname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Colson</span>\"
+    \"<span class=sf-dump-key>username</span>\" => \"\"
+    \"<span class=sf-dump-key>phone</span>\" => \"\"
+    \"<span class=sf-dump-key>gender</span>\" => \"<span class=sf-dump-str title=\"6 characters\">female</span>\"
+    \"<span class=sf-dump-key>tier</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>bday</span>\" => \"\"
+    \"<span class=sf-dump-key>role</span>\" => \"<span class=sf-dump-str title=\"2 characters\">su</span>\"
+    \"<span class=sf-dump-key>avatar</span>\" => \"\"
+    \"<span class=sf-dump-key>verified</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>complete_signup</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>password</span>\" => \"<span class=sf-dump-str title=\"60 characters\">$2y$10$J2o6/ySlzUc41mK/xPRre.6HvCtFeYlTQU7eiZRk3ptEccwvJDWLy</span>\"
+    \"<span class=sf-dump-key>remember_token</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>reset_code</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:18:59</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:26:27</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>email_verified_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:16</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">fname</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"5 characters\">lname</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"5 characters\">email</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"8 characters\">username</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"5 characters\">phone</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+    <span class=sf-dump-index>6</span> => \"<span class=sf-dump-str title=\"6 characters\">gender</span>\"
+    <span class=sf-dump-index>7</span> => \"<span class=sf-dump-str title=\"4 characters\">role</span>\"
+    <span class=sf-dump-index>8</span> => \"<span class=sf-dump-str title=\"6 characters\">avatar</span>\"
+    <span class=sf-dump-index>9</span> => \"<span class=sf-dump-str title=\"4 characters\">tier</span>\"
+    <span class=sf-dump-index>10</span> => \"<span class=sf-dump-str title=\"4 characters\">bday</span>\"
+    <span class=sf-dump-index>11</span> => \"<span class=sf-dump-str title=\"6 characters\">status</span>\"
+    <span class=sf-dump-index>12</span> => \"<span class=sf-dump-str title=\"8 characters\">verified</span>\"
+    <span class=sf-dump-index>13</span> => \"<span class=sf-dump-str title=\"15 characters\">complete_signup</span>\"
+    <span class=sf-dump-index>14</span> => \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+    <span class=sf-dump-index>15</span> => \"<span class=sf-dump-str title=\"10 characters\">reset_code</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">authPasswordName</span>: \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">rememberTokenName</span>: \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">accessToken</span>: <span class=sf-dump-const>null</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-99475163\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","plugins":"<pre class=sf-dump id=sf-dump-456351016 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-456351016\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","senders":"<pre class=sf-dump id=sf-dump-1956340106 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1956340106\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","signals":"<pre class=sf-dump id=sf-dump-10189146 data-indent-pad=\"  \"><span class=sf-dump-note>array:2</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>okays</span>\" => <span class=sf-dump-note>array:7</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Sign in successful</span>\"
+    \"<span class=sf-dump-key>add-sender-status</span>\" => \"<span class=sf-dump-str title=\"13 characters\">Sender added!</span>\"
+    \"<span class=sf-dump-key>update-profile-status</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Profile updated!</span>\"
+    \"<span class=sf-dump-key>new-tracking-status</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Tracking added!</span>\"
+    \"<span class=sf-dump-key>tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking updated!</span>\"
+    \"<span class=sf-dump-key>remove-tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking removed!</span>\"
+    \"<span class=sf-dump-key>contact-status</span>\" => \"<span class=sf-dump-str title=\"80 characters\">Message sent! Our customer service representatives will get back to you shortly.</span>\"
+  </samp>]
+  \"<span class=sf-dump-key>errors</span>\" => <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status-error</span>\" => \"<span class=sf-dump-str title=\"55 characters\">There was a problem signing in, please contact support.</span>\"
+    \"<span class=sf-dump-key>add-sender-status-error</span>\" => \"<span class=sf-dump-str title=\"34 characters\">There was a problem adding sender.</span>\"
+    \"<span class=sf-dump-key>update-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem updating the account, please contact support.</span>\"
+    \"<span class=sf-dump-key>contact-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem sending your message, please contact support.</span>\"
+    \"<span class=sf-dump-key>tracking-status-error</span>\" => \"<span class=sf-dump-str title=\"29 characters\">Tracking info does not exist!</span>\"
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-10189146\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ads":"<pre class=sf-dump id=sf-dump-73485401 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-73485401\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","contactDetails":"<pre class=sf-dump id=sf-dump-1018397082 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"36 characters\">Test Address&lt;br&gt; Lagos State, NG&lt;br&gt;</span>\"
+  \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"11 characters\">08012345678</span>\"
+  \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"20 characters\">info@ukporunique.com</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1018397082\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","sliderData":"<pre class=sf-dump id=sf-dump-296256436 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>popular</span>\" => <span class=sf-dump-note>array:6</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>1</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"21 characters\">jacket-suiting-blazer</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"21 characters\">Jacket Suiting Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item1.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>1</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>2</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"18 characters\">gap-graphic-cuffed</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Gap Graphic Cuffed</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item2.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"4 characters\">18.5</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>2</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>3</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"19 characters\">womens-lauren-dress</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Women&#039;s Lauren Dress</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item3.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>3</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>4</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"20 characters\">jacket-lauren-blazer</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Jacket Lauren Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"35 characters\">mages/products/thumbnails/item4.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>4</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>5</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"23 characters\">jacket-suiting-blazer-2</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"21 characters\">Jacket Suiting Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item5.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"4 characters\">18.5</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>5</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>6</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"18 characters\">women-spahyr-dress</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Women&#039;s Spahyr Dress</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item6.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+  </samp>]
+  \"<span class=sf-dump-key>specials</span>\" => <span class=sf-dump-note>array:6</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>1</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"21 characters\">jacket-suiting-blazer</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"21 characters\">Jacket Suiting Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item1.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>1</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>2</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"18 characters\">gap-graphic-cuffed</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Gap Graphic Cuffed</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item2.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"4 characters\">18.5</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>2</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>3</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"19 characters\">womens-lauren-dress</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Women&#039;s Lauren Dress</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item3.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>3</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>4</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"20 characters\">jacket-lauren-blazer</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Jacket Lauren Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"35 characters\">mages/products/thumbnails/item4.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>4</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>5</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"23 characters\">jacket-suiting-blazer-2</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"21 characters\">Jacket Suiting Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item5.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"4 characters\">18.5</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>5</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>6</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"18 characters\">women-spahyr-dress</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Women&#039;s Spahyr Dress</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item6.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+  </samp>]
+  \"<span class=sf-dump-key>featured</span>\" => <span class=sf-dump-note>array:6</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>1</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"21 characters\">jacket-suiting-blazer</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"21 characters\">Jacket Suiting Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item1.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>1</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>2</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"18 characters\">gap-graphic-cuffed</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Gap Graphic Cuffed</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item2.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"4 characters\">18.5</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>2</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>3</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"19 characters\">womens-lauren-dress</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Women&#039;s Lauren Dress</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item3.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>3</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>4</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"20 characters\">jacket-lauren-blazer</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Jacket Lauren Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"35 characters\">mages/products/thumbnails/item4.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">40</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>4</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>5</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"23 characters\">jacket-suiting-blazer-2</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"21 characters\">Jacket Suiting Blazer</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item5.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"4 characters\">18.5</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+    <span class=sf-dump-index>5</span> => <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>id</span>\" => \"<span class=sf-dump-str>6</span>\"
+      \"<span class=sf-dump-key>slug</span>\" => \"<span class=sf-dump-str title=\"18 characters\">women-spahyr-dress</span>\"
+      \"<span class=sf-dump-key>category</span>\" => \"<span class=sf-dump-str title=\"5 characters\">women</span>\"
+      \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"20 characters\">Women&#039;s Spahyr Dress</span>\"
+      \"<span class=sf-dump-key>thumb</span>\" => \"<span class=sf-dump-str title=\"36 characters\">images/products/thumbnails/item6.jpg</span>\"
+      \"<span class=sf-dump-key>description</span>\" => \"\"
+      \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"2 characters\">30</span>\"
+      \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    </samp>]
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-296256436\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","products":"<pre class=sf-dump id=sf-dump-1693001014 data-indent-pad=\"  \"><span class=sf-dump-num>0</span>
+</pre><script>Sfdump(\"sf-dump-1693001014\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","orders":"<pre class=sf-dump id=sf-dump-1651784990 data-indent-pad=\"  \"><span class=sf-dump-num>0</span>
+</pre><script>Sfdump(\"sf-dump-1651784990\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","refunds":"<pre class=sf-dump id=sf-dump-1677080960 data-indent-pad=\"  \"><span class=sf-dump-num>0</span>
+</pre><script>Sfdump(\"sf-dump-1677080960\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","users":"<pre class=sf-dump id=sf-dump-1756815124 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1756815124\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":2,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): count(): Argument #1 ($value) must be of type Countable|array, int given at /Users/tobikudayisi/repos/charlon-shop/resources/views/admin-dashboard.blade.php:23)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require()
+#1 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#7 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#59 {main}
+
+[previous exception] [object] (TypeError(code: 0): count(): Argument #1 ($value) must be of type Countable|array, int given at /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/ef88c9fa3d4622e443f81afabb2b4277.php:25)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require()
+#1 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#7 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#59 {main}
+"} 
+[2026-03-18 13:34:47] local.ERROR: Undefined variable $sliderData {"view":{"view":"/Users/tobikudayisi/repos/charlon-shop/resources/views/layout.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-872259381 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#476</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-872259381\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","user":"<pre class=sf-dump id=sf-dump-27966588 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\User</span> {<a class=sf-dump-ref>#1184</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"5 characters\">users</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"27 characters\">uwantbrendacolson@gmail.com</span>\"
+    \"<span class=sf-dump-key>fname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Brenda</span>\"
+    \"<span class=sf-dump-key>lname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Colson</span>\"
+    \"<span class=sf-dump-key>username</span>\" => \"\"
+    \"<span class=sf-dump-key>phone</span>\" => \"\"
+    \"<span class=sf-dump-key>gender</span>\" => \"<span class=sf-dump-str title=\"6 characters\">female</span>\"
+    \"<span class=sf-dump-key>tier</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>bday</span>\" => \"\"
+    \"<span class=sf-dump-key>role</span>\" => \"<span class=sf-dump-str title=\"2 characters\">su</span>\"
+    \"<span class=sf-dump-key>avatar</span>\" => \"\"
+    \"<span class=sf-dump-key>verified</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>complete_signup</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>password</span>\" => \"<span class=sf-dump-str title=\"60 characters\">$2y$10$J2o6/ySlzUc41mK/xPRre.6HvCtFeYlTQU7eiZRk3ptEccwvJDWLy</span>\"
+    \"<span class=sf-dump-key>remember_token</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>reset_code</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:18:59</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:26:27</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:19</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>2</span>
+    \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"27 characters\">uwantbrendacolson@gmail.com</span>\"
+    \"<span class=sf-dump-key>fname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Brenda</span>\"
+    \"<span class=sf-dump-key>lname</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Colson</span>\"
+    \"<span class=sf-dump-key>username</span>\" => \"\"
+    \"<span class=sf-dump-key>phone</span>\" => \"\"
+    \"<span class=sf-dump-key>gender</span>\" => \"<span class=sf-dump-str title=\"6 characters\">female</span>\"
+    \"<span class=sf-dump-key>tier</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>bday</span>\" => \"\"
+    \"<span class=sf-dump-key>role</span>\" => \"<span class=sf-dump-str title=\"2 characters\">su</span>\"
+    \"<span class=sf-dump-key>avatar</span>\" => \"\"
+    \"<span class=sf-dump-key>verified</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>complete_signup</span>\" => \"<span class=sf-dump-str title=\"3 characters\">yes</span>\"
+    \"<span class=sf-dump-key>password</span>\" => \"<span class=sf-dump-str title=\"60 characters\">$2y$10$J2o6/ySlzUc41mK/xPRre.6HvCtFeYlTQU7eiZRk3ptEccwvJDWLy</span>\"
+    \"<span class=sf-dump-key>remember_token</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>reset_code</span>\" => \"<span class=sf-dump-str title=\"7 characters\">default</span>\"
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"2 characters\">ok</span>\"
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:18:59</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2026-03-17 14:26:27</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>email_verified_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:16</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">fname</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"5 characters\">lname</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"5 characters\">email</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"8 characters\">username</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"5 characters\">phone</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+    <span class=sf-dump-index>6</span> => \"<span class=sf-dump-str title=\"6 characters\">gender</span>\"
+    <span class=sf-dump-index>7</span> => \"<span class=sf-dump-str title=\"4 characters\">role</span>\"
+    <span class=sf-dump-index>8</span> => \"<span class=sf-dump-str title=\"6 characters\">avatar</span>\"
+    <span class=sf-dump-index>9</span> => \"<span class=sf-dump-str title=\"4 characters\">tier</span>\"
+    <span class=sf-dump-index>10</span> => \"<span class=sf-dump-str title=\"4 characters\">bday</span>\"
+    <span class=sf-dump-index>11</span> => \"<span class=sf-dump-str title=\"6 characters\">status</span>\"
+    <span class=sf-dump-index>12</span> => \"<span class=sf-dump-str title=\"8 characters\">verified</span>\"
+    <span class=sf-dump-index>13</span> => \"<span class=sf-dump-str title=\"15 characters\">complete_signup</span>\"
+    <span class=sf-dump-index>14</span> => \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+    <span class=sf-dump-index>15</span> => \"<span class=sf-dump-str title=\"10 characters\">reset_code</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">authPasswordName</span>: \"<span class=sf-dump-str title=\"8 characters\">password</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">rememberTokenName</span>: \"<span class=sf-dump-str title=\"14 characters\">remember_token</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">accessToken</span>: <span class=sf-dump-const>null</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-27966588\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","plugins":"<pre class=sf-dump id=sf-dump-1779387899 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1779387899\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","senders":"<pre class=sf-dump id=sf-dump-1368479719 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1368479719\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","signals":"<pre class=sf-dump id=sf-dump-960028719 data-indent-pad=\"  \"><span class=sf-dump-note>array:2</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>okays</span>\" => <span class=sf-dump-note>array:7</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status</span>\" => \"<span class=sf-dump-str title=\"18 characters\">Sign in successful</span>\"
+    \"<span class=sf-dump-key>add-sender-status</span>\" => \"<span class=sf-dump-str title=\"13 characters\">Sender added!</span>\"
+    \"<span class=sf-dump-key>update-profile-status</span>\" => \"<span class=sf-dump-str title=\"16 characters\">Profile updated!</span>\"
+    \"<span class=sf-dump-key>new-tracking-status</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Tracking added!</span>\"
+    \"<span class=sf-dump-key>tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking updated!</span>\"
+    \"<span class=sf-dump-key>remove-tracking-status</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Tracking removed!</span>\"
+    \"<span class=sf-dump-key>contact-status</span>\" => \"<span class=sf-dump-str title=\"80 characters\">Message sent! Our customer service representatives will get back to you shortly.</span>\"
+  </samp>]
+  \"<span class=sf-dump-key>errors</span>\" => <span class=sf-dump-note>array:5</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>login-status-error</span>\" => \"<span class=sf-dump-str title=\"55 characters\">There was a problem signing in, please contact support.</span>\"
+    \"<span class=sf-dump-key>add-sender-status-error</span>\" => \"<span class=sf-dump-str title=\"34 characters\">There was a problem adding sender.</span>\"
+    \"<span class=sf-dump-key>update-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem updating the account, please contact support.</span>\"
+    \"<span class=sf-dump-key>contact-status-error</span>\" => \"<span class=sf-dump-str title=\"65 characters\">There was a problem sending your message, please contact support.</span>\"
+    \"<span class=sf-dump-key>tracking-status-error</span>\" => \"<span class=sf-dump-str title=\"29 characters\">Tracking info does not exist!</span>\"
+  </samp>]
+</samp>]
+</pre><script>Sfdump(\"sf-dump-960028719\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","ads":"<pre class=sf-dump id=sf-dump-1900307087 data-indent-pad=\"  \">[]
+</pre><script>Sfdump(\"sf-dump-1900307087\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","contactDetails":"<pre class=sf-dump id=sf-dump-188930350 data-indent-pad=\"  \"><span class=sf-dump-note>array:3</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"<span class=sf-dump-key>address</span>\" => \"<span class=sf-dump-str title=\"36 characters\">Test Address&lt;br&gt; Lagos State, NG&lt;br&gt;</span>\"
+  \"<span class=sf-dump-key>phone</span>\" => \"<span class=sf-dump-str title=\"11 characters\">08012345678</span>\"
+  \"<span class=sf-dump-key>email</span>\" => \"<span class=sf-dump-str title=\"20 characters\">info@ukporunique.com</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-188930350\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","void":"<pre class=sf-dump id=sf-dump-1389682945 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"18 characters\">javascript:void(0)</span>\"
+</pre><script>Sfdump(\"sf-dump-1389682945\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","title":"<pre class=sf-dump id=sf-dump-1067076169 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"11 characters\">Add Setting</span>\"
+</pre><script>Sfdump(\"sf-dump-1067076169\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","mode":"<pre class=sf-dump id=sf-dump-1453433177 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"5 characters\">admin</span>\"
+</pre><script>Sfdump(\"sf-dump-1453433177\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":2,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Undefined variable $sliderData at /Users/tobikudayisi/repos/charlon-shop/resources/views/layout.blade.php:310)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#1 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#7 /Users/tobikudayisi/repos/charlon-shop/resources/views/admin-add-setting.blade.php(119): Illuminate\\View\\View->render()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#9 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#60 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#63 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#64 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#65 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#66 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#67 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Undefined variable $sliderData at /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/963b5a1563fb29efb3da183d5a4e5108.php:311)
+[stacktrace]
+#0 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', '/Users/tobikuda...', 311)
+#1 /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/963b5a1563fb29efb3da183d5a4e5108.php(311): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', '/Users/tobikuda...', 311)
+#2 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#3 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#5 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#6 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#7 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#8 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#9 /Users/tobikudayisi/repos/charlon-shop/storage/framework/views/884d511034a59b2b037a13700d2c887f.php(120): Illuminate\\View\\View->render()
+#10 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(123): require('/Users/tobikuda...')
+#11 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('/Users/tobikuda...', Array)
+#13 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(75): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('/Users/tobikuda...', Array)
+#14 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(209): Illuminate\\View\\Engines\\CompilerEngine->get('/Users/tobikuda...', Array)
+#15 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(192): Illuminate\\View\\View->getContents()
+#16 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/View.php(161): Illuminate\\View\\View->renderContents()
+#17 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(79): Illuminate\\View\\View->render()
+#18 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#19 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(920): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#20 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(887): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#21 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#22 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#31 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#39 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#40 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Routing/Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#41 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#42 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(170): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#43 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#49 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#58 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#59 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#60 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#61 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#62 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#63 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(209): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#64 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(127): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#65 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#66 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#67 /Users/tobikudayisi/repos/charlon-shop/public/index.php(61): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#68 /Users/tobikudayisi/repos/charlon-shop/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/tobikuda...')
+#69 {main}
+"} 

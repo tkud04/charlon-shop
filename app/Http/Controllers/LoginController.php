@@ -77,6 +77,12 @@ class LoginController extends Controller {
             $months = $this->helpers->months;
             $contactDetails = $this->helpers->contactDetails;
             array_push($c,'contactDetails','months');
+            $sliderData = [
+                'popular' => $this->helpers->testProducts,
+                'specials' => $this->helpers->testProducts,
+                'featured' => $this->helpers->testProducts,
+            ];
+            array_push($c,'sliderData');
     	   return view('signup',compact($c));
        /* }
         else
@@ -111,6 +117,12 @@ class LoginController extends Controller {
 		$c = $this->compactValues;
         $contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+        $sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
     	return view('login',compact($c));
     }
 
@@ -279,6 +291,12 @@ class LoginController extends Controller {
 		$c = $this->compactValues;
         $contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+        $sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
          return view('forgot-password', compact($c));
     }
     
@@ -370,6 +388,12 @@ class LoginController extends Controller {
             {
                 $xf = $u->id;
                 array_push($c,'xf');
+                $sliderData = [
+                    'popular' => $this->helpers->testProducts,
+                    'specials' => $this->helpers->testProducts,
+                    'featured' => $this->helpers->testProducts,
+                ];
+                array_push($c,'sliderData');
                 return view('reset-password',compact($c));
             }
             else
@@ -437,6 +461,12 @@ class LoginController extends Controller {
        $c = $this->compactValues;
        $contactDetails = $this->helpers->contactDetails;
        array_push($c,'contactDetails');
+       $sliderData = [
+        'popular' => $this->helpers->testProducts,
+        'specials' => $this->helpers->testProducts,
+        'featured' => $this->helpers->testProducts,
+    ];
+    array_push($c,'sliderData');
 
        $req = $request->all();
 
@@ -539,6 +569,12 @@ class LoginController extends Controller {
             array_push($c,'contactDetails');
             $em = $user->email;
             array_push($c,'em');
+            $sliderData = [
+                'popular' => $this->helpers->testProducts,
+                'specials' => $this->helpers->testProducts,
+                'featured' => $this->helpers->testProducts,
+            ];
+            array_push($c,'sliderData');
            
             return view('change-password',compact($c)); 
 		}

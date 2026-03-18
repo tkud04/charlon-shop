@@ -2,6 +2,7 @@
 $void = "javascript:void(0)";
 $isDevMode = false;
 $shopTitle = "Charlon Shop";
+
 ?>
 
 
@@ -42,6 +43,7 @@ $v = isset($isDashboard) && $isDashboard;
 $isLoggedIn = isset($user);
 $isAdmin = $isLoggedIn && ($user->role === 'admin' || $user->role === 'su');
 $bday = $isLoggedIn ? $user->bday : ''; 
+$isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'admin');
 ?>
 
 <body>
@@ -304,7 +306,9 @@ $bday = $isLoggedIn ? $user->bday : '';
 
       <footer id="footer">
         <div id="footer-top">
-         @include('components.products-slider',$sliderData)
+          @if(!$isAdminPage)
+            @include('components.products-slider',$sliderData)
+         @endif
         </div>
         <div id="inner-footer">
           <div class="container">
