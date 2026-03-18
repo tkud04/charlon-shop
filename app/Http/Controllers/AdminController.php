@@ -219,7 +219,7 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getProductCategories()
+	public function getCategories()
     {
         $user = null;
 		$senders = $this->helpers->getSenders();
@@ -234,8 +234,8 @@ class AdminController extends Controller {
 			$user = $vu['user'];	
             if($user->role === "admin" || $user->role === "su")
             {
-				$categories = $this->helpers->getProductCategories();
-				#dd($purchases);
+				$categories = $this->helpers->getCategories();
+				//dd($categories);
 				array_push($c,'categories');
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
@@ -259,7 +259,7 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getAddProductCategory()
+	public function getAddCategory()
     {
         $user = null;
 		$senders = $this->helpers->getSenders();
@@ -294,7 +294,7 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-    public function postAddProductCategory(Request $request)
+    public function postAddCategory(Request $request)
     {
         $req = $request->all();
 		$ret = ['status' => 'error','message' => "nothing happened"];
@@ -310,16 +310,24 @@ class AdminController extends Controller {
 				$validator = Validator::make($req, [
 					'slug' => 'required',
 					'title' => 'required',
+					'pf' => 'required|file|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:204800' //max 200mb
                  ]);
 
                  if($validator->fails())
                  {
                     $ret['message'] = "validation";
+					$ret['req'] = $req;
                  }
 
                  else
                  {
-	                 $temp = $this->helpers->createProductCategory($req);
+					$pic = $this->helpers->cloudinaryUploadImage($request->file('pf'));
+					$categoryPayload = [
+						'title' => $req['title'],
+						'slug' => $req['slug'],
+						'img' => $pic
+					];
+	                 $temp = $this->helpers->createCategory($categoryPayload);
 	                 $rr = isset($temp) ? 'ok' : 'error';
 	                 $ret = ['status' => $rr];
                  }
@@ -342,7 +350,7 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getProductCategory(Request $request)
+	public function getCategory(Request $request)
     {
         $user = null;
 		$req = $request->all();
@@ -360,7 +368,7 @@ class AdminController extends Controller {
             {
 				if(isset($req['xf']))
 				{
-					$category = $this->helpers->getProductCategory($req['xf']);
+					$category = $this->helpers->getCategory($req['xf']);
 
 					if(count($category) > 0)
 					{
@@ -391,7 +399,7 @@ class AdminController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function postRemoveProductCategory(Request $request)
+	public function postRemoveCategory(Request $request)
     {
 		$user = null;
 		$ret = ['status' => 'error','message' => "nothing happened"];
@@ -406,11 +414,12 @@ class AdminController extends Controller {
 		   {
 			  if(isset($req['xf']))
 			  {
-				$p = $this->helpers->getProductCategory($req['xf']);
+				$p = $this->helpers->getCategory($req['xf']);
 	
 				if(count($p) > 0)
 				{
-					$this->helpers->removeProductCategory($req['xf']);
+					$this->helpers->cloudinaryRemoveImage($p['img']);
+					$this->helpers->removeCategory($req['xf']);
 					$ret = ['status' => "ok"];
 				}
 			  }
@@ -484,7 +493,7 @@ class AdminController extends Controller {
 			$user = $vu['user'];	
             if($user->role === "admin" || $user->role === "su")
             {
-				$categories = $this->helpers->getProductCategories();
+				$categories = $this->helpers->getCategories();
 				$statuses = $this->helpers->productStatuses;
 
 				array_push($c,'statuses','categories');
@@ -585,7 +594,7 @@ class AdminController extends Controller {
 					if(count($product) > 0)
 					{
 						$statuses = $this->helpers->productStatuses;
-						$categories = $this->helpers->getProductCategories();
+						$categories = $this->helpers->getCategories();
 						array_push($c,'product','statuses','categories');
 						$sliderData = [
 							'popular' => $this->helpers->testProducts,

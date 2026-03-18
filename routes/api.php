@@ -49,9 +49,9 @@ Route::post('rsm', [AdminController::class,'postRemoveSiteMessage']);
 Route::post('product', [AdminController::class,'postProduct']);
 Route::get('remove-product', [AdminController::class,'getRemoveProduct']);
 
-Route::post('add-product-category', [AdminController::class,'postAddProductCategory']);
-Route::post('product-category', [AdminController::class,'postProductCategory']);
-Route::get('remove-product-category', [AdminController::class,'getRemoveProductCategory']);
+Route::post('add-category', [AdminController::class,'postAddCategory']);
+Route::post('product-category', [AdminController::class,'postCategory']);
+Route::post('remove-category', [AdminController::class,'postRemoveCategory']);
 
 Route::post('add-plugin', [AdminController::class,'postAddPlugin']);
 Route::post('remove-plugin', [AdminController::class,'postRemovePlugin']);

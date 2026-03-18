@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Senders;
 use App\Models\Plugins;
+use App\Models\Categories;
 use GuzzleHttp\Client;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\MailerInterface;
@@ -1156,9 +1157,84 @@ EOD;
 /***********************************************************************************
  * Add custom helper functions here
 ***********************************************************************************/
+function createCategory($data)
+{
+    $ret = Categories::create([
+        'title' => $data['title'],
+        'slug' => $data['slug'],
+        'img' => $data['img'],
+    ]);
+
+    return $ret;
+}
+
+function getCategories()
+{
+  $ret = [];
+ $data = Categories::where('id','>','0')->orderBy('created_at','desc')->get();
+ 
+  if($data != null)
+   {
+    
+        foreach($data as $c)
+        {
+            $temp = $this->getCategory($c->id);
+            array_push($ret,$temp);
+        }
+   }
+
+ return $ret;
+}
+
+function getCategory($id="")
+{
+
+  $ret = [];
+    $c = Categories::where('id',$id)->first();
+
+    if($c != null)
+    {
+     $ret['id'] = $c->id;
+     $ret['title'] = $c->title;
+     $ret['slug'] = $c->slug;
+     $ret['img'] = $c->img;
+     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+    }
+
+    return $ret;
+}
+
+function updateCategory($data)
+{  
+  $ret = 'error'; 
+
+  if(isset($data['xf']))
+   {
+      $c = Categories::where('id', $data['xf'])->first();
+
+      if($c != null)
+      {
+         $payload = [];
+         if(isset($data['status'])) $payload['status'] = $data['status'];
+     
+         $c->update($payload);
+         $ret = "ok";
+     }                                    
+  }                                 
+   return $ret;                               
+ } 
+
+function removeCategory($id)
+{
+    $a = Categories::where('id',$id)->first();
+
+    if($a != null) $a->delete();
+}
 
 
-
+/*******************************************************************************
+ * Reusable Funtions
+ ******************************************************************************/
 		  
            function getCurrentBanner()
            {

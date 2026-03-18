@@ -55,8 +55,8 @@ Route::get('products', [AdminController::class,'getProducts']);
 Route::get('add-product', [AdminController::class,'getAddProduct']);
 Route::get('product', [AdminController::class,'getProduct']);
 
-Route::get('product-categories', [AdminController::class,'getProductCategories']);
-Route::get('add-product-category', [AdminController::class,'getAddProductCategory']);
+Route::get('categories', [AdminController::class,'getCategories']);
+Route::get('add-category', [AdminController::class,'getAddCategory']);
 Route::get('product-category', [AdminController::class,'getProductCategory']);
 
 Route::get('orders', [AdminController::class,'getOrders']);

@@ -593,8 +593,8 @@ const rsm = async (payload={xf:''},successCallback,errorCallback) => {
  
 }
 
-const ae = async (payload=new FormData(),successCallback,errorCallback) => {
-  const url = 'api/add-event';
+const ac = async (payload=new FormData(),successCallback,errorCallback) => {
+  const url = 'api/add-category';
 
   await fetchWithFormData(
     {
@@ -608,8 +608,8 @@ const ae = async (payload=new FormData(),successCallback,errorCallback) => {
  
 }
 
-const re = async (payload={xf:''},successCallback,errorCallback) => {
-  const url = 'api/remove-event';
+const rc = async (payload={xf:''},successCallback,errorCallback) => {
+  const url = 'api/remove-category';
 
   await fetchWithJson(
     {

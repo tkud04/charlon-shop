@@ -1,7 +1,7 @@
 <?php
 $data = [
   ['url' => url('admin'), 'icon' => "fa fa-dashboard",'label' => "Dashboard"],
-  ['url' => url('products'), 'icon' => "fa fa-shopping-bag",'label' => "Products"],
+  ['url' => url('products'), 'icon' => "fa fa-file-image-o",'label' => "Products"],
   ['url' => url('categories'), 'icon' => "fa fa-list-ul",'label' => "Categories"],
   ['url' => url('orders'), 'icon' => "fa fa-credit-card",'label' => "Orders"],
   ['url' => url('users'), 'icon' => "fa fa-users",'label' => "Users"],
