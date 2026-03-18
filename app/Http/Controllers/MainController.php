@@ -727,6 +727,89 @@ dd($user);
     	return view('privacy',compact($c));
     }
 
+	/**
+	 * Show the application contact view to the user.
+	 *
+	 * @return Response
+	 */
+	public function getCategories(Request $request)
+    {
+        $user = null;
+	   $vu = $this->helpers->getValidUser();
+		if($vu['check'])
+		{
+			$user = $vu['user'];
+		}
+
+		$signals = $this->helpers->signals;
+		$ads = $this->helpers->getAds();
+		$senders = $this->helpers->getSenders();
+		$plugins = $this->helpers->getPlugins(['mode' => 'active']);
+		$c = $this->compactValues;
+		$categories = $this->helpers->getCategories();
+		$contactDetails = $this->helpers->contactDetails;
+        array_push($c,'contactDetails','categories');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
+		
+    	return view('categories',compact($c));
+    }
+
+	/**
+	 * Show the application contact view to the user.
+	 *
+	 * @return Response
+	 */
+	public function getCategory(Request $request)
+    {
+        $user = null;
+	   $vu = $this->helpers->getValidUser();
+	   $req = $request->all();
+
+		if($vu['check'])
+		{
+			$user = $vu['user'];
+		}
+
+		$signals = $this->helpers->signals;
+		$ads = $this->helpers->getAds();
+		$senders = $this->helpers->getSenders();
+		$plugins = $this->helpers->getPlugins(['mode' => 'active']);
+		$c = $this->compactValues;
+
+		if(isset($req['xf']))
+		{
+            $cat = $this->helpers->getCategory($req['xf']);
+			if(count($cat) > 0)
+			{ 
+				$contactDetails = $this->helpers->contactDetails;
+            array_push($c,'contactDetails','cat');
+		    $sliderData = [
+			   'popular' => $this->helpers->testProducts,
+			   'specials' => $this->helpers->testProducts,
+			   'featured' => $this->helpers->testProducts,
+		    ];
+		    array_push($c,'sliderData');
+		
+    	    return view('category',compact($c));
+			}
+			else
+			{
+				return redirect()->intended('categories');
+			}
+		    
+		}
+		else
+		{
+			return redirect()->intended('categories');
+		}
+		
+    }
+
 
 
 

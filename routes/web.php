@@ -23,7 +23,8 @@ Route::get('about', [MainController::class,'getAbout']);
 Route::get('contact', [MainController::class,'getContact']);
 Route::get('terms', [MainController::class,'getTerms']);
 Route::get('privacy', [MainController::class,'getPrivacyPolicy']);
-Route::get('smtp', [MainController::class,'getSmtp']);
+Route::get('categories', [MainController::class,'getCategories']);
+Route::get('category', [MainController::class,'getCategory']);
 Route::get('add-smtp', [MainController::class,'getAddSmtp']);
 
 
@@ -55,7 +56,7 @@ Route::get('products', [AdminController::class,'getProducts']);
 Route::get('add-product', [AdminController::class,'getAddProduct']);
 Route::get('product', [AdminController::class,'getProduct']);
 
-Route::get('categories', [AdminController::class,'getCategories']);
+Route::get('categories2', [AdminController::class,'getCategories']);
 Route::get('add-category', [AdminController::class,'getAddCategory']);
 Route::get('product-category', [AdminController::class,'getProductCategory']);
 

@@ -1190,7 +1190,8 @@ function getCategory($id="")
 {
 
   $ret = [];
-    $c = Categories::where('id',$id)->first();
+    $c = Categories::where('id',$id)
+         ->orWhere('slug',$id)->first();
 
     if($c != null)
     {
