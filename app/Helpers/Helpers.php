@@ -239,6 +239,70 @@ class Helper //implements HelperContract
         ],
     ];
 
+    public $testProducts = [
+        [
+           'id' => '1',
+           'slug' => 'jacket-suiting-blazer',
+           'category' => 'women',
+           'title' => 'Jacket Suiting Blazer',
+           'thumb' => 'images/products/thumbnails/item1.jpg',
+           'description' => '',
+           'price' => '40',
+           'status' => 'ok'
+        ],
+        [
+            'id' => '2',
+            'slug' => 'gap-graphic-cuffed',
+            'category' => 'women',
+            'title' => 'Gap Graphic Cuffed',
+            'thumb' => 'images/products/thumbnails/item2.jpg',
+            'description' => '',
+            'price' => '18.5',
+            'status' => 'ok'
+         ],
+         [
+            'id' => '3',
+            'slug' => 'womens-lauren-dress',
+            'category' => 'women',
+            'title' => 'Women\'s Lauren Dress',
+            'thumb' => 'images/products/thumbnails/item3.jpg',
+            'description' => '',
+            'price' => '30',
+            'status' => 'ok'
+         ],
+         [
+            'id' => '4',
+            'slug' => 'jacket-lauren-blazer',
+            'category' => 'women',
+            'title' => 'Jacket Lauren Blazer',
+            'thumb' => 'mages/products/thumbnails/item4.jpg',
+            'description' => '',
+            'price' => '40',
+            'status' => 'ok'
+         ],
+         [
+            'id' => '5',
+            'slug' => 'jacket-suiting-blazer-2',
+            'category' => 'women',
+            'title' => 'Jacket Suiting Blazer',
+            'thumb' => 'images/products/thumbnails/item5.jpg',
+            'description' => '',
+            'price' => '18.5',
+            'status' => 'ok'
+         ],
+         [
+            'id' => '6',
+            'slug' => 'women-spahyr-dress',
+            'category' => 'women',
+            'title' => 'Women\'s Spahyr Dress',
+            'thumb' => 'images/products/thumbnails/item6.jpg',
+            'description' => '',
+            'price' => '30',
+            'status' => 'ok'
+         ],
+       
+    ];
+
 
     
     public $deletedUser = [
@@ -1139,6 +1203,29 @@ $ret = 'error';
    return $ret;
 }
  
+function paginateData($data=[],$itemsPerPage=5)
+{
+    $ret = [];
+    $numPages = $this->numPages($data,$itemsPerPage);
+    $ctr = 0;
+
+    if($numPages > 0)
+    {
+       for($i = 0; $i < $numPages; $i++)
+       {
+          $temp = [];
+          for($j = 0; $j < $itemsPerPage; $j++)
+          {
+             array_push($temp,$data[$ctr]);
+             if($ctr >= count($data)) break;
+             ++$ctr;
+          }
+          array_push($ret,$temp);
+       }
+    }
+    
+    return $ret;
+}
            
           
 

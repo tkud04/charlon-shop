@@ -51,6 +51,12 @@ class MainController extends Controller {
 
 		array_push($c,'faqs','contactDetails');
 
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
         return view('index',compact($c));
        // return view('temp',compact($c));

@@ -1,6 +1,7 @@
 <?php
 $void = "javascript:void(0)";
 $isDevMode = false;
+$shopTitle = "Charlon Shop";
 ?>
 
 
@@ -10,7 +11,7 @@ $isDevMode = false;
 <head>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>@yield('title') | Charlon Shop</title>
+   <title>@yield('title') | {{$shopTitle}}</title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,12 +76,14 @@ $bday = $isLoggedIn ? $user->bday : '';
                         <span class="hide-for-xs">My Cart</span>
                       </a>
                     </li>
+                    @if($isAdmin)
                     <li>
-                      <a href="{{url('checkout')}}" title="Checkout">
+                      <a href="{{url('admin')}}" title="Admin">
                         <span class="top-icon top-icon-check"></span>
-                        <span class="hide-for-xs">Checkout</span>
+                        <span class="hide-for-xs">Admin Dashboard</span>
                       </a>
                     </li>
+                    @endif
                   </ul>
                   @endif
                 </div>
@@ -167,10 +170,10 @@ $bday = $isLoggedIn ? $user->bday : '';
             <div class="row">
               <div class="col-md-5 col-sm-5 col-xs-12 logo-container">
                 <h1 class="logo clearfix">
-                  <a href="{{url('/')}}" title="Charlon Shop">
-                    <img src="images/favicon.png" alt="Charlon Shop" width="80" height="80">
+                  <a href="{{url('/')}}" title="{{$shopTitle}}">
+                    <img src="images/favicon.png" alt="{{$shopTitle}}" width="80" height="80">
                   </a>
-                  Charlon Shop
+                  {{$shopTitle}}
                 </h1>
               </div>
               <div class="col-md-7 col-sm-7 col-xs-12 header-inner-right">
@@ -301,364 +304,65 @@ $bday = $isLoggedIn ? $user->bday : '';
 
       <footer id="footer">
         <div id="footer-top">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-12 widget">
-                <div class="title-bg">
-                  <h3>Popular</h3>
-                </div>
-                <div class="footer-popular-slider flexslider footerslider">
-                  <ul class="slides">
-                    <li>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item1.jpg" alt="item1">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Suiting Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="80"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$40</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item2.jpg" alt="item2">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Gap Graphic Cuffed</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="100"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$18.5</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item3.jpg" alt="item3">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Women's Lauren Dress</a>
-                        </p>
-                        <div class="item-price-special">$30</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item4.jpg" alt="item4">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Lauren Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="80"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$40</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item5.jpg" alt="item5">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Suiting Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="100"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$18.5</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item6.jpg" alt="item6">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Women's Spahyr Dress</a>
-                        </p>
-                        <div class="item-price-special">$30</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="md-margin visible-xs"></div>
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-12 widget">
-                <div class="title-bg">
-                  <h3>Featured</h3>
-                </div>
-                <div class="footer-featured-slider flexslider footerslider">
-                  <ul class="slides">
-                    <li>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item4.jpg" alt="item4">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Suiting Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="80"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$40</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item5.jpg" alt="item5">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Gap Graphic Cuffed</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="100"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$18.5</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item6.jpg" alt="item6">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Women's Lauren Dress</a>
-                        </p>
-                        <div class="item-price-special">$30</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item7.jpg" alt="item7">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Lauren Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="80"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$40</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item8.jpg" alt="item8">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Suiting Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="100"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$18.5</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item9.jpg" alt="item9">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Women's Spahyr Dress</a>
-                        </p>
-                        <div class="item-price-special">$30</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="md-margin visible-xs"></div>
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-12 widget">
-                <div class="title-bg">
-                  <h3>Specials</h3>
-                </div>
-                <div class="footer-specials-slider flexslider footerslider">
-                  <ul class="slides">
-                    <li>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item7.jpg" alt="item7">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Suiting Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="80"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$40</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item8.jpg" alt="item8">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Gap Graphic Cuffed</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="100"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$18.5</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item9.jpg" alt="item9">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Women's Lauren Dress</a>
-                        </p>
-                        <div class="item-price-special">$30</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item1.jpg" alt="item1">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Lauren Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="80"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$40</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item2.jpg" alt="item2">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Jacket Suiting Blazer</a>
-                        </p>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="100"></div>
-                          </div>
-                        </div>
-                        <div class="item-price-special">$18.5</div>
-                      </div>
-                      <div class="slide-item clearfix">
-                        <figure class="item-image-container">
-                          <a href="product.html">
-                            <img src="images/products/thumbnails/item3.jpg" alt="item3">
-                          </a>
-                        </figure>
-                        <p class="item-name">
-                          <a href="product.html">Women's Spahyr Dress</a>
-                        </p>
-                        <div class="item-price-special">$30</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+         @include('components.products-slider',$sliderData)
         </div>
         <div id="inner-footer">
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-sm-4 col-xs-12 widget">
-                <h3>MY ACCOUNT</h3>
+                <h3>QUICK LINKS</h3>
                 <ul class="links">
                   <li>
-                    <a href="#">My account</a>
+                    <a href="{{url('about')}}">About Us</a>
                   </li>
                   <li>
-                    <a href="#">Personal information</a>
+                    <a href="{{url('terms')}}">Terms & Conditions</a>
                   </li>
                   <li>
-                    <a href="#">Addresses</a>
+                    <a href="{{url('privacy')}}">Privacy Policy</a>
                   </li>
                   <li>
-                    <a href="#">Discount</a>
+                    <a href="{{url('contact')}}">Contact Us</a>
                   </li>
-                  <li>
-                    <a href="#">Order History</a>
-                  </li>
-                  <li>
-                    <a href="#">Your Vouchers</a>
-                  </li>
+                 
                 </ul>
               </div>
               <div class="col-md-3 col-sm-4 col-xs-12 widget">
-                <h3>INFORMATION</h3>
+                <h3>SHOP</h3>
                 <ul class="links">
                   <li>
-                    <a href="#">New products</a>
+                    <a href="{{url('new')}}">New products</a>
                   </li>
                   <li>
-                    <a href="#">Top sellers</a>
+                    <a href="{{url('top-sellers')}}">Top sellers</a>
                   </li>
                   <li>
-                    <a href="#">Specials</a>
+                    <a href="{{url('categories')}}">Categories</a>
+                  </li>
+                   <li>
+                    <a href="{{url('brands')}}">Brands</a>
                   </li>
                   <li>
-                    <a href="#">Manufacturers</a>
-                  </li>
-                  <li>
-                    <a href="#">Suppliers</a>
-                  </li>
-                  <li>
-                    <a href="#">Our stores</a>
+                    <a href="{{url('refund-policy')}}">Refund Policy</a>
                   </li>
                 </ul>
               </div>
               <div class="col-md-3 col-sm-4 col-xs-12 widget">
                 <h3>MY ACCOUNT</h3>
                 <ul class="contact-list">
+                  @if($isLoggedIn)
                   <li>
-                    <strong>Venedor Ltd</strong>
+                    <strong>Welcome back, {{$user->fname}}</strong>
+                  </li>
+                  <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                  <li><a href="{{url('profile')}}">Profile</a></li>
+                  <li><a href="{{url('wishlist')}}">Wishlist</a></li>
+                    @if($isAdmin)
+                    <li><a href="{{url('admin')}}">Admin Dashboard</a></li>
+                    @endif
+                  @endif
+                  <li>
+                    <strong>{{$shopTitle}}</strong>
                   </li>
                   <li>United Kingdom</li>
                   <li>Greater London</li>
@@ -693,24 +397,12 @@ $bday = $isLoggedIn ? $user->bday : '';
                     <a href="#" class="social-icon icon-rss"></a>
                   </li>
                   <li>
-                    <a href="#" class="social-icon icon-delicious"></a>
-                  </li>
-                  <li>
-                    <a href="#" class="social-icon icon-linkedin"></a>
-                  </li>
-                  <li>
-                    <a href="#" class="social-icon icon-flickr"></a>
-                  </li>
-                  <li>
-                    <a href="#" class="social-icon icon-skype"></a>
-                  </li>
-                  <li>
                     <a href="#" class="social-icon icon-email"></a>
                   </li>
                 </ul>
               </div>
               <div class="col-md-5 col-sm-5 col-xs-12 footer-text-container">
-                <p>&copy; {{date('Y')}} Powered by Charlon Shop&trade;. All Rights Reserved.</p>
+                <p>&copy; {{date('Y')}} Powered by {{$shopTitle}}&trade;. All Rights Reserved.</p>
               </div>
             </div>
           </div>
@@ -772,85 +464,6 @@ if (isset($signals)) {
 <!------------------------------------->
 
 
-
-  <?php
-  /*
-  <header>
-   
-     <!-- tp-header-area-start -->
-     <div id="header-sticky" class="tp-header-area pre-header sticky-white-bg tp-header-blur header-transparent tp-header-lg-spacing">
-        <div class="container-fluid container-1800">
-           <div class="row align-items-center">
-              <div class="col-12">
-              <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{{url('/')}}">Sender 26</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
-        </li>
-       <li class="nav-item dropdown">
-         @if($isLoggedIn)
-         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome back, {{$user->username}}
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{url('profile')}}">Profile</a></li>
-            <li><a class="dropdown-item" href="{{url('smtp')}}">SMTP settings</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{{url('bye')}}">Sign out</a></li>
-          </ul>
-         @else
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome,
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{url('login')}}">Login</a></li>
-            <li><a class="dropdown-item" href="{{url('apply')}}">Apply</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Version: 2.0.1</a></li>
-          </ul>
-         @endif
-          
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-              </div>
-           </div>
-        </div>
-     </div>
-     <!-- tp-header-area-end -->
-      
-  </header>
-
-        <main>
-           @yield('content')
-
-            <!-- tp-footer area start -->
-         <div class="fixed-bottom">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-12">
-                    
-                  </div>
-               </div>
-            </div>
-         </div>
-            <!-- tp-footer area end -->
-        </main>
-
-    */
-    ?>    
 
 
   
