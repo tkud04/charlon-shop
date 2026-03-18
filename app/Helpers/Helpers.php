@@ -1199,6 +1199,7 @@ function getCategory($id="")
      $ret['title'] = $c->title;
      $ret['slug'] = $c->slug;
      $ret['img'] = $c->img;
+     $ret['product_count'] = 0; //TODO
      $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
     }
 

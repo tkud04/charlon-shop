@@ -787,7 +787,8 @@ dd($user);
 			if(count($cat) > 0)
 			{ 
 				$contactDetails = $this->helpers->contactDetails;
-            array_push($c,'contactDetails','cat');
+				$categories = $this->helpers->getCategories();
+            array_push($c,'contactDetails','cat','categories');
 		    $sliderData = [
 			   'popular' => $this->helpers->testProducts,
 			   'specials' => $this->helpers->testProducts,
