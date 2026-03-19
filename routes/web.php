@@ -1,9 +1,21 @@
 <?php
 
+use App\Http\Controllers\AdminAdsController;
+use App\Http\Controllers\AdminBannersController;
+use App\Http\Controllers\AdminCategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminOrdersController;
+use App\Http\Controllers\AdminPluginsController;
+use App\Http\Controllers\AdminProductsController;
+use App\Http\Controllers\AdminSendersController;
+use App\Http\Controllers\AdminSettingsController;
+use App\Http\Controllers\AdminSiteMessagesController;
+use App\Http\Controllers\CartsController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +30,12 @@ use App\Http\Controllers\AdminController;
 
 //General routes
 Route::get('/', [MainController::class,'getIndex']);
-Route::get('gallery', [MainController::class,'getGallery']);
 Route::get('about', [MainController::class,'getAbout']);
 Route::get('contact', [MainController::class,'getContact']);
 Route::get('terms', [MainController::class,'getTerms']);
 Route::get('privacy', [MainController::class,'getPrivacyPolicy']);
-Route::get('categories', [MainController::class,'getCategories']);
-Route::get('category', [MainController::class,'getCategory']);
-Route::get('add-smtp', [MainController::class,'getAddSmtp']);
+Route::get('categories', [CategoriesController::class,'getCategories']);
+Route::get('category', [CategoriesController::class,'getCategory']);
 
 
 //Auth routes
@@ -43,44 +53,45 @@ Route::get('profile', [MainController::class,'getProfile']);
 
 
 
-Route::get('cart', [MainController::class,'getCart']);
-Route::get('checkout', [MainController::class,'getCheckout']);
+Route::get('cart', [CartsController::class,'getCart']);
+Route::get('checkout', [CartsController::class,'getCheckout']);
+Route::get('order', [OrdersController::class,'getOrder']);
 
 
 //Admin routes
 Route::get('admin', [AdminController::class,'getDashboard']);
 
-Route::get('site-messages', [AdminController::class,'getSiteMessages']);
+Route::get('site-messages', [AdminSiteMessagesController::class,'getSiteMessages']);
 
-Route::get('products', [AdminController::class,'getProducts']);
-Route::get('add-product', [AdminController::class,'getAddProduct']);
-Route::get('product', [AdminController::class,'getProduct']);
+Route::get('products', [AdminProductsController::class,'getProducts']);
+Route::get('add-product', [AdminProductsController::class,'getAddProduct']);
+Route::get('product', [AdminProductsController::class,'getProduct']);
 
-Route::get('categories2', [AdminController::class,'getCategories']);
-Route::get('add-category', [AdminController::class,'getAddCategory']);
-Route::get('product-category', [AdminController::class,'getProductCategory']);
+Route::get('categories2', [AdminCategoriesController::class,'getCategories']);
+Route::get('add-category', [AdminCategoriesController::class,'getAddCategory']);
+Route::get('product-category', [AdminCategoriesController::class,'getProductCategory']);
 
-Route::get('orders', [AdminController::class,'getOrders']);
+Route::get('orders', [AdminOrdersController::class,'getOrders']);
 
-Route::get('add-plugin', [AdminController::class,'getAddPlugin']);
-Route::get('plugins', [AdminController::class,'getPlugins']);
-Route::get('plugin', [AdminController::class,'getPlugin']);
+Route::get('add-plugin', [AdminPluginsController::class,'getAddPlugin']);
+Route::get('plugins', [AdminPluginsController::class,'getPlugins']);
+Route::get('plugin', [AdminPluginsController::class,'getPlugin']);
 
-Route::get('add-sender', [AdminController::class,'getAddSender']);
-Route::get('senders', [AdminController::class,'getSenders']);
-Route::get('sender', [AdminController::class,'getSender']);
+Route::get('add-sender', [AdminSendersController::class,'getAddSender']);
+Route::get('senders', [AdminSendersController::class,'getSenders']);
+Route::get('sender', [AdminSendersController::class,'getSender']);
 
-Route::get('settings', [AdminController::class,'getSettings']);
-Route::get('add-setting', [AdminController::class,'getAddSetting']);
-Route::get('setting', [AdminController::class,'getSetting']);
+Route::get('settings', [AdminSettingsController::class,'getSettings']);
+Route::get('add-setting', [AdminSettingsController::class,'getAddSetting']);
+Route::get('setting', [AdminSettingsController::class,'getSetting']);
 
-Route::get('ads', [AdminController::class,'getAds']);
-Route::get('add-ad', [AdminController::class,'getAddAd']);
-Route::get('ad', [AdminController::class,'getAd']);
+Route::get('ads', [AdminAdsController::class,'getAds']);
+Route::get('add-ad', [AdminAdsController::class,'getAddAd']);
+Route::get('ad', [AdminAdsController::class,'getAd']);
 
-Route::get('banners', [AdminController::class,'getBanners']);
-Route::get('add-banner', [AdminController::class,'getAddBanner']);
-Route::get('banner', [AdminController::class,'getBanner']);
+Route::get('banners', [AdminBannersController::class,'getBanners']);
+Route::get('add-banner', [AdminBannersController::class,'getAddBanner']);
+Route::get('banner', [AdminBannersController::class,'getBanner']);
 
 
 

@@ -23,7 +23,7 @@ $title = "Categories";
         {
            $slug = $c['slug'];
            $vu = url('category')."?xf=".$slug;
-           $img = $c['img'] ? $c['img'] : "img/unkwown.png";
+           $img = $c['img'] ? $c['img'] : "images/unkwown.png";
     ?>
     <div class="col-md-4 col-sm-4 col-xs-4 portfolio-item photography">
         <figure><img src="<?php echo e($img); ?>" alt="<?php echo e($c['title']); ?>">

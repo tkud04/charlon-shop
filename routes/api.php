@@ -1,12 +1,20 @@
 <?php
 
+use App\Http\Controllers\AdminAdsController;
+use App\Http\Controllers\AdminBannersController;
+use App\Http\Controllers\AdminCategoriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\SchoolAdminController;
+use App\Http\Controllers\AdminOrdersController;
+use App\Http\Controllers\AdminPluginsController;
+use App\Http\Controllers\AdminProductsController;
+use App\Http\Controllers\AdminSendersController;
+use App\Http\Controllers\AdminSettingsController;
+use App\Http\Controllers\AdminSiteMessagesController;
+use App\Http\Controllers\CartsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +32,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //General routes
-Route::post('contact', [MainController::class,'postContact']);;
-Route::post('donate', [MainController::class,'postDonate']);
-Route::post('cf', [MainController::class,'postCfDonate']);
+Route::post('contact', [MainController::class,'postContact']);
 
 //Auth routes
 Route::post('login', [LoginController::class,'postLogin']);
@@ -39,38 +45,40 @@ Route::post('upload-avatar', [MainController::class,'postUploadAvatar']);
 Route::post('bomb', [MainController::class,'postSend']);
 
 //Dashboard routes
-
+Route::post('add-to-cart', [CartsController::class,'postAddToCart']);
+Route::post('remove-from-cart', [CartsController::class,'postRemoveFromCart']);
+Route::post('checkout', [CartsController::class,'postCheckout']);
 
 //Admin routes
 
-Route::get('asm', [AdminController::class,'postAddSiteMessage']);
-Route::post('rsm', [AdminController::class,'postRemoveSiteMessage']);
+Route::get('asm', [AdminSiteMessagesController::class,'postAddSiteMessage']);
+Route::post('rsm', [AdminSiteMessagesController::class,'postRemoveSiteMessage']);
 
-Route::post('product', [AdminController::class,'postProduct']);
-Route::get('remove-product', [AdminController::class,'getRemoveProduct']);
+Route::post('product', [AdminProductsController::class,'postProduct']);
+Route::get('remove-product', [AdminProductsController::class,'getRemoveProduct']);
 
-Route::post('add-category', [AdminController::class,'postAddCategory']);
-Route::post('product-category', [AdminController::class,'postCategory']);
-Route::post('remove-category', [AdminController::class,'postRemoveCategory']);
+Route::post('add-category', [AdminCategoriesController::class,'postAddCategory']);
+Route::post('product-category', [AdminCategoriesController::class,'postCategory']);
+Route::post('remove-category', [AdminCategoriesController::class,'postRemoveCategory']);
 
-Route::post('add-plugin', [AdminController::class,'postAddPlugin']);
-Route::post('remove-plugin', [AdminController::class,'postRemovePlugin']);
+Route::post('add-plugin', [AdminPluginsController::class,'postAddPlugin']);
+Route::post('remove-plugin', [AdminPluginsController::class,'postRemovePlugin']);
 
-Route::post('add-setting', [AdminController::class,'postAddSetting']);
-Route::post('setting', [AdminController::class,'postSetting']);
-Route::post('remove-setting', [AdminController::class,'postRemoveSetting']);
+Route::post('add-setting', [AdminSettingsController::class,'postAddSetting']);
+Route::post('setting', [AdminSettingsController::class,'postSetting']);
+Route::post('remove-setting', [AdminSettingsController::class,'postRemoveSetting']);
 
-Route::post('add-sender', [AdminController::class,'postAddSender']);
-Route::post('sender', [AdminController::class,'postSender']);
-Route::post('remove-sender', [AdminController::class,'postRemoveSender']);
+Route::post('add-sender', [AdminSendersController::class,'postAddSender']);
+Route::post('sender', [AdminSendersController::class,'postSender']);
+Route::post('remove-sender', [AdminSendersController::class,'postRemoveSender']);
 
-Route::post('add-ad', [AdminController::class,'postAddAd']);
-Route::post('ad', [AdminController::class,'postAd']);
-Route::post('remove-ad', [AdminController::class,'postRemoveAd']);
+Route::post('add-ad', [AdminAdsController::class,'postAddAd']);
+Route::post('ad', [AdminAdsController::class,'postAd']);
+Route::post('remove-ad', [AdminAdsController::class,'postRemoveAd']);
 
-Route::post('add-banner', [AdminController::class,'postAddBanner']);
-Route::post('banner', [AdminController::class,'postBanner']);
-Route::get('remove-banner', [AdminController::class,'getRemoveBanner']);
+Route::post('add-banner', [AdminBannersController::class,'postAddBanner']);
+Route::post('banner', [AdminBannersController::class,'postBanner']);
+Route::get('remove-banner', [AdminBannersController::class,'getRemoveBanner']);
 
 
 
