@@ -46,7 +46,7 @@ class AdminAdsController extends Controller {
                 array_push($c,'contactDetails');
 				$ads = $this->helpers->getAds();
 				array_push($c,'ads');
-			   return view('admin-ads',compact($c));
+			   return view('main.admin.ads.admin-ads',compact($c));
             }
 		}
 
@@ -76,7 +76,7 @@ class AdminAdsController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
-				return view('admin-add-ad',compact($c));
+				return view('main.admin.ads.admin-add-ad',compact($c));
             }
 		}
 
@@ -176,7 +176,7 @@ class AdminAdsController extends Controller {
 			return redirect()->intended('ads');
 		}
 
-    	return view('admin-edit-ad',compact(['user','signals','a']));
+    	return view('main.admin.ads.admin-edit-ad',compact(['user','signals','a']));
     }
 
 	/**

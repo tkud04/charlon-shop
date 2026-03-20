@@ -51,7 +51,7 @@ class AdminProductsController extends Controller {
 					'featured' => $this->helpers->testProducts,
 				];
 				array_push($c,'sliderData');
-			   return view('admin-products',compact($c));
+			   return view('main.admin.products.admin-products',compact($c));
             }
 		}
 
@@ -88,7 +88,7 @@ class AdminProductsController extends Controller {
 					'featured' => $this->helpers->testProducts,
 				];
 				array_push($c,'sliderData');
-				return view('admin-add-product',compact($c));
+				return view('main.admin.products.admin-add-product',compact($c));
             }
 		}
 
@@ -188,7 +188,7 @@ class AdminProductsController extends Controller {
 						];
 						array_push($c,'sliderData');
 
-						 return view('admin-product',compact($c));
+						 return view('main.admin.products.admin-product',compact($c));
 					}
 				}
             }

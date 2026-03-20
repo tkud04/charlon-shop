@@ -52,7 +52,7 @@ class CategoriesController extends Controller {
 		];
 		array_push($c,'sliderData');
 		
-    	return view('categories',compact($c));
+    	return view('main.categories.categories',compact($c));
     }
 
 	/**
@@ -92,7 +92,7 @@ class CategoriesController extends Controller {
 		    ];
 		    array_push($c,'sliderData');
 		
-    	    return view('category',compact($c));
+    	    return view('main.categories.category',compact($c));
 			}
 			else
 			{

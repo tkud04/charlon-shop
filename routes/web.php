@@ -13,6 +13,7 @@ use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AdminSendersController;
 use App\Http\Controllers\AdminSettingsController;
 use App\Http\Controllers\AdminSiteMessagesController;
+use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrdersController;
@@ -62,6 +63,7 @@ Route::get('order', [OrdersController::class,'getOrder']);
 Route::get('admin', [AdminController::class,'getDashboard']);
 
 Route::get('site-messages', [AdminSiteMessagesController::class,'getSiteMessages']);
+Route::get('users', [AdminUsersController::class,'getUsers']);
 
 Route::get('products', [AdminProductsController::class,'getProducts']);
 Route::get('add-product', [AdminProductsController::class,'getAddProduct']);

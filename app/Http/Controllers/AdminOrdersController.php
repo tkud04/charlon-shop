@@ -51,7 +51,7 @@ class AdminOrdersController extends Controller {
 					'featured' => $this->helpers->testProducts,
 				];
 				array_push($c,'sliderData');
-			   return view('admin-orders',compact($c));
+			   return view('main.admin.orders.admin-orders',compact($c));
             }
 		}
 
@@ -94,7 +94,7 @@ class AdminOrdersController extends Controller {
 							'featured' => $this->helpers->testProducts,
 						];
 						array_push($c,'sliderData');
-						 return view('admin-order',compact($c));
+						 return view('main.admin.orders.admin-order',compact($c));
 					}
 				}
             }

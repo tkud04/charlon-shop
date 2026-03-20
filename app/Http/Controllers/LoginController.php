@@ -83,7 +83,7 @@ class LoginController extends Controller {
                 'featured' => $this->helpers->testProducts,
             ];
             array_push($c,'sliderData');
-    	   return view('signup',compact($c));
+    	   return view('auth.signup.signup',compact($c));
        /* }
         else
         {
@@ -123,7 +123,7 @@ class LoginController extends Controller {
 			'featured' => $this->helpers->testProducts,
 		];
 		array_push($c,'sliderData');
-    	return view('login',compact($c));
+    	return view('auth.login.login',compact($c));
     }
 
     public function postApply(Request $request)
@@ -297,7 +297,7 @@ class LoginController extends Controller {
 			'featured' => $this->helpers->testProducts,
 		];
 		array_push($c,'sliderData');
-         return view('forgot-password', compact($c));
+         return view('auth.forgot-password.forgot-password', compact($c));
     }
     
     /**
@@ -394,7 +394,7 @@ class LoginController extends Controller {
                     'featured' => $this->helpers->testProducts,
                 ];
                 array_push($c,'sliderData');
-                return view('reset-password',compact($c));
+                return view('auth.forgot-password.reset-password',compact($c));
             }
             else
             {
@@ -487,7 +487,7 @@ class LoginController extends Controller {
             
             if(count($u) > 0 && $u['complete_signup'] === 'no')
             {
-                return view('set-password',compact($c));
+                return view('auth.set-password',compact($c));
             }
             else
             {
@@ -576,7 +576,7 @@ class LoginController extends Controller {
             ];
             array_push($c,'sliderData');
            
-            return view('change-password',compact($c)); 
+            return view('auth.change-password',compact($c)); 
 		}
 
        

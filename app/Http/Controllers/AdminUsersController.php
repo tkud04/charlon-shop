@@ -43,8 +43,9 @@ class AdminUsersController extends Controller {
             if($user->role === "admin" || $user->role === "su")
             {
 				$users = $this->helpers->getUsers();
+				dd($users);
 				array_push($c,'users');
-			   return view('admin-users',compact($c));
+			   return view('main.admin.users.admin-users',compact($c));
             }
 		}
 
@@ -86,7 +87,7 @@ class AdminUsersController extends Controller {
 						#dd($purchases);
 						array_push($c,'u','purchases');
 
-						 return view('admin-user',compact($c));
+						 return view('main.admin.users.admin-user',compact($c));
 					}
 				}
             }

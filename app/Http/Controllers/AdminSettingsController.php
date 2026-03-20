@@ -46,7 +46,7 @@ class AdminSettingsController extends Controller {
                 array_push($c,'contactDetails');
 				$settings = $this->helpers->getSettings();
 				array_push($c,'settings');
-			   return view('admin-settings',compact($c));
+			   return view('main.admin.settings.admin-settings',compact($c));
             }
 		}
 
@@ -76,7 +76,7 @@ class AdminSettingsController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
-				return view('admin-add-setting',compact($c));
+				return view('main.admin.settings.admin-add-setting',compact($c));
             }
 		}
 
@@ -164,7 +164,7 @@ class AdminSettingsController extends Controller {
 						$contactDetails = $this->helpers->contactDetails;
 						array_push($c,'contactDetails');
 						array_push($c,'setting');
-						 return view('admin-setting',compact($c));
+						 return view('main.admin.settings.admin-setting',compact($c));
 					}
 				}
             }

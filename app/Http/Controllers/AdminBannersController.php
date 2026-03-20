@@ -44,7 +44,7 @@ class AdminBannersController extends Controller {
             {
 				$banners = $this->helpers->getBanners();
 			    array_push($c,'banners');
-			   return view('admin-banners',compact($c));
+			   return view('main.admin.banners.admin-banners',compact($c));
             }
 
 			
@@ -74,7 +74,7 @@ class AdminBannersController extends Controller {
 			
 			if($user->role === "su")
             {
-				return view('admin-add-banner',compact($c));
+				return view('main.admin.banners.admin-add-banner',compact($c));
             }
 		}
 
@@ -180,7 +180,7 @@ class AdminBannersController extends Controller {
 			return redirect()->intended('banners');
 		}
 
-    	return view('admin-edit-banner',compact(['user','signals','a']));
+    	return view('main.admin.banners.admin-edit-banner',compact(['user','signals','a']));
     }
 
 	/**

@@ -63,7 +63,7 @@ class CartsController extends Controller {
 			'featured' => $this->helpers->testProducts,
 		];
 		array_push($c,'sliderData');
-	    return view('cart',compact($c));	
+	    return view('main.cart.cart',compact($c));	
 		
     }
 
@@ -188,7 +188,7 @@ class CartsController extends Controller {
 		];
 		array_push($c,'sliderData');
 		array_push($c,'items','fee','pmodes');
-	    return view('checkout',compact($c));	
+	    return view('main.cart.checkout',compact($c));	
 		
     }
 
@@ -239,67 +239,6 @@ class CartsController extends Controller {
 		}*/
 
 		 return json_encode($ret);
-    }
-
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function getOrder(Request $request)
-    {
-       $user = null;
-	   $req = $request->all();
-
-		$vu = $this->helpers->getValidUser();
-		if($vu['check'])
-		{
-			$user = $vu['user'];
-		}
-		/*else
-		{
-			$u = '/';
-			return redirect()->intended($u);
-		}*/
-
-		$signals = $this->helpers->signals;
-		$ads = $this->helpers->getAds();
-		$senders = $this->helpers->getSenders();
-		$plugins = $this->helpers->getPlugins(['mode' => 'active']);
-		$c = $this->compactValues;
-
-		if(isset($req['xf']))
-         {
-			
-		    $o = $this->helpers->getOrder($req['xf']);
-
-			if(count($o) > 0)
-			{
-			 array_push($c,'o');
-			 dd($o);
-			 $contactDetails = $this->helpers->contactDetails;
-        array_push($c,'contactDetails');
-		$sliderData = [
-			'popular' => $this->helpers->testProducts,
-			'specials' => $this->helpers->testProducts,
-			'featured' => $this->helpers->testProducts,
-		];
-		array_push($c,'sliderData');
-	           return view('order',compact($c));	
-			}
-			else
-			{
-				return redirect()->intended('/');
-			}
-
-           
-         }
-		 else
-		 {
-			 return redirect()->intended('/');
-		 }
-
-		
     }
 
 

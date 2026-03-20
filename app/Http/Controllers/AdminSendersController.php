@@ -44,7 +44,7 @@ class AdminSendersController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
-			   return view('admin-senders',compact($c));
+			   return view('main.admin.senders.admin-senders',compact($c));
             }
 		}
 
@@ -74,7 +74,7 @@ class AdminSendersController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
-				return view('admin-add-sender',compact($c));
+				return view('main.admin.senders.admin-add-sender',compact($c));
             }
 		}
 
@@ -166,7 +166,7 @@ class AdminSendersController extends Controller {
 					$contactDetails = $this->helpers->contactDetails;
 					array_push($c,'contactDetails');
 					array_push($c,'s');
-					return view('admin-sender',compact($c));
+					return view('main.admin.senders.admin-sender',compact($c));
 				  }
 			}
 		   }

@@ -44,7 +44,7 @@ class AdminPluginsController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
-			   return view('admin-plugins',compact($c));
+			   return view('main.admin.plugins.admin-plugins',compact($c));
             }
 		}
 
@@ -74,7 +74,7 @@ class AdminPluginsController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
-				return view('admin-add-plugin',compact($c));
+				return view('main.admin.plugins.admin-add-plugin',compact($c));
             }
 		}
 
@@ -158,7 +158,7 @@ class AdminPluginsController extends Controller {
 					$contactDetails = $this->helpers->contactDetails;
 					array_push($c,'contactDetails');
 					array_push($c,'p');
-					return view('admin-plugin',compact($c));
+					return view('main.admin.plugins.admin-plugin',compact($c));
 				}
 			  }
 		   }

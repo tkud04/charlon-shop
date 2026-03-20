@@ -53,7 +53,7 @@ class AdminSiteMessagesController extends Controller {
 					'featured' => $this->helpers->testProducts,
 				];
 				array_push($c,'sliderData');
-			   return view('admin-site-messages',compact($c));
+			   return view('main.admin.site-messages.admin-site-messages',compact($c));
             }
 		}
 

@@ -53,7 +53,7 @@ class AdminCategoriesController extends Controller {
 					'featured' => $this->helpers->testProducts,
 				];
 				array_push($c,'sliderData');
-			   return view('admin-categories',compact($c));
+			   return view('main.admin.categories.admin-categories',compact($c));
             }
 		}
 
@@ -89,7 +89,7 @@ class AdminCategoriesController extends Controller {
 					'featured' => $this->helpers->testProducts,
 				];
 				array_push($c,'sliderData');
-				return view('admin-add-product-category',compact($c));
+				return view('main.admin.categories.admin-add-product-category',compact($c));
             }
 		}
 
@@ -187,7 +187,7 @@ class AdminCategoriesController extends Controller {
 							'featured' => $this->helpers->testProducts,
 						];
 						array_push($c,'sliderData');
-						 return view('admin-product-category',compact($c));
+						 return view('main.admin.cattegories.admin-product-category',compact($c));
 					}
 				}
             }

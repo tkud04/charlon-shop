@@ -58,8 +58,8 @@ class MainController extends Controller {
 		];
 		array_push($c,'sliderData');
 
-        return view('index',compact($c));
-       // return view('temp',compact($c));
+        return view('main.index',compact($c));
+       // return view('main.temp',compact($c));
 		
     }
 
@@ -102,7 +102,7 @@ dd($user);
 			'featured' => $this->helpers->testProducts,
 		];
 		array_push($c,'sliderData');
-	    return view('dashboard',compact($c));	
+	    return view('main.dashboard.dashboard',compact($c));	
     }
 
 
@@ -144,7 +144,7 @@ dd($user);
 
 		array_push($c,'activeClass','profile','contactDetails');
 
-           return view('profile',compact($c));	
+           return view('main.dashboard.profile',compact($c));	
     }
 
 	/**
@@ -179,7 +179,7 @@ dd($user);
 		];
 		array_push($c,'sliderData');
 
-		return view('set-password',compact($c));	
+		return view('main.dashboard.set-password',compact($c));	
 
 		
     }
@@ -439,7 +439,7 @@ dd($user);
 
 		array_push($c,'contactInfo','admins');
 		
-    	return view('contact',compact($c));
+    	return view('main.contact',compact($c));
     }
 
 	/**
@@ -582,7 +582,7 @@ dd($user);
 
 
 		
-    	return view('about',compact($c));
+    	return view('main.about',compact($c));
     }
 
 
@@ -619,7 +619,7 @@ dd($user);
 
 
 		
-    	return view('terms',compact($c));
+    	return view('main.terms',compact($c));
     }
 
 	 /**
@@ -651,7 +651,7 @@ dd($user);
 		array_push($c,'sliderData');
 
 		
-    	return view('privacy',compact($c));
+    	return view('main.privacy',compact($c));
     }
 	
 
@@ -800,7 +800,7 @@ dd($user);
 			if(isset($faqs))
 			{
 			  array_push($c,'faqs');
-			  return view('faq',compact($c));
+			  return view('main.faq',compact($c));
 			}
     }
 

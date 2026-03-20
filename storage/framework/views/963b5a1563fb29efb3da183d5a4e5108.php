@@ -353,7 +353,7 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                 </ul>
               </div>
               <div class="col-md-3 col-sm-4 col-xs-12 widget">
-                <h3>MY ACCOUNT</h3>
+                <h3><?php echo e($shopTitle); ?></h3>
                 <ul class="contact-list">
                   <?php if($isLoggedIn): ?>
                   <li>
@@ -366,15 +366,11 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                     <li><a href="<?php echo e(url('admin')); ?>">Admin Dashboard</a></li>
                     <?php endif; ?>
                   <?php endif; ?>
-                  <li>
-                    <strong><?php echo e($shopTitle); ?></strong>
-                  </li>
-                  <li>United Kingdom</li>
-                  <li>Greater London</li>
-                  <li>London 02587</li>
-                  <li>Oxford Street 48/188</li>
+                 <li>United States</li>
+                  <li>California 92672</li>
+                  <li>149 Avenida Del Mar, San Clemente</li>
                   <li>Working Days: Mon. - Sun.</li>
-                  <li>Working Hours: 9.00AM - 8.00PM</li>
+                  <li>Working Hours: 9.00AM - 5.00PM</li>
                 </ul>
               </div>
               <div class="clearfix visible-sm"></div>

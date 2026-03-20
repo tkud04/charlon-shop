@@ -53,7 +53,7 @@ class AdminController extends Controller {
 				$orders = [];//$this->helpers->getOrders();
 				$refunds = [];//$this->helpers->getRefunds();
 				array_push($c,'sliderData','products','orders','refunds','users');
-			   return view('admin-dashboard',compact($c));
+			   return view('main.admin.dashboard.admin-dashboard',compact($c));
             }
 		}
 

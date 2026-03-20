@@ -67,7 +67,7 @@ class OrdersController extends Controller {
 			'featured' => $this->helpers->testProducts,
 		];
 		array_push($c,'sliderData');
-	           return view('order',compact($c));	
+	           return view('main.orders.order',compact($c));	
 			}
 			else
 			{
