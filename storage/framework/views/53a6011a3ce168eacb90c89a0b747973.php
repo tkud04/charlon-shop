@@ -3,16 +3,16 @@ $void = 'javascript:void(0)';
 $title = "Add Setting";
 $mode = "admin";
 ?>
-@extends('layout')
-
-@section('title',$title)
 
 
-@section('content')
-@include('components.generic-banner',[
+<?php $__env->startSection('title',$title); ?>
+
+
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('components.generic-banner',[
    'title' => $title,
    'description' => "Here you can upload all required information on new gallery items"
-  ])
+  ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
   <div class=" tp-portfolio-area pb-10">
   <div class="container">
@@ -20,7 +20,7 @@ $mode = "admin";
 <div class="col-md-4">
      <div class="row">
         <div class="col-md-12 my-4">
-           @include('components.admin-sidebar')
+           <?php echo $__env->make('components.admin-sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         </div>
      </div>
   </div>
@@ -37,20 +37,20 @@ $mode = "admin";
                                     <div class="form-group col-md-12 mb-4">
                                     <h4>Title</h4> 
                                          <input type="text" class="form-control" id="title" placeholder="Title" required="">
-                                         @include('components.form-validation',['id' => 'title'])
+                                         <?php echo $__env->make('components.form-validation',['id' => 'title'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                      <div class="form-group col-md-12 mb-4">
                                      <h4>Content</h4> 
                                      <input type="text" class="form-control" id="content" placeholder="Content" required="">
-                                         @include('components.form-validation',['id' => 'content'])
+                                         <?php echo $__env->make('components.form-validation',['id' => 'content'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                      
              
                                      <div class="col-lg-12">
                                          <div class="contact-form-btn">
-                                         @include('components.button',['id' => 'add-setting'])
+                                         <?php echo $__env->make('components.button',['id' => 'add-setting'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                          </div>
-                                         @include('components.form-loading',['id' => 'add-setting'])
+                                         <?php echo $__env->make('components.form-loading',['id' => 'add-setting'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                                      </div>
                                  </div>
                              </form>
@@ -62,9 +62,9 @@ $mode = "admin";
 </div>
   </div>
   </div>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
  <script>
     $(() => {
         hideFormValidations();
@@ -116,4 +116,5 @@ $mode = "admin";
         });
     });
  </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/main/admin/settings/admin-add-setting.blade.php ENDPATH**/ ?>

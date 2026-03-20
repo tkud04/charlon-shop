@@ -579,6 +579,12 @@ dd($user);
 		$c = $this->compactValues;
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$sliderData = [
+			'popular' => $this->helpers->testProducts,
+			'specials' => $this->helpers->testProducts,
+			'featured' => $this->helpers->testProducts,
+		];
+		array_push($c,'sliderData');
 
 
 		

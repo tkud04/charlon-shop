@@ -11,6 +11,8 @@ use App\Models\User;
 use App\Models\Senders;
 use App\Models\Plugins;
 use App\Models\Categories;
+use App\Models\ProductImages;
+use App\Models\Products;
 use GuzzleHttp\Client;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\MailerInterface;
@@ -1157,6 +1159,158 @@ EOD;
 /***********************************************************************************
  * Add custom helper functions here
 ***********************************************************************************/
+
+//PRODUCTS
+function createProduct($data)
+{
+    $ret = Products::create([
+        'title' => $data['title'],
+        'slug' => $data['slug'],
+        'category' => $data['category'],
+        'brand' => $data['brand'],
+        'description' => $data['description'],
+        'price' => $data['price'],
+        'status' => $data['status'],
+    ]);
+
+    return $ret;
+}
+
+function getProducts($options = [])
+{
+  $ret = []; $data = null;
+
+  if(isset($options['status']))
+  {
+    $data = Products::where('status',$options['status'])->orderBy('created_at','desc')->get();
+  }
+  else
+  {
+     $data = Products::where('id','>','0')->orderBy('created_at','desc')->get();
+  }
+
+
+ 
+  if($data != null)
+   {
+    
+        foreach($data as $c)
+        {
+            $temp = $this->getProduct($c->id,$options);
+            array_push($ret,$temp);
+        }
+   }
+
+ return $ret;
+}
+
+function getProduct($id="",$options=[])
+{
+
+  $ret = [];
+    $c = Products::where('id',$id)
+         ->orWhere('slug',$id)->first();
+
+    if($c != null)
+    {
+     $ret['id'] = $c->id;
+     $ret['title'] = $c->title;
+     $ret['slug'] = $c->slug;
+     $ret['images'] = $this->getProductImages($c->slug);
+     $ret['product_count'] = 0; //TODO
+     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+    }
+
+    return $ret;
+}
+
+function updateProduct($data)
+{  
+  $ret = 'error'; 
+
+  if(isset($data['xf']))
+   {
+      $c = Products::where('id', $data['xf'])
+                   ->orWhere('slug',$data['xf'])->first();
+
+      if($c != null)
+      {
+         $payload = [];
+         if(isset($data['status'])) $payload['status'] = $data['status'];
+     
+         $c->update($payload);
+         $ret = "ok";
+     }                                    
+  }                                 
+   return $ret;                               
+ } 
+
+function removeProduct($id)
+{
+    $a = Products::where('id', $id)
+    ->orWhere('slug',$id)->first();
+
+    if($a != null) $a->delete();
+}
+
+//PRODUCT IMAGES
+function createProductImage($data)
+{
+    $ret = ProductImages::create([
+        'product_slug' => $data['slug'],
+        'url' => $data['url'],
+    ]);
+
+    return $ret;
+}
+
+function getProductImages($product="",$options = [])
+{
+  $ret = []; $data = null;
+
+     $data = ProductImages::where('product_slug',$product)->orderBy('created_at','desc')->get();
+
+
+ 
+  if($data != null)
+   {
+    
+        foreach($data as $c)
+        {
+            $temp = $this->getProductImage($c->id,$options);
+            array_push($ret,$temp);
+        }
+   }
+
+ return $ret;
+}
+
+function getProductImage($id="",$options=[])
+{
+
+  $ret = [];
+    $c = ProductImages::where('id',$id)->first();
+
+    if($c != null)
+    {
+     $ret['id'] = $c->id;
+     $ret['product_slug'] = $c->product_slug;
+     $ret['url'] = $c->url;
+     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+    }
+
+    return $ret;
+}
+
+
+function removeProductImage($id)
+{
+    $a = ProductImages::where('id', $id);
+
+    if($a != null) $a->delete();
+}
+
+//CATEGORIES
 function createCategory($data)
 {
     $ret = Categories::create([
@@ -1232,6 +1386,8 @@ function removeCategory($id)
 
     if($a != null) $a->delete();
 }
+
+
 
 
 /*******************************************************************************
