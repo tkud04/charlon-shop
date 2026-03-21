@@ -1,15 +1,15 @@
 <?php
 $void = 'javascript:void(0)';
-$title = "Add Category";
+$title = "Add Product Category";
 $mode = "admin";
 ?>
-@extends('layout')
 
-@section('title',$title)
 
-@section('bodyClass','border_style html_oh')
+<?php $__env->startSection('title',$title); ?>
 
-@section('content')
+<?php $__env->startSection('bodyClass','border_style html_oh'); ?>
+
+<?php $__env->startSection('content'); ?>
 <div class="row">
     <div class="col-md-12">
     <h3 style="margin-left: 10px;">Add New Product Category</h3>
@@ -19,35 +19,34 @@ $mode = "admin";
          <div class="form-group" style="padding: 10px;">
              <h6 class='control-label'>Name<span style='color: red;'>*</span></h6>
              <input class='form-control' id="pname" type="text" placeholder="Category name" required="required">
-            @include('components.form-validation',['id' => 'pname'])
+            <?php echo $__env->make('components.form-validation',['id' => 'pname'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
              <h6 class='control-label'>Slug (catchy nickname)<span style='color: red;'>*</span></h6>
              <input class='form-control' id="slug" type="text" placeholder="Category slug" required="required" disabled>
-            @include('components.form-validation',['id' => 'slug'])
+            <?php echo $__env->make('components.form-validation',['id' => 'slug'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
-         <h6 class='control-label'>Image <span style='color: red;'>*</span></h6>
            <input type="file" id="ac-pf">
-           @include('components.form-validation',['id' => 'ac-pf'])
+           <?php echo $__env->make('components.form-validation',['id' => 'ac-pf'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        
     <div class="col-md-12">
-    @include('components.button',['id' => 'add-category','title' => 'Submit'])
+    <?php echo $__env->make('components.button',['id' => 'add-category','title' => 'Submit'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
-     @include('components.form-loading',['id' => 'add-category'])
+     <?php echo $__env->make('components.form-loading',['id' => 'add-category'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     </div>
     </form>
     </div>
 </div>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 <script>
   $(() => {
     hideFormValidations();
@@ -99,4 +98,5 @@ $mode = "admin";
     });
   });
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/main/admin/categories/admin-add-product-category.blade.php ENDPATH**/ ?>

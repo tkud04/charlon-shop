@@ -4,6 +4,7 @@ namespace App\Helpers;
 use App\Helpers\Contracts\HelperContract;
 use App\Models\Ads;
 use App\Models\Banners;
+use App\Models\Brands;
 use App\Models\Settings;
 use Crypt;
 use Carbon\Carbon; 
@@ -1216,8 +1217,10 @@ function getProduct($id="",$options=[])
      $ret['id'] = $c->id;
      $ret['title'] = $c->title;
      $ret['slug'] = $c->slug;
+     $ret['description'] = $c->description;
      $ret['images'] = $this->getProductImages($c->slug);
-     $ret['product_count'] = 0; //TODO
+     $ret['category'] = $this->getCategory($c->category);
+     $ret['brand'] = $this->getBrand($c->brand);
      $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
     }
 
@@ -1257,7 +1260,7 @@ function removeProduct($id)
 function createProductImage($data)
 {
     $ret = ProductImages::create([
-        'product_slug' => $data['slug'],
+        'product_slug' => $data['product_slug'],
         'url' => $data['url'],
     ]);
 
@@ -1360,29 +1363,69 @@ function getCategory($id="")
     return $ret;
 }
 
-function updateCategory($data)
-{  
-  $ret = 'error'; 
-
-  if(isset($data['xf']))
-   {
-      $c = Categories::where('id', $data['xf'])->first();
-
-      if($c != null)
-      {
-         $payload = [];
-         if(isset($data['status'])) $payload['status'] = $data['status'];
-     
-         $c->update($payload);
-         $ret = "ok";
-     }                                    
-  }                                 
-   return $ret;                               
- } 
 
 function removeCategory($id)
 {
-    $a = Categories::where('id',$id)->first();
+    $a =  $c = Categories::where('id',$id)
+    ->orWhere('slug',$id)->first();
+
+    if($a != null) $a->delete();
+}
+
+//BRANDS
+function createBrand($data)
+{
+    $ret = Brands::create([
+        'title' => $data['title'],
+        'slug' => $data['slug'],
+        'img' => $data['img'],
+    ]);
+
+    return $ret;
+}
+
+function getBrands()
+{
+  $ret = [];
+ $data = Brands::where('id','>','0')->orderBy('created_at','desc')->get();
+ 
+  if($data != null)
+   {
+    
+        foreach($data as $c)
+        {
+            $temp = $this->getBrand($c->id);
+            array_push($ret,$temp);
+        }
+   }
+
+ return $ret;
+}
+
+function getBrand($id="")
+{
+
+  $ret = [];
+    $c = Brands::where('id',$id)
+         ->orWhere('slug',$id)->first();
+
+    if($c != null)
+    {
+     $ret['id'] = $c->id;
+     $ret['title'] = $c->title;
+     $ret['slug'] = $c->slug;
+     $ret['img'] = $c->img;
+     $ret['product_count'] = 0; //TODO
+     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+    }
+
+    return $ret;
+}
+
+function removeBrand($id)
+{
+    $a = $c = Brands::where('id',$id)
+    ->orWhere('slug',$id)->first();
 
     if($a != null) $a->delete();
 }

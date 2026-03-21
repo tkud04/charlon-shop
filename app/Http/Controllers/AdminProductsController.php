@@ -79,9 +79,10 @@ class AdminProductsController extends Controller {
             if($user->role === "admin" || $user->role === "su")
             {
 				$categories = $this->helpers->getCategories();
+				$brands = $this->helpers->getBrands();
 				$statuses = $this->helpers->productStatuses;
 
-				array_push($c,'statuses','categories');
+				array_push($c,'statuses','categories','brands');
 				$sliderData = [
 					'popular' => $this->helpers->testProducts,
 					'specials' => $this->helpers->testProducts,
@@ -119,7 +120,9 @@ class AdminProductsController extends Controller {
 					'category' => 'required',
 					'brand' => 'required',
 					'title' => 'required',
+					'description' => 'required',
 					'pf' => 'required|file|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:204800', //max 200mb
+					'fp' => 'required|file|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:204800', //max 200mb
 					'price' => 'required|numeric',
 					'status' => 'required'
                  ]);
@@ -131,7 +134,8 @@ class AdminProductsController extends Controller {
 
                  else
                  {
-					$pic = $this->helpers->cloudinaryUploadImage($request->file('pf'));
+					$pic1 = $this->helpers->cloudinaryUploadImage($request->file('pf'));
+					$pic2 = $this->helpers->cloudinaryUploadImage($request->file('fp'));
 					//$req['image'] = $pic;
 					$req['description'] = isset($req['description']) ? $req['description'] : '';
 	                $temp = $this->helpers->createProduct($req);
@@ -139,10 +143,13 @@ class AdminProductsController extends Controller {
 
 					if(isset($temp))
 					{
-						$i = $this->helpers->createProductImage([
+						foreach([$pic1,$pic2] as $pic)
+						{
+							$this->helpers->createProductImage([
 							'product_slug' => $temp->slug,
 							'url' => $pic
 						]);
+						}
 						
 						$rr = 'ok';
 					}

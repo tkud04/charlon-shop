@@ -2,13 +2,12 @@
 
 use App\Http\Controllers\AdminAdsController;
 use App\Http\Controllers\AdminBannersController;
+use App\Http\Controllers\AdminBrandsController;
 use App\Http\Controllers\AdminCategoriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminOrdersController;
 use App\Http\Controllers\AdminPluginsController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AdminSendersController;
@@ -54,12 +53,17 @@ Route::post('checkout', [CartsController::class,'postCheckout']);
 Route::get('asm', [AdminSiteMessagesController::class,'postAddSiteMessage']);
 Route::post('rsm', [AdminSiteMessagesController::class,'postRemoveSiteMessage']);
 
+Route::post('add-product', [AdminProductsController::class,'postAddProduct']);
 Route::post('product', [AdminProductsController::class,'postProduct']);
-Route::get('remove-product', [AdminProductsController::class,'getRemoveProduct']);
+Route::post('remove-product', [AdminProductsController::class,'postRemoveProduct']);
 
 Route::post('add-category', [AdminCategoriesController::class,'postAddCategory']);
 Route::post('product-category', [AdminCategoriesController::class,'postCategory']);
 Route::post('remove-category', [AdminCategoriesController::class,'postRemoveCategory']);
+
+Route::post('add-brand', [AdminBrandsController::class,'postAddBrand']);
+Route::post('product-brand', [AdminBrandsController::class,'postBrand']);
+Route::post('remove-brand', [AdminBrandsController::class,'postRemoveBrand']);
 
 Route::post('add-plugin', [AdminPluginsController::class,'postAddPlugin']);
 Route::post('remove-plugin', [AdminPluginsController::class,'postRemovePlugin']);

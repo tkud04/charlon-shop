@@ -107,7 +107,7 @@ const copyToClipboard = async (text='') => {
 } 
 
 const sluggify = (text='') => {
-text = text.toLowerCase();
+text = text.toLowerCase().replace(/"/g,'');
 let ret = text;
 
   try {
@@ -625,6 +625,69 @@ const rc = async (payload={xf:''},successCallback,errorCallback) => {
  
 }
 
+const ab = async (payload=new FormData(),successCallback,errorCallback) => {
+  const url = 'api/add-brand';
+
+  await fetchWithFormData(
+    {
+      url,
+      method: 'POST',
+      fd: payload,
+    },
+    successCallback,
+    errorCallback
+  );
+ 
+}
+
+const rb = async (payload={xf:''},successCallback,errorCallback) => {
+  const url = 'api/remove-brand';
+
+  await fetchWithJson(
+    {
+      url,
+      method: 'POST',
+      data: [
+        {key: 'xf',value: `${payload.xf}`},
+      ],
+    },
+    successCallback,
+    errorCallback
+  );
+ 
+}
+
+const ap = async (payload=new FormData(),successCallback,errorCallback) => {
+  const url = 'api/add-product';
+
+  await fetchWithFormData(
+    {
+      url,
+      method: 'POST',
+      fd: payload,
+    },
+    successCallback,
+    errorCallback
+  );
+ 
+}
+
+const rp = async (payload={xf:''},successCallback,errorCallback) => {
+  const url = 'api/remove-product';
+
+  await fetchWithJson(
+    {
+      url,
+      method: 'POST',
+      data: [
+        {key: 'xf',value: `${payload.xf}`},
+      ],
+    },
+    successCallback,
+    errorCallback
+  );
+ 
+}
 
 const agi = async (payload=new FormData(),successCallback,errorCallback) => {
   const url = 'api/add-gallery-item';
@@ -1069,222 +1132,7 @@ const removeBanner = async (id,successCallback,errorCallback) => {
  
 }
 
-/********************************************************************************* */
 
-const addProductCategory = async (payload={
-  title,
-  slug,
-}
-  ,successCallback,errorCallback) => {
-  const url = 'api/add-product-category';
-
-  await fetchWithJson(
-    {
-      url,
-      method: 'POST',
-      data: [
-        {key: 'title',value: payload.title},
-        {key: 'slug',value: payload.slug},
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
-}
-
-const removeProductCategory = async (id,successCallback,errorCallback) => {
-  const url = `api/remove-product-category`;
-
-  await fetchWithJson(
-    {
-       url,
-       method: 'POST',
-       data: [
-        {key: 'xf',value:id}
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
- 
-}
-
-const addProduct = async (payload={
-  title,
-  category,
-  image,
-  points,
-  price,
-  description,
-  slug,
-  sstatus
-}
-  ,successCallback,errorCallback) => {
-  const url = 'api/add-product';
-
-  await fetchWithJson(
-    {
-      url,
-      method: 'POST',
-      data: [
-        {key: 'title',value: payload.title},
-        {key: 'category',value: payload.category},
-        {key: 'image',value: payload.image},
-        {key: 'price',value: payload.price},
-        {key: 'description',value: payload.description},
-        {key: 'slug',value: payload.slug},
-        {key: 'status',value: payload.sstatus},
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
-}
-
-const updateProduct = async (payload={
-  xf,
-  title,
-  category,
-  image,
-  points,
-  price,
-  description,
-  slug,
-  sstatus
-}
-  ,successCallback,errorCallback) => {
-  const url = 'api/product';
-
-  await fetchWithJson(
-    {
-      url,
-      method: 'POST',
-      data: [
-        {key: 'xf',value: payload.xf},
-        {key: 'title',value: payload.title},
-        {key: 'category',value: payload.category},
-        {key: 'image',value: payload.image},
-        {key: 'price',value: payload.price},
-        {key: 'description',value: payload.description},
-        {key: 'slug',value: payload.slug},
-        {key: 'status',value: payload.sstatus},
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
-}
-
-const removeProduct = async (id,successCallback,errorCallback) => {
-  const url = `api/remove-product`;
-
-  await fetchWithJson(
-    {
-       url,
-       method: 'POST',
-       data: [
-        {key: 'xf',value:id}
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
- 
-}
-
-const addToCart = async (payload={
-  xf,
-  qty,
-}
-  ,successCallback,errorCallback) => {
-  const url = 'api/add-to-cart';
-
-  await fetchWithJson(
-    {
-      url,
-      method: 'POST',
-      data: [
-        {key: 'xf',value: payload.xf},
-        {key: 'qty',value: payload.qty},
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
-}
-
-const removeFromCart = async (payload={
-  xf
-}
-  ,successCallback,errorCallback) => {
-  const url = 'api/remove-from-cart';
-
-  await fetchWithJson(
-    {
-      url,
-      method: 'POST',
-      data: [
-        {key: 'xf',value: payload.xf},
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
-}
-
-
-const c2 = () => {
-    const pmode = $('#pmode').val(), v = pmode === 'none';
-
-    if(v){
-      if(pmode === 'none') $('#pmode-validation').fadeIn();
-    }
-    else{
-       toggleFormButton({id: 'checkout',mode: 'hide'});
-
-       const p = {pmode};
-
-       checkout(
-              p,
-              (data) => {
-                 toggleFormButton({id: 'checkout',mode: 'show'});
-
-                 if(data.status === 'ok'){
-                   const u = data?.xf || '';
-                    window.location = `order?xf=${u}`;
-                 }
-                 else if(data.status === 'error'){
-                   handleResponseError(data);
-                 }
-              },
-              (err) => {
-                  toggleFormButton({id: 'checkout',mode: 'show'});
-                  alert(`Failed to checkout: ${err}`);
-              }
-          );
-    }
-}
-
-const checkout = async (payload={
-  pmode
-}
-  ,successCallback,errorCallback) => {
-  const url = 'api/checkout';
-
-  await fetchWithJson(
-    {
-      url,
-      method: 'POST',
-      data: [
-        {key: 'pmode',value: payload.pmode},
-      ],
-    },
-    successCallback,
-    errorCallback
-  );
-}
-
-/********************************************************************************* */
 
 const bomb = (
   payload={s:'',n:'',sub:'',b:'',d:1,i:0},

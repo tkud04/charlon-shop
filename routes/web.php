@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAdsController;
 use App\Http\Controllers\AdminBannersController;
+use App\Http\Controllers\AdminBrandsController;
 use App\Http\Controllers\AdminCategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
@@ -72,6 +73,9 @@ Route::get('product', [AdminProductsController::class,'getProduct']);
 Route::get('categories2', [AdminCategoriesController::class,'getCategories']);
 Route::get('add-category', [AdminCategoriesController::class,'getAddCategory']);
 Route::get('product-category', [AdminCategoriesController::class,'getProductCategory']);
+
+Route::get('brands2', [AdminBrandsController::class,'getBrands']);
+Route::get('add-brand', [AdminBrandsController::class,'getAddBrand']);
 
 Route::get('orders', [AdminOrdersController::class,'getOrders']);
 

@@ -3,6 +3,7 @@ $data = [
   ['url' => url('admin'), 'icon' => "fa fa-dashboard",'label' => "Dashboard"],
   ['url' => url('products'), 'icon' => "fa fa-file-image-o",'label' => "Products"],
   ['url' => url('categories2'), 'icon' => "fa fa-list-ul",'label' => "Categories"],
+  ['url' => url('brands2'), 'icon' => "fa fa-tag",'label' => "Brands"],
   ['url' => url('orders'), 'icon' => "fa fa-credit-card",'label' => "Orders"],
   ['url' => url('users'), 'icon' => "fa fa-users",'label' => "Users"],
   ['url' => url('settings'), 'icon' => "fa fa-wrench",'label' => "Site Settings"],

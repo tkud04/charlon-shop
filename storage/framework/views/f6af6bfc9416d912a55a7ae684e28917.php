@@ -3,13 +3,13 @@ $void = 'javascript:void(0)';
 $title = "Add Product";
 $mode = "admin";
 ?>
-@extends('layout')
 
-@section('title',$title)
 
-@section('bodyClass','border_style html_oh')
+<?php $__env->startSection('title',$title); ?>
 
-@section('content')
+<?php $__env->startSection('bodyClass','border_style html_oh'); ?>
+
+<?php $__env->startSection('content'); ?>
 <div class="row">
     <div class="col-md-12">
     <h3 style="margin-left: 10px;">Add New Product</h3>
@@ -19,14 +19,14 @@ $mode = "admin";
          <div class="form-group" style="padding: 10px;">
              <h6 class='control-label'>Name<span style='color: red;'>*</span></h6>
              <input class='form-control' id="pname" type="text" placeholder="Product name" required="required">
-            @include('components.form-validation',['id' => 'pname'])
+            <?php echo $__env->make('components.form-validation',['id' => 'pname'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
              <h6 class='control-label'>Slug (catchy nickname)<span style='color: red;'>*</span></h6>
              <input class='form-control' id="slug" type="text" placeholder="Product nickname" required="required" disabled>
-            @include('components.form-validation',['id' => 'slug'])
+            <?php echo $__env->make('components.form-validation',['id' => 'slug'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
@@ -40,13 +40,13 @@ $mode = "admin";
                    foreach($categories as $c)
                     {
               ?>
-                 <option value="{{$c['slug']}}">{{$c['title']}}</option>
+                 <option value="<?php echo e($c['slug']); ?>"><?php echo e($c['title']); ?></option>
               <?php
                     }
                 }
               ?>
              </select>
-            @include('components.form-validation',['id' => 'pcat'])
+            <?php echo $__env->make('components.form-validation',['id' => 'pcat'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
@@ -60,41 +60,41 @@ $mode = "admin";
                    foreach($brands as $b)
                     {
               ?>
-                 <option value="{{$b['slug']}}">{{$b['title']}}</option>
+                 <option value="<?php echo e($b['slug']); ?>"><?php echo e($b['title']); ?></option>
               <?php
                     }
                 }
               ?>
              </select>
-            @include('components.form-validation',['id' => 'pbrand'])
+            <?php echo $__env->make('components.form-validation',['id' => 'pbrand'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-12">
          <div class="form-group" style="padding: 10px;">
              <h6 class='control-label'>Description<span style='color: red;'>*</span></h6>
             <div id="ap-description"></div>
-            @include('components.form-validation',['id' => 'ap-description'])
+            <?php echo $__env->make('components.form-validation',['id' => 'ap-description'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
            <h6 class='control-label'>Image #1<span style='color: red;'>*</span></h6>
            <input type="file" id="ap-pf">
-           @include('components.form-validation',['id' => 'ap-pf'])
+           <?php echo $__env->make('components.form-validation',['id' => 'ap-pf'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
          <h6 class='control-label'>Image #2<span style='color: red;'>*</span></h6>
            <input type="file" id="ap-fp">
-           @include('components.form-validation',['id' => 'ap-fp'])
+           <?php echo $__env->make('components.form-validation',['id' => 'ap-fp'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
-             <h6 class='control-label'>Price($)<span style='color: red;'>*</span></h6>
+             <h6 class='control-label'>Price(&#8358;)<span style='color: red;'>*</span></h6>
              <input class='form-control' id="price" type="number" placeholder="Product price" required="required">
-            @include('components.form-validation',['id' => 'price'])
+            <?php echo $__env->make('components.form-validation',['id' => 'price'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
        <div class="col-md-6">
@@ -108,27 +108,27 @@ $mode = "admin";
                    foreach($statuses as $st)
                     {
               ?>
-                 <option value="{{$st['value']}}">{{$st['label']}}</option>
+                 <option value="<?php echo e($st['value']); ?>"><?php echo e($st['label']); ?></option>
               <?php
                     }
                 }
               ?>
              </select>
-             @include('components.form-validation',['id' => 'pstatus'])
+             <?php echo $__env->make('components.form-validation',['id' => 'pstatus'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
        </div>
     </div>
     <div class="col-md-12">
-    @include('components.button',['id' => 'add-product','title' => 'Submit'])
+    <?php echo $__env->make('components.button',['id' => 'add-product','title' => 'Submit'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
-     @include('components.form-loading',['id' => 'add-product'])
+     <?php echo $__env->make('components.form-loading',['id' => 'add-product'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     </div>
     </form>
     </div>
 </div>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 <script src="lib/ckeditor/ckeditor.js"></script>
 <script>
   const confirmAddProduct = (payload = new FormData()) => {
@@ -208,4 +208,5 @@ $mode = "admin";
     });
   });
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/main/admin/products/admin-add-product.blade.php ENDPATH**/ ?>

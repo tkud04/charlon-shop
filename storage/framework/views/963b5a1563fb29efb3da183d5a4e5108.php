@@ -155,7 +155,7 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                     </div>
                   </div>
                   <div class="header-text-container pull-right">
-                    <p class="header-text">Welcome to Venedor!</p>
+                    <p class="header-text">Welcome to <?php echo e($shopTitle); ?>!</p>
                     <?php if(!$isLoggedIn): ?>
                     <p class="header-link">
                       <a href="<?php echo e(url('login')); ?>">login</a>&nbsp;or&nbsp; <a href="<?php echo e(url('signup')); ?>">create an account</a>

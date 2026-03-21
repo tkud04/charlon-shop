@@ -1,0 +1,248 @@
+<?php namespace App\Http\Controllers;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use Illuminate\Http\Request;
+use App\Helpers\Helper; 
+use Illuminate\Support\Facades\Auth;
+use Session; 
+use Validator; 
+use Carbon\Carbon; 
+
+class AdminBrandsController extends Controller {
+
+	protected $helpers; //Helpers implementation
+    protected $compactValues;
+    
+    public function __construct(Helper $h)
+    {
+    	$this->helpers = $h;
+		$this->compactValues = ['user','plugins','senders','signals','ads'];                     
+    }
+
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getBrands()
+    {
+        $user = null;
+		$senders = $this->helpers->getSenders();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins(['mode' => "all"]);
+		$ads = $this->helpers->getAds(); $c = $this->compactValues;
+
+
+		$vu = $this->helpers->getValidUser();
+		if($vu['check'])
+		{
+			$user = $vu['user'];	
+            if($user->role === "admin" || $user->role === "su")
+            {
+				$brands = $this->helpers->getBrands();
+				//dd($brands);
+				array_push($c,'brands');
+				$contactDetails = $this->helpers->contactDetails;
+                array_push($c,'contactDetails');
+				$sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
+			   return view('main.admin.brands.admin-brands',compact($c));
+            }
+		}
+
+		return redirect()->intended('/');
+       
+    }
+
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getAddBrand()
+    {
+        $user = null;
+		$senders = $this->helpers->getSenders();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins(['mode' => "all"]);
+		$ads = $this->helpers->getAds(); $c = $this->compactValues;
+
+
+		$vu = $this->helpers->getValidUser();
+		if($vu['check'])
+		{
+			$user = $vu['user'];	
+            if($user->role === "admin" || $user->role === "su")
+            {
+				
+                $sliderData = [
+					'popular' => $this->helpers->testProducts,
+					'specials' => $this->helpers->testProducts,
+					'featured' => $this->helpers->testProducts,
+				];
+				array_push($c,'sliderData');
+				return view('main.admin.brands.admin-add-brand',compact($c));
+            }
+		}
+
+		return redirect()->intended('/');
+       
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+    public function postAddBrand(Request $request)
+    {
+        $req = $request->all();
+		$ret = ['status' => 'error','message' => "nothing happened"];
+
+       $vu = $this->helpers->getValidUser();
+		if($vu['check'])
+		{
+			$user = $vu['user'];	
+            if($user->role === "admin" || $user->role === "su")
+            {
+               
+
+				$validator = Validator::make($req, [
+					'slug' => 'required',
+					'title' => 'required',
+					'pf' => 'required|file|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:204800' //max 200mb
+                 ]);
+
+                 if($validator->fails())
+                 {
+                    $ret['message'] = "validation";
+					$ret['req'] = $req;
+                 }
+
+                 else
+                 {
+					$pic = $this->helpers->cloudinaryUploadImage($request->file('pf'));
+					$categoryPayload = [
+						'title' => $req['title'],
+						'slug' => $req['slug'],
+						'img' => $pic
+					];
+	                 $temp = $this->helpers->createBrand($categoryPayload);
+	                 $rr = isset($temp) ? 'ok' : 'error';
+	                 $ret = ['status' => $rr];
+                 }
+            }
+			else
+			{
+				$ret['message'] = "auth";
+			}
+		}
+        else
+        {
+			$ret['message'] = "auth";
+        }
+
+		 return json_encode($ret);
+    }
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function getBrand(Request $request)
+    {
+        $user = null;
+		$req = $request->all();
+		$senders = $this->helpers->getSenders();
+		$signals = $this->helpers->signals;
+		$plugins = $this->helpers->getPlugins(['mode' => "all"]);
+		$ads = $this->helpers->getAds(); $c = $this->compactValues;
+
+
+		$vu = $this->helpers->getValidUser();
+		if($vu['check'])
+		{
+			$user = $vu['user'];	
+            if($user->role === "admin" || $user->role === "su")
+            {
+				if(isset($req['xf']))
+				{
+					$brand = $this->helpers->getBrand($req['xf']);
+
+					if(count($brand) > 0)
+					{
+						array_push($c,'brand');
+						$sliderData = [
+							'popular' => $this->helpers->testProducts,
+							'specials' => $this->helpers->testProducts,
+							'featured' => $this->helpers->testProducts,
+						];
+						array_push($c,'sliderData');
+						 return view('main.admin.cattegories.admin-brand',compact($c));
+					}
+				}
+            }
+		}
+
+		return redirect()->intended('/');
+       
+    }
+
+
+
+	
+
+
+	/**
+	 * Show the application about view to the user.
+	 *
+	 * @return Response
+	 */
+	public function postRemoveBrand(Request $request)
+    {
+		$user = null;
+		$ret = ['status' => 'error','message' => "nothing happened"];
+
+	   $req = $request->all();
+
+	   $vu = $this->helpers->getValidUser();
+		if($vu['check'])
+		{
+			$user = $vu['user'];	
+		   if($user->role === "admin" || $user->role === "su")
+		   {
+			  if(isset($req['xf']))
+			  {
+				$p = $this->helpers->getBrand($req['xf']);
+	
+				if(count($p) > 0)
+				{
+					$this->helpers->cloudinaryRemoveImage($p['img']);
+					$this->helpers->removeBrand($req['xf']);
+					$ret = ['status' => "ok"];
+				}
+			  }
+			  else
+			  {
+				$ret['message'] = "validation";
+			  }
+		   }
+	   }
+	   else
+	   {
+		 $ret['message'] = "auth";
+	   }
+
+	   return json_encode(($ret));
+    }	
+
+}
