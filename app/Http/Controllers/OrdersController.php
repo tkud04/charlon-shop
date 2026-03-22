@@ -61,11 +61,7 @@ class OrdersController extends Controller {
 			 dd($o);
 			 $contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
-		$sliderData = [
-			'popular' => $this->helpers->testProducts,
-			'specials' => $this->helpers->testProducts,
-			'featured' => $this->helpers->testProducts,
-		];
+		$sliderData = $this->helpers->getSliderProducts();
 		array_push($c,'sliderData');
 	           return view('main.orders.order',compact($c));	
 			}

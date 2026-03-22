@@ -43,13 +43,15 @@ class AdminController extends Controller {
             {
 				$contactDetails = $this->helpers->contactDetails;
                 array_push($c,'contactDetails');
-				$sliderData = [
+
+				/*$sliderData = [
 					'popular' => $this->helpers->testProducts,
 					'specials' => $this->helpers->testProducts,
 					'featured' => $this->helpers->testProducts,
-				];
+				];*/
+				$sliderData = $this->helpers->getSliderProducts();
+				$products = $this->helpers->getProducts();
 				$users = $this->helpers->getUsers();
-				$products = [];//$this->helpers->getProducts();
 				$orders = [];//$this->helpers->getOrders();
 				$refunds = [];//$this->helpers->getRefunds();
 				array_push($c,'sliderData','products','orders','refunds','users');

@@ -249,8 +249,8 @@ class Helper //implements HelperContract
            'slug' => 'jacket-suiting-blazer',
            'category' => 'women',
            'title' => 'Jacket Suiting Blazer',
-           'thumb' => 'images/products/thumbnails/item1.jpg',
-           'description' => '',
+           'images' => [['url' => 'images/products/thumbnails/item1.jpg']],
+            'description' => '',
            'price' => '40',
            'status' => 'ok'
         ],
@@ -259,7 +259,7 @@ class Helper //implements HelperContract
             'slug' => 'gap-graphic-cuffed',
             'category' => 'women',
             'title' => 'Gap Graphic Cuffed',
-            'thumb' => 'images/products/thumbnails/item2.jpg',
+            'images' => [['url' => 'images/products/thumbnails/item2.jpg']],
             'description' => '',
             'price' => '18.5',
             'status' => 'ok'
@@ -269,7 +269,7 @@ class Helper //implements HelperContract
             'slug' => 'womens-lauren-dress',
             'category' => 'women',
             'title' => 'Women\'s Lauren Dress',
-            'thumb' => 'images/products/thumbnails/item3.jpg',
+            'images' => [['url' => 'images/products/thumbnails/item3.jpg']],
             'description' => '',
             'price' => '30',
             'status' => 'ok'
@@ -279,7 +279,7 @@ class Helper //implements HelperContract
             'slug' => 'jacket-lauren-blazer',
             'category' => 'women',
             'title' => 'Jacket Lauren Blazer',
-            'thumb' => 'mages/products/thumbnails/item4.jpg',
+            'images' => [['url' => 'images/products/thumbnails/item4.jpg']],
             'description' => '',
             'price' => '40',
             'status' => 'ok'
@@ -289,7 +289,7 @@ class Helper //implements HelperContract
             'slug' => 'jacket-suiting-blazer-2',
             'category' => 'women',
             'title' => 'Jacket Suiting Blazer',
-            'thumb' => 'images/products/thumbnails/item5.jpg',
+            'images' => [['url' => 'images/products/thumbnails/item5.jpg']],
             'description' => '',
             'price' => '18.5',
             'status' => 'ok'
@@ -299,7 +299,7 @@ class Helper //implements HelperContract
             'slug' => 'women-spahyr-dress',
             'category' => 'women',
             'title' => 'Women\'s Spahyr Dress',
-            'thumb' => 'images/products/thumbnails/item6.jpg',
+            'images' => [['url' => 'images/products/thumbnails/item6.jpg']],
             'description' => '',
             'price' => '30',
             'status' => 'ok'
@@ -1219,6 +1219,7 @@ function getProduct($id="",$options=[])
      $ret['slug'] = $c->slug;
      $ret['description'] = $c->description;
      $ret['images'] = $this->getProductImages($c->slug);
+     $ret['price'] = $c->price;
      $ret['category'] = $this->getCategory($c->category);
      $ret['brand'] = $this->getBrand($c->brand);
      $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
@@ -1247,6 +1248,60 @@ function updateProduct($data)
   }                                 
    return $ret;                               
  } 
+
+ function getSliderProducts()
+ {
+    $ret = [
+        'popular' => [],
+		'specials' => [],
+		'featured' => [],
+    ];
+    $products = $this->getProducts();
+    $pc = count($products);
+
+    if($pc < 6)
+    {
+         for($i = 0; $i < $pc; $i++)
+         {
+            //Popular
+            array_push($ret['popular'],$products[$i]);
+
+            //Specials
+            array_push($ret['specials'],$products[$i]);
+
+            //Featured
+            array_push($ret['featured'],$products[$i]);
+         }
+
+         for($i=$pc; $i < count($this->testProducts); $i++)
+         {
+             //Popular
+             array_push($ret['popular'],$this->testProducts[$i]);
+
+             //Specials
+             array_push($ret['specials'],$this->testProducts[$i]);
+ 
+             //Featured
+             array_push($ret['featured'],$this->testProducts[$i]);
+         }
+    }
+    else
+    {
+        shuffle($products);
+        for($i = 0; $i < 6; $i++)
+         {
+            //Popular
+            array_push($ret['popular'],$products[$i]);
+
+            //Specials
+            array_push($ret['specials'],$products[$i]);
+
+            //Featured
+            array_push($ret['featured'],$products[$i]);
+         }
+    }
+   return $ret;
+ }
 
 function removeProduct($id)
 {

@@ -45,11 +45,7 @@ class CategoriesController extends Controller {
 		$categories = $this->helpers->getCategories();
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails','categories');
-		$sliderData = [
-			'popular' => $this->helpers->testProducts,
-			'specials' => $this->helpers->testProducts,
-			'featured' => $this->helpers->testProducts,
-		];
+		$sliderData = $this->helpers->getSliderProducts();
 		array_push($c,'sliderData');
 		
     	return view('main.categories.categories',compact($c));

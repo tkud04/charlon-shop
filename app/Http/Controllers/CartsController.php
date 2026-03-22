@@ -57,11 +57,7 @@ class CartsController extends Controller {
 		array_push($c,'items','fee');
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
-		$sliderData = [
-			'popular' => $this->helpers->testProducts,
-			'specials' => $this->helpers->testProducts,
-			'featured' => $this->helpers->testProducts,
-		];
+		$sliderData = $this->helpers->getSliderProducts();
 		array_push($c,'sliderData');
 	    return view('main.cart.cart',compact($c));	
 		
@@ -181,11 +177,7 @@ class CartsController extends Controller {
 		#dd($items);
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
-		$sliderData = [
-			'popular' => $this->helpers->testProducts,
-			'specials' => $this->helpers->testProducts,
-			'featured' => $this->helpers->testProducts,
-		];
+		$sliderData = $this->helpers->getSliderProducts();
 		array_push($c,'sliderData');
 		array_push($c,'items','fee','pmodes');
 	    return view('main.cart.checkout',compact($c));	

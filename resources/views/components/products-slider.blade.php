@@ -18,11 +18,12 @@ $sc = 0;
                        foreach($p as $item)
                        {
                         $vu = url('product')."?pp=".$item['slug'];
+                        $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
                         <figure class="item-image-container">
                           <a href="{{$vu}}">
-                            <img src="{{$item['thumb']}}" alt="{{$item['title']}}">
+                            <img src="{{$img}}" alt="{{$item['title']}}">
                           </a>
                         </figure>
                         <p class="item-name">
@@ -45,11 +46,12 @@ $sc = 0;
                        foreach($p as $item)
                        {
                         $vu = url('product')."?pp=".$item['slug'];
+                        $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
                         <figure class="item-image-container">
                           <a href="{{$vu}}">
-                            <img src="{{$item['thumb']}}" alt="{{$item['title']}}">
+                            <img src="{{$img}}" alt="{{$item['title']}}">
                           </a>
                         </figure>
                         <p class="item-name">
@@ -81,11 +83,12 @@ $sc = 0;
                        foreach($f as $item)
                        {
                         $vu = url('product')."?pp=".$item['slug'];
+                        $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
                         <figure class="item-image-container">
                           <a href="{{$vu}}">
-                            <img src="{{$item['thumb']}}" alt="{{$item['title']}}">
+                            <img src="{{$img}}" alt="{{$item['title']}}">
                           </a>
                         </figure>
                         <p class="item-name">
@@ -108,11 +111,12 @@ $sc = 0;
                        foreach($f as $item)
                        {
                         $vu = url('product')."?pp=".$item['slug'];
+                        $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
                         <figure class="item-image-container">
                           <a href="{{$vu}}">
-                            <img src="{{$item['thumb']}}" alt="{{$item['title']}}">
+                            <img src="{{$img}}" alt="{{$item['title']}}">
                           </a>
                         </figure>
                         <p class="item-name">
@@ -144,11 +148,12 @@ $sc = 0;
                        foreach($s as $item)
                        {
                         $vu = url('product')."?pp=".$item['slug'];
+                        $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
                         <figure class="item-image-container">
                           <a href="{{$vu}}">
-                            <img src="{{$item['thumb']}}" alt="{{$item['title']}}">
+                            <img src="{{$img}}" alt="{{$item['title']}}">
                           </a>
                         </figure>
                         <p class="item-name">
@@ -171,11 +176,12 @@ $sc = 0;
                        foreach($s as $item)
                        {
                         $vu = url('product')."?pp=".$item['slug'];
+                        $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
                         <figure class="item-image-container">
                           <a href="{{$vu}}">
-                            <img src="{{$item['thumb']}}" alt="{{$item['title']}}">
+                            <img src="{{$img}}" alt="{{$item['title']}}">
                           </a>
                         </figure>
                         <p class="item-name">
