@@ -1303,6 +1303,24 @@ function updateProduct($data)
    return $ret;
  }
 
+ function getProductsByCategory($slug='')
+ {
+    $ret = [];
+    $data = Products::where('category',$slug)->orderBy('created_at','desc')->get();
+
+    if($data != null)
+    {
+     
+         foreach($data as $c)
+         {
+             $temp = $this->getProduct($c->id);
+             array_push($ret,$temp);
+         }
+    }
+
+    return $ret;
+ }
+
 function removeProduct($id)
 {
     $a = Products::where('id', $id)
