@@ -37,8 +37,8 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
                         $vu = url('product')."?xf=".$pid;
                         $imgs = $p['images']; $img = count($imgs) > 0 ? $imgs[0]['url'] : '';
                         $pname = $p['title'];
-                        $formerPrice = floatval($p['price']) + 20;
-                        $newPrice = floatval($p['price']);
+                        $formerPrice = (floatval($p['price']) - 1)  + 20;
+                        $newPrice = floatval($p['price']) - 1;
                   ?>
                      <div class="col-md-4 col-sm-6 col-xs-12">
                   <div class="item item-hover">
@@ -55,8 +55,7 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
                         <span class="item-price">${{$newPrice}} <span class="sub-price">.99</span>
                         </span>
                       </div>
-                      <span class="new-rect">New</span>
-                      <span class="discount-rect">-15%</span>
+                     <span class="discount-rect">-15%</span>
                     </div>
                     <div class="item-meta-container">
                       <div class="ratings-container">

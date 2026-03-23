@@ -1321,6 +1321,24 @@ function updateProduct($data)
     return $ret;
  }
 
+ function getProductsByBrand($slug='')
+ {
+    $ret = [];
+    $data = Products::where('brand',$slug)->orderBy('created_at','desc')->get();
+
+    if($data != null)
+    {
+     
+         foreach($data as $c)
+         {
+             $temp = $this->getProduct($c->id);
+             array_push($ret,$temp);
+         }
+    }
+
+    return $ret;
+ }
+
 function removeProduct($id)
 {
     $a = Products::where('id', $id)
@@ -1429,7 +1447,7 @@ function getCategory($id="")
      $ret['title'] = $c->title;
      $ret['slug'] = $c->slug;
      $ret['img'] = $c->img;
-     $ret['product_count'] = 0; //TODO
+     $ret['product_count'] = Products::where('category',$c->slug)->count();
      $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
     }
 
@@ -1488,7 +1506,7 @@ function getBrand($id="")
      $ret['title'] = $c->title;
      $ret['slug'] = $c->slug;
      $ret['img'] = $c->img;
-     $ret['product_count'] = 0; //TODO
+     $ret['product_count'] = Products::where('brand',$c->slug)->count();
      $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
     }
 

@@ -53,21 +53,17 @@
                   <div id="category-list-2" class="collapse in">
                     <div class="panel-body">
                       <ul class="category-filter-list jscrollpane">
+                        <?php
+                          foreach($brands as $brand)
+                          {
+                            $bu = url('brand')."?xf=".$brand['slug'];
+                        ?>
                         <li>
-                          <a href="#">Samsung (50)</a>
+                          <a href="<?php echo e($bu); ?>"><?php echo e($brand['title']); ?>(<?php echo e($brand['product_count']); ?>)</a>
                         </li>
-                        <li>
-                          <a href="#">Apple (80)</a>
-                        </li>
-                        <li>
-                          <a href="#">HTC (20)</a>
-                        </li>
-                        <li>
-                          <a href="#">Motoroloa (20)</a>
-                        </li>
-                        <li>
-                          <a href="#">Nokia (11)</a>
-                        </li>
+                        <?php
+                          }
+                        ?>
                       </ul>
                     </div>
                   </div>
@@ -104,6 +100,7 @@
                     </div>
                   </div>
                 </div>
+                <!--
                 <div class="panel">
                   <div class="accordion-header">
                     <div class="accordion-title">
@@ -163,217 +160,10 @@
                     </div>
                   </div>
                 </div>
+                  -->
               </div>
             </div>
-            <div class="widget featured">
-              <h3>Featured</h3>
-              <div class="featured-slider flexslider sidebarslider">
-                <div class="flex-viewport" style="overflow: hidden; position: relative; height: 280px;">
-                  <ul class="featured-list clearfix" style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-789px, 0px, 0px);">
-                    <li class="clone" aria-hidden="true" style="width: 263px; float: left; display: block;">
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item4.jpg" alt="item4" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Gap Graphic Cuffed</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$17</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item6.jpg" alt="item6" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Women's Lauren Dress</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$30</div>
-                      </div>
-                    </li>
-                    <li class="" style="width: 263px; float: left; display: block;">
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item5.jpg" alt="item5" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Jacket Suiting Blazer</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$40</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item1.jpg" alt="item1" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Gap Graphic Cuffed</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$18</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item2.jpg" alt="item2" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Women's Lauren Dress</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$30</div>
-                      </div>
-                    </li>
-                    <li class="" style="width: 263px; float: left; display: block;">
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item3.jpg" alt="item3" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Swiss Mobile Phone</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="64" style="width: 60.16px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$39</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item4.jpg" alt="item4" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Zwinzed HeadPhones</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="94" style="width: 88.36px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$18.99</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item7.jpg" alt="item7" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Kless Man Suit</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="74" style="width: 69.56px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$99</div>
-                      </div>
-                    </li>
-                    <li class="flex-active-slide" style="width: 263px; float: left; display: block;">
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item4.jpg" alt="item4" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Gap Graphic Cuffed</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$17</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item6.jpg" alt="item6" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Women's Lauren Dress</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$30</div>
-                      </div>
-                    </li>
-                    <li class="clone" aria-hidden="true" style="width: 263px; float: left; display: block;">
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item5.jpg" alt="item5" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Jacket Suiting Blazer</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$40</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item1.jpg" alt="item1" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Gap Graphic Cuffed</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$18</div>
-                      </div>
-                      <div class="featured-product clearfix">
-                        <figure>
-                          <img src="images/products/thumbnails/item2.jpg" alt="item2" draggable="false">
-                        </figure>
-                        <h5>
-                          <a href="#">Women's Lauren Dress</a>
-                        </h5>
-                        <div class="ratings-container">
-                          <div class="ratings">
-                            <div class="ratings-result" data-result="84" style="width: 78.96px;"></div>
-                          </div>
-                        </div>
-                        <div class="featured-price">$30</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <ul class="flex-direction-nav">
-                  <li>
-                    <a class="flex-prev" href="#"></a>
-                  </li>
-                  <li>
-                    <a class="flex-next" href="#"></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+
             <div class="widget banner-slider-container">
               <div class="banner-slider flexslider">
                 <ul class="banner-slider-list clearfix">

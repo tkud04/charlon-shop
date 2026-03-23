@@ -81,7 +81,8 @@ class CategoriesController extends Controller {
 				$contactDetails = $this->helpers->contactDetails;
 				$categories = $this->helpers->getCategories();
 				$products = $this->helpers->getProductsByCategory($cat['slug']);
-            array_push($c,'contactDetails','cat','categories','products');
+				$brands = $this->helpers->getBrands();
+            array_push($c,'contactDetails','cat','categories','products','brands');
 		    $sliderData = $this->helpers->getSliderProducts();
 		    array_push($c,'sliderData');
 		
