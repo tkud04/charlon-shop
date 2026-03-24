@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminSendersController;
 use App\Http\Controllers\AdminSettingsController;
 use App\Http\Controllers\AdminSiteMessagesController;
 use App\Http\Controllers\AdminUsersController;
+use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrdersController;
@@ -38,6 +39,8 @@ Route::get('terms', [MainController::class,'getTerms']);
 Route::get('privacy', [MainController::class,'getPrivacyPolicy']);
 Route::get('categories', [CategoriesController::class,'getCategories']);
 Route::get('category', [CategoriesController::class,'getCategory']);
+Route::get('brands', [BrandsController::class,'getBrands']);
+Route::get('brand', [BrandsController::class,'getBrand']);
 
 
 //Auth routes
