@@ -40,7 +40,7 @@ $img = $bra['img'] ? $bra['img'] : "images/unkwown.png";
                      foreach($products as $p)
                      {
                         $pid = $p['slug'];
-                        $vu = url('product')."?xf=".$pid;
+                        $vu = url('view-product')."?xf=".$pid;
                         $imgs = $p['images']; $img = count($imgs) > 0 ? $imgs[0]['url'] : '';
                         $pname = $p['title'];
                         $formerPrice = $p['formerPrice']; $newPrice = $p['newPrice'];

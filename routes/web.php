@@ -19,6 +19,7 @@ use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::get('category', [CategoriesController::class,'getCategory']);
 Route::get('brands', [BrandsController::class,'getBrands']);
 Route::get('brand', [BrandsController::class,'getBrand']);
 
+Route::get('view-product', [ProductsController::class,'getProduct']);
+
 
 //Auth routes
 Route::get('login', [LoginController::class,'getLogin']);
@@ -55,7 +58,6 @@ Route::get('bye', [LoginController::class,'getLogout']);
 
 Route::get('dashboard', [MainController::class,'getDashboard']);
 Route::get('profile', [MainController::class,'getProfile']);
-
 
 
 Route::get('cart', [CartsController::class,'getCart']);
