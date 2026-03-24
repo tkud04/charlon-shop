@@ -34,7 +34,7 @@ $title = "Categories";
             </figcaption>
         </figure>
         <h2><a href="{{$vu}}">{{$c['title']}}</a></h2>
-        <p><a href="{{$vu}}">10 items</a></p>
+        <p><a href="{{$vu}}">{{$c['product_count']}} items</a></p>
     </div>
     <?php
         }

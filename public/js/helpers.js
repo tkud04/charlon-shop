@@ -107,7 +107,7 @@ const copyToClipboard = async (text='') => {
 } 
 
 const sluggify = (text='') => {
-text = text.toLowerCase().replace(/"/g,'');
+text = text.toLowerCase().replace(/["”]/g,'');
 let ret = text;
 
   try {

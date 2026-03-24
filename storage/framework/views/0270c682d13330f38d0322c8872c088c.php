@@ -34,7 +34,7 @@ $title = "Categories";
             </figcaption>
         </figure>
         <h2><a href="<?php echo e($vu); ?>"><?php echo e($c['title']); ?></a></h2>
-        <p><a href="<?php echo e($vu); ?>">10 items</a></p>
+        <p><a href="<?php echo e($vu); ?>"><?php echo e($c['product_count']); ?> items</a></p>
     </div>
     <?php
         }

@@ -92,7 +92,7 @@ $mode = "admin";
        </div>
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
-             <h6 class='control-label'>Price(&#8358;)<span style='color: red;'>*</span></h6>
+             <h6 class='control-label'>Price($)<span style='color: red;'>*</span></h6>
              <input class='form-control' id="price" type="number" placeholder="Product price" required="required">
             <?php echo $__env->make('components.form-validation',['id' => 'price'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
          </div>
