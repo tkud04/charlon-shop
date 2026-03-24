@@ -80,9 +80,26 @@ class CategoriesController extends Controller {
 			{ 
 				$contactDetails = $this->helpers->contactDetails;
 				$categories = $this->helpers->getCategories();
-				$products = $this->helpers->getProductsByCategory($cat['slug']);
+				$allProducts = $this->helpers->getProductsByCategory($cat['slug']);
+				$totalPages = $this->helpers->numPages($allProducts);
+				$products = [];
+				$ops = ['prev','next'];
+
+				$v1 = isset($req['page']) && intval($req['page']) > 0;
+				$v2 = isset($req['op']) && in_array($req['op'],$ops);
+				
+				$page = $v1 ? $req['page'] : '1'; 
+				$products = $this->helpers->changePage($allProducts,$page);
+				
+
+				if($v2)
+				{
+					if($req['op'] === 'prev') $products = $this->helpers->prevPage($allProducts,$page);
+					if($req['op'] === 'next') $products = $this->helpers->nextPage($allProducts,$page);
+				}
+
 				$brands = $this->helpers->getBrands();
-            array_push($c,'contactDetails','cat','categories','products','brands');
+            array_push($c,'contactDetails','cat','categories','totalPages','page','products','brands');
 		    $sliderData = $this->helpers->getSliderProducts();
 		    array_push($c,'sliderData');
 		

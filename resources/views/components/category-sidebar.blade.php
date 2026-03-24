@@ -68,25 +68,18 @@
                     </div>
                   </div>
                 </div>
+               <!--
                 <div class="panel">
-                  <div class="accordion-header">
+                  
+                 <div class="accordion-header">
                     <div class="accordion-title">
                       <span>Price</span>
                     </div>
                     <a class="accordion-btn opened" data-toggle="collapse" data-target="#category-list-3"></a>
                   </div>
+                  
                   <div id="category-list-3" class="collapse in">
                     <div class="panel-body">
-                      <div id="price-range" class="noUi-target noUi-ltr noUi-horizontal noUi-background">
-                        <div class="noUi-base">
-                          <div class="noUi-origin noUi-connect" data-style="left" style="left: 0%;">
-                            <div class="noUi-handle noUi-handle-lower"></div>
-                          </div>
-                          <div class="noUi-origin noUi-background" data-style="left" style="left: 100%;">
-                            <div class="noUi-handle noUi-handle-upper"></div>
-                          </div>
-                        </div>
-                      </div>
                       <div id="price-range-details">
                         <span class="sm-separator">from</span>
                         <input type="text" id="price-range-low" class="separator">
@@ -99,7 +92,9 @@
                       </div>
                     </div>
                   </div>
+                      
                 </div>
+                -->
                 <!--
                 <div class="panel">
                   <div class="accordion-header">

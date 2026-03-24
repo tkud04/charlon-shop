@@ -1220,6 +1220,9 @@ function getProduct($id="",$options=[])
      $ret['description'] = $c->description;
      $ret['images'] = $this->getProductImages($c->slug);
      $ret['price'] = $c->price;
+     $discount = floatval($ret['price']) * (15/100);
+     $ret['formerPrice'] = (floatval($ret['price']) - 1) + $discount;
+     $ret['newPrice'] = floatval($ret['price']) - 1;
      $ret['category'] = $this->getCategory($c->category);
      $ret['brand'] = $this->getBrand($c->brand);
      $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
@@ -1619,7 +1622,7 @@ function paginateData($data=[],$itemsPerPage=5)
 
 
 
-          function numPages($data,$itemsPerPage=7)
+          function numPages($data,$itemsPerPage=9)
            {
              return ceil(count($data) / $itemsPerPage);
            }
@@ -1633,6 +1636,7 @@ function paginateData($data=[],$itemsPerPage=5)
                 --$currentPage;
                 $ret = $this->changePage($data,$currentPage);
             }
+            return $ret;
           }
 
           function nextPage($data,$currentPage)
@@ -1643,9 +1647,10 @@ function paginateData($data=[],$itemsPerPage=5)
                 ++$currentPage;
                 $ret = $this->changePage($data,$currentPage);
             }
+            return $ret;
           }
 
-          function changePage($data=[],$currentPage=1,$itemsPerPage=7)
+          function changePage($data=[],$currentPage=1,$itemsPerPage=9)
           {
             $ret = []; $numPages = $this->numPages($data);
            

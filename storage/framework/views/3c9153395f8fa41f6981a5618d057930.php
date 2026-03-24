@@ -10,7 +10,7 @@ $title = $cat['title'];
 <?php $__env->startSection('content'); ?>
 <?php
 $slug = $cat['slug'];
-$vu = url('category')."?xf=".$slug;
+$cu = url('category')."?xf=".$slug;
 $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
 ?>
 
@@ -20,10 +20,16 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
     'description' => 'View all available products for this category'
     ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 <div class="container">
-   <div class="row">
+   <div class="row mt-4">
         <div class="col-md-12">
            <div class="row">
            <div class="col-md-9 col-sm-8 col-xs-12 main-content">
+               <?php echo $__env->make('components.pagination2',[
+                  'page' => $page,
+                  'totalpages' => $totalPages,
+                  'url' => $cu
+                ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+               <div></div>
                <div class="category-item-container">
                <div class="row">
                   <?php
@@ -37,8 +43,7 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
                         $vu = url('product')."?xf=".$pid;
                         $imgs = $p['images']; $img = count($imgs) > 0 ? $imgs[0]['url'] : '';
                         $pname = $p['title'];
-                        $formerPrice = (floatval($p['price']) - 1)  + 20;
-                        $newPrice = floatval($p['price']) - 1;
+                        $formerPrice = $p['formerPrice']; $newPrice = $p['newPrice'];
                   ?>
                      <div class="col-md-4 col-sm-6 col-xs-12">
                   <div class="item item-hover">
@@ -85,8 +90,17 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
                   ?>
                </div>
                </div>
+               <div class="pagination-container clearfix">
+              <div class="pull-right">
+                <?php echo $__env->make('components.pagination2',[
+                  'page' => $page,
+                  'totalpages' => $totalPages,
+                  'url' => $cu
+                ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+              </div>
+            </div>
            </div>
-           <aside class="col-md-3 col-sm-4 col-xs-12 sidebar">
+           <aside class="col-md-3 col-sm-4 col-xs-12 mt-4 sidebar">
                <?php echo $__env->make('components.category-sidebar',[
                  'data' => $categories
                 ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
