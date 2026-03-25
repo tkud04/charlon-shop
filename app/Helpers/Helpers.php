@@ -13,6 +13,7 @@ use App\Models\Senders;
 use App\Models\Plugins;
 use App\Models\Categories;
 use App\Models\ProductImages;
+use App\Models\ProductLikes;
 use App\Models\Products;
 use GuzzleHttp\Client;
 use Symfony\Component\Mailer\Mailer;
@@ -1403,6 +1404,73 @@ function getProductImage($id="",$options=[])
 function removeProductImage($id)
 {
     $a = ProductImages::where('id', $id);
+
+    if($a != null) $a->delete();
+}
+
+//PRODUCT LIKES
+function createProductLike($data)
+{
+    $ret = ProductLikes::create([
+        'product_slug' => $data['product_slug'],
+        'user_id' => $data['user_id'],
+    ]);
+
+    return $ret;
+}
+
+function getProductLikes($product="",$options = [])
+{
+  $ret = []; $data = null;
+
+     $data = ProductLikes::where('product_slug',$product)->orderBy('created_at','desc')->get();
+
+
+ 
+  if($data != null)
+   {
+    
+        foreach($data as $c)
+        {
+            $temp = $this->getProductLike($c->id,$options);
+            array_push($ret,$temp);
+        }
+   }
+
+ return $ret;
+}
+
+function getProductLike($id="",$options=[])
+{
+
+  $ret = [];
+    $c = ProductLikes::where('id',$id)->first();
+
+    if($c != null)
+    {
+     $ret['id'] = $c->id;
+     $ret['product_slug'] = $c->product_slug;
+     $ret['user_id'] = $c->user_id;
+     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+    }
+
+    return $ret;
+}
+
+function hasLikedProduct($options=['user_id' => '','slug' => ''])
+{
+    $ret = "false";
+
+    $l = ProductLikes::where('user_id',$options['user_id'])
+                     ->where('product_slug',$options['slug'])->first();
+    if($l !== null) $ret = "true";
+    return $ret;
+}
+
+
+function removeProductLike($id)
+{
+    $a = ProductLikes::where('id', $id);
 
     if($a != null) $a->delete();
 }

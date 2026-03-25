@@ -213,8 +213,8 @@ const handleResponseError = (data) => {
   else if(data.message === 'invalid-member-request'){
     errMessage = 'Invalid request, please contact support';
   }
-  else if(data.message === 'invalid-event'){
-    errMessage = 'Invalid event, please contact support';
+  else if(data.message === 'invalid-product'){
+    errMessage = 'Invalid product, please contact support';
   }
 
   alert(errMessage);
@@ -689,14 +689,16 @@ const rp = async (payload={xf:''},successCallback,errorCallback) => {
  
 }
 
-const agi = async (payload=new FormData(),successCallback,errorCallback) => {
-  const url = 'api/add-gallery-item';
+const lp = async (payload={xf:''},successCallback,errorCallback) => {
+  const url = 'api/like-product';
 
-  await fetchWithFormData(
+  await fetchWithJson(
     {
       url,
       method: 'POST',
-      fd: payload,
+      data: [
+        {key: 'xf',value: `${payload.xf}`},
+      ],
     },
     successCallback,
     errorCallback

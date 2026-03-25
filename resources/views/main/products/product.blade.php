@@ -19,15 +19,20 @@ $title = $product['title'];
                                     <div id="product-image-carousel-container">
                                         <ul id="product-carousel" class="celastislide-list">
                                             <?php
+
                                               $images = $product['images'];
+                                              $firstImg = "";
+
                                               for($i = 0; $i < count($images); $i++)
                                               {
-                                                $aa = $i === 0 ? 'class="active-slide"' : '';
+                                                $isFirst = $i === 0;
+                                                $aa = $isFirst ? 'class="active-slide"' : '';
                                                 $img = $images[$i]['url'];
+                                                if($isFirst) $firstImg = $img;
                                             ?>
                                             <li{!!$aa!!}>
-                                                <a data-rel="prettyPhoto[product]" href="" data-image="{{$img}}" data-zoom-image="{{$img}}" class="product-gallery-item">
-                                                    <img src="{{$img}}" alt="{{$title}}">
+                                                <a  href="#" data-image="{{$img}}" data-zoom-image="{{$img}}" class="product-gallery-item">
+                                                    <img src="{{$img}}" alt="{{$title}}" class="j">
                                                 </a>
                                             </li>
                                             <?php
@@ -38,7 +43,7 @@ $title = $product['title'];
                                     </div>
                                     <div id="product-image-container">
                                         <figure>
-                                            <img src="{{$img}}" data-zoom-image="{{$img}}" alt="{{$title}}" id="product-image">
+                                            <img src="{{$firstImg}}" data-zoom-image="{{$firstImg}}" alt="{{$title}}" id="product-image">
                                             <figcaption class="item-price-container">
                                                 <span class="old-price">${{number_format($product['formerPrice'],2)}}</span>
                                                 <span class="item-price">${{number_format($product['newPrice'],2)}}</span>
@@ -75,23 +80,24 @@ $title = $product['title'];
                                     <hr>
                                     <div class="product-add clearfix">
                                         <div class="custom-quantity-input">
-                                            <input type="text" name="quantity" value="1">
-                                            <a href="#" onclick="return!1" class="quantity-btn quantity-input-up">
+                                            <input type="text" name="quantity" id="qty" value="1">
+                                            <a href="#" onclick="upQty(); return false;" class="quantity-btn quantity-input-up">
                                                 <i class="fa fa-angle-up"></i>
                                             </a>
-                                            <a href="#" onclick="return!1" class="quantity-btn quantity-input-down">
+                                            <a href="#" onclick="downQty(); return false;" class="quantity-btn quantity-input-down">
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                         </div>
-                                        <button class="btn btn-custom-2">ADD TO CART</button>
+                                        <button class="btn btn-custom-2" id="cart-btn">ADD TO CART</button>
                                     </div>
                                     <div class="md-margin"></div>
                                     <div class="product-extra clearfix">
                                         <div class="product-extra-box-container clearfix">
                                             <div class="item-action-inner">
-                                                <a href="#" class="icon-button icon-like">Favourite</a>
-                                                <a href="#" class="icon-button icon-compare">Checkout</a>
+                                                <a href="#" id="lp-btn" title="Like this product" class="icon-button-2"><i class="fa fa-heart text-white"></i></a>
+                                                <a href="{{url('checkout')}}" title="Checkout" class="icon-button-2"><i class="fa fa-credit-card text-white"></i></a>
                                             </div>
+                                            @include('components.form-loading',['id' => 'lp'])
                                         </div>
                                         <div class="md-margin visible-xs"></div>
                                         <div class="share-button-group">
@@ -529,4 +535,74 @@ $title = $product['title'];
                         </div>
                     </div>
 
+@stop
+
+@section('scripts')
+<script>
+    const qtyElem = $('#qty');
+    const upQty = () => {
+        if("{{$hl}}" === "true"){
+           alert('You have already liked this product');
+        }
+        else{
+           let q = parseInt(qtyElem.val());
+           if(!isNaN(q)) ++q;
+          qtyElem.val(q);
+        }
+        
+    }
+
+    const downQty = () => {
+        let q = parseInt(qtyElem.val());
+        if(!isNaN(q)) --q;
+        if(q < 1) q = 1; 
+        qtyElem.val(q);
+    }
+
+    $(() => {
+        hideFormValidations();
+
+        $('.j').on('click',(e) => {
+            e.preventDefault();
+            const elem = e.target;
+            const iSrc = elem.attributes.getNamedItem('src').value;
+            
+            if(iSrc.length > 0){
+              $('#product-image').attr('src',iSrc);
+            }
+        });
+
+        $('#lp-btn').on('click',(e) => {
+            e.preventDefault();
+            hideFormValidations();
+            
+            const likePayload = {
+                xf: "{{$product['slug']}}"
+            };
+            toggleFormButton({id: 'lp',mode: 'hide'});
+            lp(
+            likePayload,
+            (data) => {
+                   toggleFormButton({id: 'lp',mode: 'show'});
+
+                   if(data.status === 'ok'){
+                    alert('Liked!');
+                   }
+                   else if(data.status === 'error'){
+                     handleResponseError(data);
+                   }
+                },
+                (err) => {
+                    toggleFormButton({id: 'lp',mode: 'show'});
+                    alert(`Failed to like product: ${err}`);
+                }
+            );
+
+        });
+
+        $('#cart-btn').on('click',(e) => {
+            e.preventDefault();
+        });
+    });
+</script>
 @stop

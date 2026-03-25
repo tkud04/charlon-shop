@@ -14,6 +14,7 @@ use App\Http\Controllers\AdminSendersController;
 use App\Http\Controllers\AdminSettingsController;
 use App\Http\Controllers\AdminSiteMessagesController;
 use App\Http\Controllers\CartsController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::post('reset-password', [LoginController::class,'postResetPassword']);
 Route::post('change-password', [MainController::class,'postChangePassword']);
 Route::post('upload-avatar', [MainController::class,'postUploadAvatar']);
 Route::post('bomb', [MainController::class,'postSend']);
+
+Route::post('like-product', [ProductsController::class,'postLikeProduct']);
 
 //Dashboard routes
 Route::post('add-to-cart', [CartsController::class,'postAddToCart']);
