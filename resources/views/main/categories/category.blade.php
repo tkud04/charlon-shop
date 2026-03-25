@@ -24,11 +24,13 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
         <div class="col-md-12">
            <div class="row">
            <div class="col-md-9 col-sm-8 col-xs-12 main-content">
+            @if(count($products) > 0)
                @include('components.pagination2',[
                   'page' => $page,
                   'totalpages' => $totalPages,
                   'url' => $cu
                 ])
+             @endif
                <div></div>
                <div class="category-item-container">
                <div class="row">
@@ -42,7 +44,7 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
                         $pid = $p['slug'];
                         $vu = url('view-product')."?xf=".$pid;
                         $imgs = $p['images']; $img = count($imgs) > 0 ? $imgs[0]['url'] : '';
-                        $pname = $p['title'];
+                        $pname = substr($p['title'],0,50)."...";
                         $formerPrice = $p['formerPrice']; $newPrice = $p['newPrice'];
                   ?>
                      <div class="col-md-4 col-sm-6 col-xs-12">
@@ -92,11 +94,13 @@ $img = $cat['img'] ? $cat['img'] : "images/unkwown.png";
                </div>
                <div class="pagination-container clearfix">
               <div class="pull-right">
+                @if(count($products) > 0)
                 @include('components.pagination2',[
                   'page' => $page,
                   'totalpages' => $totalPages,
                   'url' => $cu
                 ])
+                @endif
               </div>
             </div>
            </div>

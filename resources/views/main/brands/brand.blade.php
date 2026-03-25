@@ -42,7 +42,7 @@ $img = $bra['img'] ? $bra['img'] : "images/unkwown.png";
                         $pid = $p['slug'];
                         $vu = url('view-product')."?xf=".$pid;
                         $imgs = $p['images']; $img = count($imgs) > 0 ? $imgs[0]['url'] : '';
-                        $pname = $p['title'];
+                        $pname = substr($p['title'],0,50)."...";
                         $formerPrice = $p['formerPrice']; $newPrice = $p['newPrice'];
                   ?>
                      <div class="col-md-4 col-sm-6 col-xs-12">

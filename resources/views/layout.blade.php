@@ -209,8 +209,8 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                     </div>
                     <ul class="menu clearfix">
                       <li> <a href="{{url('/')}}">HOME</a> </li>
-                      <li> <a href="{{url('shop')}}">shop</a> </li>
                       <li> <a href="{{url('categories')}}">categories</a> </li>
+                      <li> <a href="{{url('brands')}}">brands</a> </li>
                       <li> <a href="{{url('about')}}">about</a> </li>
                       <li> <a href="{{url('contact')}}">Contact Us</a>  </li>
                     </ul>

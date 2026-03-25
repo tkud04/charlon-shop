@@ -25,7 +25,7 @@ $mode = "admin";
        <div class="col-md-6">
          <div class="form-group" style="padding: 10px;">
              <h6 class='control-label'>Slug (catchy nickname)<span style='color: red;'>*</span></h6>
-             <input class='form-control' id="slug" type="text" placeholder="Brand slug" required="required" disabled>
+             <input class='form-control' id="slug" type="text" placeholder="Brand slug" required="required">
             @include('components.form-validation',['id' => 'slug'])
          </div>
        </div>

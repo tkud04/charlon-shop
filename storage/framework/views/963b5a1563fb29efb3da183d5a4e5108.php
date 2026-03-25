@@ -210,8 +210,8 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                     </div>
                     <ul class="menu clearfix">
                       <li> <a href="<?php echo e(url('/')); ?>">HOME</a> </li>
-                      <li> <a href="<?php echo e(url('shop')); ?>">shop</a> </li>
                       <li> <a href="<?php echo e(url('categories')); ?>">categories</a> </li>
+                      <li> <a href="<?php echo e(url('brands')); ?>">brands</a> </li>
                       <li> <a href="<?php echo e(url('about')); ?>">about</a> </li>
                       <li> <a href="<?php echo e(url('contact')); ?>">Contact Us</a>  </li>
                     </ul>
