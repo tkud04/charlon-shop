@@ -22,33 +22,6 @@ $title = "Cart";
 </style>
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('scripts'); ?>
-<script src="lib/datatables/datatables.min.js"></script>
-
-<script>
-  const confirmRemoveFromCart = (pid) => {
-          confirmAction(pid, 
-              (xf) => {
-           removeFromCart({xf},
-                    () => {
-                         alert('Item removed!');
-                        window.location = 'cart';
-                    },
-                    (err) => {
-                         alert('Failed to remove from cart: ',err);
-                    }
-                 )
-         })
-      
-      }
-
-  $(() => {
-        let tables = $('.69-table');
-        tables?.dataTable();
-    }
-  );
-</script>
-<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
 <div class="container">
@@ -58,13 +31,13 @@ $title = "Cart";
 
 
 <div class="">
-              <table class="table table-hover 69-table">
+<table class="table cart-table">
 				<thead>
 				  <tr>
                     <th>Product</th>
-					<th>Price(&#8358;)</th>
+					<th>Price($)</th>
 					<th>Qty</th>
-					<th>Total(&#8358;)</th>
+					<th>Subtotal($)</th>
           <th></th>
 				  </tr>
 				</thead>
@@ -76,11 +49,15 @@ $title = "Cart";
                   {
                     foreach($items as $item)
                     {
+                      $iid = $item['id'];
+                      $lid = "rfc-".$iid;
                         $itemTotal = 0;
                         $p = $item['product'];
                         $qty = $item['qty'];
                         $pid = $p['slug'];
                         $cat = $p['category'];
+                        $ptitle = $p['title'];
+                        $vu = url('view-product')."?xf=".$p['slug'];
   
                       
                         $img = isset($p['images'][0]['url']) ? $p['images'][0]['url'] : '';
@@ -90,6 +67,7 @@ $title = "Cart";
                        $itemTotal += ($p['price'] * $qty);
                        $total += $itemTotal;
                  ?>
+            <!--
 				  <tr>
 					<td>
                    <div class="row">
@@ -119,6 +97,29 @@ $title = "Cart";
              <p style="margin-top: 10px;"><a type="button" href="<?php echo e($void); ?>" onclick="<?php echo e($ru); ?>" class="btn-close"></a></p>
           </td>
 				  </tr>
+                    -->
+          <tr>
+                                <td class="item-name-col">
+                                    <figure><a href="<?php echo e($vu); ?>"><img src="<?php echo e($img); ?>" alt="<?php echo e($ptitle); ?>"></a></figure>
+                                    <header class="item-name"><a href="<?php echo e($vu); ?>"><?php echo e($ptitle); ?></a></header>
+                                    <p class="item-code"><?php echo e($pid); ?></p>
+                                </td>
+                                <td class="item-price-col">
+                                  <span class="item-price-special">$<?php echo e(number_format($p['price'],2)); ?></span>
+                                </td>
+                                <td class="item-price-col">
+                                <span class="item-price-special">x<?php echo e($qty); ?></span>
+                                </td>
+                                <td class="item-total-col">
+                                  <span class="item-price-special">$<?php echo e(number_format($itemTotal,2)); ?></span> 
+                                  <a id="<?php echo e($lid); ?>" href="#" onclick="confirmRc('<?php echo e($iid); ?>'); return false;" class="close-button"></a>
+                                  <?php echo $__env->make('components.form-loading',[
+                                    'id' => $lid,
+                                    'size' => 20,
+                                    'noMsg' => true
+                                    ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                                </td>
+          </tr>
 				<?php
 					}
 				}
@@ -128,31 +129,109 @@ $title = "Cart";
 			  </table>
             </div>
             </div>
-            <div class="col-md-8" style="margin-top: 20px;"></div>
-            <div class="col-md-4" style="margin-top: 20px;">
-              <div class="card card-body text-end" style="margin-top: 20px; margin-top: 10px;">
-                <h5 class="card-title">Subtotal:  <span class="black total-text">&#8358;<?php echo e(number_format($total,2)); ?></span></h5>
-                <h5 class="card-title">Tax & other deductions: <span class="black total-text">&#8358;<?php echo e(number_format($fee,2)); ?></h5>
-                <h5 class="card-title">Total: <span class="black total-text">&#8358; <?php echo e(number_format($total + $fee,2)); ?></h5>
-              </div>
+    </div>
+    <div class="row">
+    <div class="lg-margin"></div>
+         <div class="col-md-8 col-sm-12 col-xs-12 lg-margin">
+        <div class="tab-container left clearfix">
+            <ul class="nav-tabs" style="height: 340px;">
+                <li class="active"><a href="#shipping" data-toggle="tab">Shipping &amp; Taxes</a></li>
+                <li><a href="#discount" data-toggle="tab">Discount Codes</a></li>
+            </ul>
+            <div class="tab-content clearfix">
+                <div class="tab-pane active" id="shipping">
+                   <dl class="row">
+                    <dt class="col-md-3">Zone 1</dt>
+                    <dd class="col-md-9">
+                      <p>States: California, New York, Nevada, Florida</p>
+                      <p>Price: $80</p>
+                    </dd>
+                    <dt class="col-md-3">Others</dt>
+                    <dd class="col-md-9">
+                      <p>States: othr states in the USA</p>
+                      <p>Price: $50</p>
+                    </dd>
+                   </dl>
+                </div>
+                <div class="tab-pane" id="discount">
+                    <p>Enter your discount coupon code here.</p>
+                    <form action="#">
+                        <div class="input-group"><input type="text" required="" class="form-control" placeholder="Coupon code"></div><input type="submit" class="btn btn-custom-2" value="APPLY COUPON">
+                    </form>
+                </div>
+               
             </div>
-            <div class="col-md-12">
-            <div style="margin-top: 20px; margin-bottom: 10px; display:flex; align-items: center; justify-content:flex-end; ">
-                              <?php echo $__env->make('components.button',[
-                                'title' => 'Continue Shopping',
-                                'href' => url('/'),
-                                'type' => "warning"
-                              ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-                               <?php echo $__env->make('components.button',[
-                                'title' => 'Checkout',
-                                'href' => url('checkout'),
-                                'style' => "margin-left: 10px;",
-                                'type' => "success"
-                                ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-                            </div>
-            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <table class="table total-table">
+            <tbody>
+                <tr>
+                    <td class="total-table-title">Subtotal:</td>
+                    <td>$<?php echo e(number_format($itemTotal,2)); ?></td>
+                </tr>
+                <tr>
+                    <td class="total-table-title">Shipping:</td>
+                    <td>$250.00</td>
+                </tr>
+                <tr>
+                    <td class="total-table-title">TAX (0%):</td>
+                    <td>$0.00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total:</td>
+                    <td>$<?php echo e(number_format($itemTotal + 250,2)); ?></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="md-margin"></div>
+        <a href="<?php echo e(url('categories')); ?>" class="btn btn-custom-2">CONTINUE SHOPPING</a> 
+        <a href="<?php echo e(url('checkout')); ?>" class="btn btn-custom">CHECKOUT</a>
+    </div>
+  
         </div>
 
 
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+  <script>
+     hideFormValidations();
+    const confirmRc = (id) => {
+      const payload = {xf: id};
+      const lid = `rfc-${id}`; 
+
+      toggleFormButton({id: lid,mode: 'hide'});
+
+      confirmAction(payload, 
+              (p) => {
+
+           rffc(p,
+           (data) => {
+                   toggleFormButton({id: lid,mode: 'show'});
+
+                   if(data.status === 'ok'){
+                     alert('Removed!');
+                      window.location = 'cart';
+                   }
+                   else if(data.status === 'error'){
+                     handleResponseError(data);
+                   }
+                },
+                (err) => {
+                    toggleFormButton({id: lid,mode: 'show'});
+                    alert(`Failed to remove from cart: ${err}`)
+                }
+                 )
+         });
+    }
+
+    $(document).ready(() => {
+      console.log('d: test');
+      hideFormValidations();
+    });
+  </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/main/cart/cart.blade.php ENDPATH**/ ?>

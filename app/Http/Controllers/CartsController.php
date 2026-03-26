@@ -138,7 +138,7 @@ class CartsController extends Controller {
          
             else
             {
-               $this->helpers->removeCartItem($req); 
+               $this->helpers->removeCartItem($req['xf']); 
 			   $ret = ['status' => "ok"];
 		    }
 		/*}

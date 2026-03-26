@@ -724,6 +724,22 @@ const atc = async (payload={xf:'',q:''},successCallback,errorCallback) => {
  
 }
 
+const rffc = async (payload={xf:''},successCallback,errorCallback) => {
+  const url = 'api/remove-from-cart';
+
+  await fetchWithJson(
+    {
+      url,
+      method: 'POST',
+      data: [
+        {key: 'xf',value: `${payload.xf}`},
+      ],
+    },
+    successCallback,
+    errorCallback
+  );
+ 
+}
 
 const afp = async (payload=new FormData(),successCallback,errorCallback) => {
   const url = 'api/add-fp';
