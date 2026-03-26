@@ -2,11 +2,11 @@
 $void = 'javascript:void(0)';
 $title = "Cart";
 ?>
-@extends('layout')
 
-@section('title',$title)
 
-@section('styles')
+<?php $__env->startSection('title',$title); ?>
+
+<?php $__env->startSection('styles'); ?>
 <link rel="stylesheet" href="lib/datatables/datatables.min.css"/>
 <style>
   .black{
@@ -20,9 +20,9 @@ $title = "Cart";
     margin-bottom: 25px;
   }
 </style>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 <script src="lib/datatables/datatables.min.js"></script>
 
 <script>
@@ -48,9 +48,9 @@ $title = "Cart";
     }
   );
 </script>
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -95,10 +95,10 @@ $title = "Cart";
                    <div class="row">
                       <div class="col-md-12">
                         <div style="display: flex;">
-                             <img src = "{!! $img !!}" alt="{{$p['title']}}" style="width:100px;height:100px;"/>
+                             <img src = "<?php echo $img; ?>" alt="<?php echo e($p['title']); ?>" style="width:100px;height:100px;"/>
                              <div style="margin-left: 10px; margin-top: 10px;">
-                                <h4>{{$p['title']}}</h4>         
-                                <h5><i>{{$cat['title']}}</i></h5>    
+                                <h4><?php echo e($p['title']); ?></h4>         
+                                <h5><i><?php echo e($cat['title']); ?></i></h5>    
                              </div>
                         <div></div>
                         </div>
@@ -107,16 +107,16 @@ $title = "Cart";
                
           </td>
           <td>    
-               <p style="margin-top: 10px;">{{number_format($p['price'],2)}}</p>
+               <p style="margin-top: 10px;"><?php echo e(number_format($p['price'],2)); ?></p>
           </td>
 		  <td>
-               <p style="margin-top: 10px;">{{number_format($qty,2)}}</p>
+               <p style="margin-top: 10px;"><?php echo e(number_format($qty,2)); ?></p>
           </td>
           <td>
-               <p style="margin-top: 10px;">{{number_format($itemTotal,2)}}</p>
+               <p style="margin-top: 10px;"><?php echo e(number_format($itemTotal,2)); ?></p>
           </td>
           <td>
-             <p style="margin-top: 10px;"><a type="button" href="{{$void}}" onclick="{{$ru}}" class="btn-close"></a></p>
+             <p style="margin-top: 10px;"><a type="button" href="<?php echo e($void); ?>" onclick="<?php echo e($ru); ?>" class="btn-close"></a></p>
           </td>
 				  </tr>
 				<?php
@@ -131,27 +131,28 @@ $title = "Cart";
             <div class="col-md-8" style="margin-top: 20px;"></div>
             <div class="col-md-4" style="margin-top: 20px;">
               <div class="card card-body text-end" style="margin-top: 20px; margin-top: 10px;">
-                <h5 class="card-title">Subtotal:  <span class="black total-text">&#8358;{{number_format($total,2)}}</span></h5>
-                <h5 class="card-title">Tax & other deductions: <span class="black total-text">&#8358;{{number_format($fee,2)}}</h5>
-                <h5 class="card-title">Total: <span class="black total-text">&#8358; {{number_format($total + $fee,2)}}</h5>
+                <h5 class="card-title">Subtotal:  <span class="black total-text">&#8358;<?php echo e(number_format($total,2)); ?></span></h5>
+                <h5 class="card-title">Tax & other deductions: <span class="black total-text">&#8358;<?php echo e(number_format($fee,2)); ?></h5>
+                <h5 class="card-title">Total: <span class="black total-text">&#8358; <?php echo e(number_format($total + $fee,2)); ?></h5>
               </div>
             </div>
             <div class="col-md-12">
             <div style="margin-top: 20px; margin-bottom: 10px; display:flex; align-items: center; justify-content:flex-end; ">
-                              @include('components.button',[
+                              <?php echo $__env->make('components.button',[
                                 'title' => 'Continue Shopping',
                                 'href' => url('/'),
                                 'type' => "warning"
-                              ])
-                               @include('components.button',[
+                              ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+                               <?php echo $__env->make('components.button',[
                                 'title' => 'Checkout',
                                 'href' => url('checkout'),
                                 'style' => "margin-left: 10px;",
                                 'type' => "success"
-                                ])
+                                ], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
                             </div>
             </div>
         </div>
 
 
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/main/cart/cart.blade.php ENDPATH**/ ?>

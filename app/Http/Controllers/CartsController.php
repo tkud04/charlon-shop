@@ -38,11 +38,11 @@ class CartsController extends Controller {
 		{
 			$user = $vu['user'];
 		}
-		/*else
+		else
 		{
 			$u = '/';
 			return redirect()->intended($u);
-		}*/
+		}
 
 		$signals = $this->helpers->signals;
 		$ads = $this->helpers->getAds();
@@ -50,7 +50,7 @@ class CartsController extends Controller {
 		$plugins = $this->helpers->getPlugins(['mode' => 'active']);
 		$c = $this->compactValues;
 
-		$items = $this->helpers->getCartItems();
+		$items = $this->helpers->getCartItems($user->id);
 		$fee = 0;
 		#dd($items);
 
@@ -75,8 +75,8 @@ class CartsController extends Controller {
 	   $ret = ['status' => 'error','message' => "nothing happened"];
 
 		$vu = $this->helpers->getValidUser();
-		//if($vu['check'])
-		//{
+		if($vu['check'])
+		{
 			$user = $vu['user'];
 
 			$req = $request->all();
@@ -93,13 +93,18 @@ class CartsController extends Controller {
          
             else
             {
-               $this->helpers->createCartItem($req); 
+				$cartPayload = [
+					'product_slug' => $req['xf'],
+					'user_id' => $user->id,
+					'qty' => $req['qty'],
+				];
+               $this->helpers->createCartItem($cartPayload); 
 			   $ret = ['status' => "ok"];
 		    }
-		/*}
+		}
 		else{
 			$ret = ['status' => 'error','message' => "auth"];
-		}*/
+		}
 
 		 return json_encode($ret);
     }

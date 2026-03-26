@@ -17,7 +17,7 @@ $sc = 0;
                       <?php
                        foreach($p as $item)
                        {
-                        $vu = url('product')."?pp=".$item['slug'];
+                        $vu = url('view-product')."?xf=".$item['slug'];
                         $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
@@ -45,7 +45,7 @@ $sc = 0;
                       <?php
                        foreach($p as $item)
                        {
-                        $vu = url('product')."?pp=".$item['slug'];
+                        $vu = url('view-product')."?xf=".$item['slug'];
                         $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
@@ -82,7 +82,7 @@ $sc = 0;
                       <?php
                        foreach($f as $item)
                        {
-                        $vu = url('product')."?pp=".$item['slug'];
+                        $vu = url('view-product')."?xf=".$item['slug'];
                         $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
@@ -110,7 +110,7 @@ $sc = 0;
                       <?php
                        foreach($f as $item)
                        {
-                        $vu = url('product')."?pp=".$item['slug'];
+                        $vu = url('view-product')."?xf=".$item['slug'];
                         $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
@@ -147,7 +147,7 @@ $sc = 0;
                       <?php
                        foreach($s as $item)
                        {
-                        $vu = url('product')."?pp=".$item['slug'];
+                        $vu = url('view-product')."?xf=".$item['slug'];
                         $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">
@@ -175,7 +175,7 @@ $sc = 0;
                       <?php
                        foreach($s as $item)
                        {
-                        $vu = url('product')."?pp=".$item['slug'];
+                        $vu = url('view-product')."?xf=".$item['slug'];
                         $images = $item['images']; $img = count($images) > 0 ? $images[0]['url'] : '';
                       ?>
                       <div class="slide-item clearfix">

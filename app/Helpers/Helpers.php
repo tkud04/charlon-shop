@@ -5,6 +5,7 @@ use App\Helpers\Contracts\HelperContract;
 use App\Models\Ads;
 use App\Models\Banners;
 use App\Models\Brands;
+use App\Models\CartItems;
 use App\Models\Settings;
 use Crypt;
 use Carbon\Carbon; 
@@ -1528,7 +1529,7 @@ function getCategory($id="")
 
 function removeCategory($id)
 {
-    $a =  $c = Categories::where('id',$id)
+    $a = Categories::where('id',$id)
     ->orWhere('slug',$id)->first();
 
     if($a != null) $a->delete();
@@ -1586,11 +1587,68 @@ function getBrand($id="")
 
 function removeBrand($id)
 {
-    $a = $c = Brands::where('id',$id)
+    $a = Brands::where('id',$id)
     ->orWhere('slug',$id)->first();
 
     if($a != null) $a->delete();
 }
+
+//CARTS
+function createCartItem($data)
+{
+    $ret = CartItems::create([
+        'user_id' => $data['user_id'],
+        'product_slug' => $data['product_slug'],
+        'qty' => $data['qty'],
+    ]);
+
+    return $ret;
+}
+
+function getCartItems($id,$options=['type' => 'user'])
+{
+  $ret = []; $data = null;
+
+  if($options['type'] === 'user') $data = CartItems::where('user_id',$id)->orderBy('created_at','desc')->get();
+ 
+  if($data != null)
+   {
+    
+        foreach($data as $c)
+        {
+            $temp = $this->getCartItem($c->id);
+            array_push($ret,$temp);
+        }
+   }
+
+ return $ret;
+}
+
+function getCartItem($id="")
+{
+
+  $ret = [];
+    $c = CartItems::where('id',$id)->first();
+
+    if($c != null)
+    {
+     $ret['id'] = $c->id;
+     $ret['user_id'] = $c->user_id;
+     $ret['product'] = $this->getProduct($c->product_slug);
+     $ret['qty'] = $c->qty;
+     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+    }
+
+    return $ret;
+}
+
+function removeCartItem($id)
+{
+    $c = CartItems::where('id',$id)->first();
+
+    if($c != null) $c->delete();
+}
+
 
 
 

@@ -604,6 +604,37 @@ $title = $product['title'];
 
         $('#cart-btn').on('click',(e) => {
             e.preventDefault();
+            const qty = qtyElem.val();
+
+            if(isNaN(qty) || parseInt(qty) < 1){
+              $('#qty-validation').fadeIn();
+            }
+            else{
+                const cartPayload = {
+                    q: qty,
+                    xf: "<?php echo e($product['slug']); ?>"
+                };
+
+                toggleFormButton({id: 'cart',mode: 'hide'});
+               atc(
+            cartPayload,
+            (data) => {
+                   toggleFormButton({id: 'cart',mode: 'show'});
+
+                   if(data.status === 'ok'){
+                    alert('Added!');
+                    window.location = 'cart';
+                   }
+                   else if(data.status === 'error'){
+                     handleResponseError(data);
+                   }
+                },
+                (err) => {
+                    toggleFormButton({id: 'cart',mode: 'show'});
+                    alert(`Failed to add to cart: ${err}`);
+                }
+            );
+            }
         });
     });
 </script>

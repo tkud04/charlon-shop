@@ -706,6 +706,25 @@ const lp = async (payload={xf:''},successCallback,errorCallback) => {
  
 }
 
+const atc = async (payload={xf:'',q:''},successCallback,errorCallback) => {
+  const url = 'api/add-to-cart';
+
+  await fetchWithJson(
+    {
+      url,
+      method: 'POST',
+      data: [
+        {key: 'xf',value: `${payload.xf}`},
+        {key: 'qty',value: `${payload.q}`},
+      ],
+    },
+    successCallback,
+    errorCallback
+  );
+ 
+}
+
+
 const afp = async (payload=new FormData(),successCallback,errorCallback) => {
   const url = 'api/add-fp';
 

@@ -14,7 +14,7 @@ class CartItems extends Model
      * @var array
      */
     protected $fillable = [
-        'product_slug','qty' 
+        'user_id','product_slug','qty' 
     ];
     
 }
