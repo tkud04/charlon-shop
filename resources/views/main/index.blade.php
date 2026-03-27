@@ -8,7 +8,20 @@ $title = "Welcome";
 
 
 @section('content')
-
+@include('components.home-slider',[
+    'data' => $bxProducts
+])
 @stop
 
+@section('scripts')
+<script>
+    const addToCart = (pid) => {
+        console.log('slug captured: ',pid);
+    }
+    $(() => {
+      $('#bxCarousel').carousel();
+    });
+   
+</script>
+@stop
 

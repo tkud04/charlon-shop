@@ -1344,6 +1344,23 @@ function updateProduct($data)
     return $ret;
  }
 
+ function getBxSliderProducts()
+ {
+    $allProducts = $this->getProducts(); $pc = count($allProducts);
+    $ret = []; $temp = [];
+    $groupCount =  $pc >= 4 ? 4 : $pc;
+     shuffle($allProducts);
+
+    for($i = 0; $i < $groupCount; $i++)
+    {
+       $temp = $allProducts[$i];
+       array_push($ret,$temp);
+    }
+
+    return $ret;
+
+ }
+
 function removeProduct($id)
 {
     $a = Products::where('id', $id)

@@ -46,10 +46,11 @@ class MainController extends Controller {
 		$faqs = []; //$this->helpers->getFaqs();
 		$addressSetting = $this->helpers->getSetting('address');
 		$emailSetting = $this->helpers->getSetting('email');
-
+		$bxProducts = $this->helpers->getBxSliderProducts();
+		
 		$contactDetails = $this->helpers->contactDetails;
 
-		array_push($c,'faqs','contactDetails');
+		array_push($c,'faqs','bxProducts','contactDetails');
 
 		$sliderData = $this->helpers->getSliderProducts();
 		$products = $this->helpers->getProducts();
