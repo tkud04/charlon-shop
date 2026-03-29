@@ -54,7 +54,7 @@ class MainController extends Controller {
 
 		$sliderData = $this->helpers->getSliderProducts();
 		$products = $this->helpers->getProducts();
-		#dd($sliderData);
+		//dd($bxProducts);
 		array_push($c,'sliderData','products');
 
         return view('main.index',compact($c));

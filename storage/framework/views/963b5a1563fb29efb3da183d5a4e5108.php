@@ -32,6 +32,9 @@ $shopTitle = "Charlon Shop";
    <link rel="stylesheet" href="lib/sweet-alert/sweetalert2.css">
    <link rel="stylesheet" href="css/mmm.css?ver=<?php echo e(rand(999, 9999999)); ?>">
 
+   <link rel="stylesheet" href="lib/hero-slider/style.css">
+<script src="lib/hero-slider/app.js"></script>
+
    <?php echo $__env->yieldContent('styles'); ?>
 </head>
 
