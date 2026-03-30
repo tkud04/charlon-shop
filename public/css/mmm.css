@@ -20,3 +20,22 @@
     color: #fff !important;
     
 }
+
+.hero-card{
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #efefef;
+}
+
+.hero-controls{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 5px;
+}
+
+.hero-body{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}

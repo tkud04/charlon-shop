@@ -1,69 +1,52 @@
-
 <?php
 $items = (isset($data) && count($data) > 0) ? $data : [];
 ?>
-<div class="container">		
+<div class="container">
    <div class="row">
-      <div class="col-md-12">
+       <div class='col-md-12'>
+           <div class="hero-card">
       <?php
-       if(count($items) > 0)
-       {
+      if (count($items) > 0) {
+
+         $ctr = count($items) >= 4 ? 4 : count($items);
+         $imgPos = 'left';
+         for ($x = 0; $x < $ctr; $x++) {
+            $i = $items[$x];
+            $slug = $i['slug'];
+            $title = substr($i['title'],0, 50)."...";
+            $img = isset($i['images'][0]) ? $i['images'][0]['url'] : '';
+            $brand = $i['brand']['title'];
+            $cat = $i['category']['title'];
+            $vu = url('view-product')."?xf=".$slug;
+            $cu = url('category')."?xf=".$i['category']['slug'];
+            $bu = url('brand')."?xf=".$i['brand']['slug'];
       ?>
-      <section class="cd-hero js-cd-hero js-cd-autoplay">
-         <ul class="cd-hero__slider">
-             <?php
-                $ctr = count($items) >= 4 ? 4 : count($items);
-                $imgPos = 'left';
-                for($x = 0; $x < $ctr - 1; $x++)
-                { 
-                  $i = $items[$x];
-                  $title = $i['title'].substr(0,20);
-                  $img = isset($i['images'][0]) ? $i['images'][0]['url'] : '';
-                  $imgHtml = "<div class='cd-hero__content cd-hero__content--half-width cd-hero__content--img'>";
-					        $imgHtml .= "<img src='".$img."' alt='".$title."'>";
-				          $imgHtml .= "</div>";
-                  $imgPos = $imgPos === 'left' ? 'right' : 'left';
-                  $brand = $i['brand']['title'];
-             ?>
-                @if($imgPos === 'left')
-                  {!! $imgHtml !!}
-                @endif
-
-                <div class="cd-hero__content cd-hero__content--half-width">
-				        	<h2>{{$title}}</h2>
-				        	<p>{{$i['category']['title']}}</p>
-					        <a href="#0" class="cd-hero__btn">Start</a>
-					        <a href="#0" class="cd-hero__btn cd-hero__btn--secondary">Learn More</a>
-				        </div> <!-- .cd-hero__content -->
-
-                @if($imgPos === 'right')
-                    {!! $imgHtml !!}
-                @endif
-             <?php
-                }
-             ?>
-         </ul>
-         <div class="cd-hero__nav js-cd-nav">
-			      <nav>
-			      	<span class="cd-hero__marker cd-hero__marker--item-1 js-cd-marker"></span>
-				       
-			        <ul>
-                 <?php
-                 for($x = 0; $x < $ctr; ++$x)
-                 {
-                  $ss = $x === 0 ? "class='cd-selected'" : '';
-                 ?>
-					          <li{{$ss}}><a href="#0">{{$brand}}</a></li>
-                <?php
-                 }
-                ?>
-				     </ul>
-		      	</nav> 
-		     </div> <!-- .cd-hero__nav -->
-      </section>
+                 <div class="row cd cd-{{$x}}">
+                     <div class="col-md-6">
+                        <img src="{{$img}}" alt="{{$title}}" />
+                     </div>
+                     <div class="col-md-6">
+                      <h2 style="margin-top: 20%;"><a href="{{$vu}}">{{$title}}</a></h2>
+                        <p><a href="{{$bu}}">{{$brand}}</a> | <a href="{{$cu}}">{{$cat}}</a></p>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <a class="btn btn-default btn-lg" href="{{$vu}}" role="button">View more</a>
+                            <a class="btn btn-custom-2 btn-lg" id="index-cart-btn" href="#" onclick="accc('{{$slug}}'); return false;" role="button">Add to cart</a>
+                        </div>
+                        
+                       
+                        @include('components.form-loading',['id' => 'index-cart'])
+                     </div>
+                 </div>
       <?php
-       }
+         }
+      }
       ?>
-      </div>
+   </div>
+   <div class="hero-controls">
+      <a class="btn btn-default btn-lg" href="#" onclick="prevSlider(); return false;" role="button"><i class="fa fa-chevron-left"></i></a>
+      <a class="btn btn-default btn-lg" href="#" onclick="nextSlider(); return false;" role="button"><i class="fa fa-chevron-right"></i></a>
+   </div>
+     
+   </div>
    </div>
 </div>

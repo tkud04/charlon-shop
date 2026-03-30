@@ -26,14 +26,12 @@ $shopTitle = "Charlon Shop";
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/prettyPhoto.css">
     <link rel="stylesheet" href="css/colpick.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="lib/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="lib/owl-carousel/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
    <link rel="stylesheet" href="lib/sweet-alert/sweetalert2.css">
    <link rel="stylesheet" href="css/mmm.css?ver=<?php echo e(rand(999, 9999999)); ?>">
-
-   <link rel="stylesheet" href="lib/hero-slider/style.css">
-<script src="lib/hero-slider/app.js"></script>
 
    <?php echo $__env->yieldContent('styles'); ?>
 </head>
@@ -428,7 +426,7 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
     <script src="js/jquery.hoverIntent.min.js"></script>
     <script src="js/twitter/jquery.tweet.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="lib/owl-carousel/owl.carousel.min.js"></script>
     <script src="js/jflickrfeed.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/colpick.js"></script>
