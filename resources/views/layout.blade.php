@@ -1,7 +1,7 @@
 <?php
 $void = "javascript:void(0)";
 $isDevMode = false;
-$shopTitle = "Charlon Shop";
+$shopTitle = "Computer City";
 
 ?>
 
@@ -336,9 +336,6 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                 <ul class="links">
                   <li>
                     <a href="{{url('new')}}">New products</a>
-                  </li>
-                  <li>
-                    <a href="{{url('top-sellers')}}">Top sellers</a>
                   </li>
                   <li>
                     <a href="{{url('categories')}}">Categories</a>
