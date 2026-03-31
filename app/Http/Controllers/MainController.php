@@ -54,8 +54,11 @@ class MainController extends Controller {
 
 		$sliderData = $this->helpers->getSliderProducts();
 		$products = $this->helpers->getProducts();
-		//dd($bxProducts);
-		array_push($c,'sliderData','products');
+		$topProducts = $products;
+		shuffle($topProducts);
+		$categories = $this->helpers->getCategories();
+		//dd($categories);
+		array_push($c,'sliderData','products','categories','topProducts');
 
         return view('main.index',compact($c));
        // return view('main.temp',compact($c));

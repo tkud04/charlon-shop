@@ -39,3 +39,26 @@
     align-items: center; 
     justify-content: center; 
 }
+
+
+.flex-centre{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.wwd{
+    width: 124px;
+    height: 124px;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin: 0 auto 20px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wwd-icon{
+   
+    font-size: 100px;
+}

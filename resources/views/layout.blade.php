@@ -26,8 +26,7 @@ $shopTitle = "Charlon Shop";
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/prettyPhoto.css">
     <link rel="stylesheet" href="css/colpick.css">
-    <link rel="stylesheet" href="lib/owl-carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="lib/owl-carousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
    <link rel="stylesheet" href="lib/sweet-alert/sweetalert2.css">
