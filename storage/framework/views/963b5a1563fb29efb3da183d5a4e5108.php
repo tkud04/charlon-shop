@@ -358,7 +358,6 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                   </li>
                   <li><a href="<?php echo e(url('dashboard')); ?>">Dashboard</a></li>
                   <li><a href="<?php echo e(url('profile')); ?>">Profile</a></li>
-                  <li><a href="<?php echo e(url('wishlist')); ?>">Wishlist</a></li>
                     <?php if($isAdmin): ?>
                     <li><a href="<?php echo e(url('admin')); ?>">Admin Dashboard</a></li>
                     <?php endif; ?>
@@ -374,7 +373,7 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
               <div class="col-md-3 col-sm-12 col-xs-12 widget">
                 <h3>FACEBOOK LIKE BOX</h3>
                 <div class="facebook-likebox">
-                  <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fenvato&amp;colorscheme=dark&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"></iframe>
+                 
                 </div>
               </div>
             </div>
