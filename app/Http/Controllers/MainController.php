@@ -47,10 +47,11 @@ class MainController extends Controller {
 		$addressSetting = $this->helpers->getSetting('address');
 		$emailSetting = $this->helpers->getSetting('email');
 		$bxProducts = $this->helpers->getBxSliderProducts();
+		$points = $this->helpers->whyChooseUsArr;
 		
 		$contactDetails = $this->helpers->contactDetails;
 
-		array_push($c,'faqs','bxProducts','contactDetails');
+		array_push($c,'faqs','bxProducts','contactDetails','points');
 
 		$sliderData = $this->helpers->getSliderProducts();
 		$products = $this->helpers->getProducts();
@@ -443,7 +444,6 @@ dd($user);
             $validator = Validator::make($req, [
                 'name' => 'required',
                 'email' => 'required|email',
-                'body' => 'required',
                 'subject' => 'required',
             ]);
          
@@ -456,6 +456,7 @@ dd($user);
             else
             {
 				if(!isset($req['email'])) $req['email'] = '';
+				if(!isset($req['body'])) $req['body'] = '';
                $this->helpers->createSiteMessage($req); 
 			   //TODO: send email to admin
 			   $ret = ['status' => "ok"];
@@ -562,7 +563,8 @@ dd($user);
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
 		$sliderData = $this->helpers->getSliderProducts();
-		array_push($c,'sliderData');
+		$points = $this->helpers->whyChooseUsArr;
+		array_push($c,'sliderData','points');
 
 
 		

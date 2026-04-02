@@ -16,6 +16,7 @@ use App\Models\Categories;
 use App\Models\ProductImages;
 use App\Models\ProductLikes;
 use App\Models\Products;
+use App\Models\SiteMessages;
 use GuzzleHttp\Client;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\MailerInterface;
@@ -307,6 +308,24 @@ class Helper //implements HelperContract
             'status' => 'ok'
          ],
        
+    ];
+
+    public $whyChooseUsArr = [
+        [
+          'icon' => "desktop",
+          'title' => "Latest Products",
+          'desc' => "We strive to surprise and delight you every day, with curated collections of computers, accessories and electronics that are relevant to everyday life."
+        ],
+        [
+          'icon' => "credit-card",
+          'title' => "Affordable Prices",
+          'desc' => "Stop sacrificing quality for price. Experience products manfactred with premium craftsmanship that actually fits your budget. ✨ Discover why savvy buyers are switching. Shop now!"
+        ],
+        [
+          'icon' => "truck",
+          'title' => "Free Shipping",
+          'desc' => "Free shipping available all over the United States (<i>on orders of $500 or more</i>). Spend more and skip the shipping fees!"
+        ],
     ];
 
 
@@ -1666,6 +1685,62 @@ function removeCartItem($id)
     if($c != null) $c->delete();
 }
 
+function createSiteMessage($data)
+{
+ 
+    $ret = SiteMessages::create(['name' => $data['name'],
+                                          'email' => $data['email'], 
+                                           'subject' => $data['subject'],
+                                           'body' => $data['body'],
+                                           ]);
+                                           
+     return $ret;
+}
+ 
+ function getSiteMessage($id)
+ {
+     $ret = [];
+     $u = SiteMessages::where('id',$id)->first();
+
+    if($u != null)
+     {
+          $temp['name'] = $u->name; 
+            $temp['email'] = $u->email;
+            $temp['subject'] = $u->subject;
+            $temp['body'] = $u->body;
+             $temp['id'] = $u->id; 
+             $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);  
+             $ret = $temp; 
+     }                          
+                                            
+      return $ret;
+ }
+ 
+ function getSiteMessages($id="all")
+ {
+     $ret = [];
+     if($id == "all") $uu = SiteMessages::where('id','>','0')->orderBy('created_at','desc')->get();
+
+    if($uu != null)
+     {
+        foreach($uu as $u)
+          {
+             $temp = $this->getSiteMessage($u->id);
+             array_push($ret,$temp); 
+          }
+     }                          
+                                            
+      return $ret;
+ }	  
+
+ 
+
+ function removeSiteMessage($id)
+ {
+     $p = SiteMessages::where('id',$id)->first();
+
+     if($p != null) $p->delete();
+ }
 
 
 

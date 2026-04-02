@@ -88,26 +88,6 @@ $title = "Welcome";
     'style' => "margin-top: 30px;"
   ])
 
-  <?php
-   $points = [
-    [
-      'icon' => "desktop",
-      'title' => "Latest Products",
-      'desc' => "We strive to surprise and delight you every day, with curated collections of computers, accessories and electronics that are relevant to everyday life."
-    ],
-    [
-      'icon' => "credit-card",
-      'title' => "Affordable Prices",
-      'desc' => "Stop sacrificing quality for price. Experience products manfactred with premium craftsmanship that actually fits your budget. ✨ Discover why savvy buyers are switching. Shop now!"
-    ],
-    [
-      'icon' => "truck",
-      'title' => "Free Shipping",
-      'desc' => "Free shipping available all over the United States (<i>on orders of $500 or more</i>). Spend more and skip the shipping fees!"
-    ],
-   ];
-  ?>
-
 <div class="row" style="margin-top: 15px;">
   <?php
    foreach($points as $p)

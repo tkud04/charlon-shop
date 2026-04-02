@@ -68,7 +68,7 @@ $iap = true;
                         <p>{{$d['body']}}</p>  
                     </td>
                     <td>
-                        <a href="#" id="rsm-{{$sid}}-btn" onclick="confirmRemoveMessage({xf:'{{$sid}}'}); return false;" class="btn btn-danger"><i class="fa-light fa-trash"></i>  </a>
+                        <a href="#" id="rsm-{{$sid}}-btn" onclick="confirmRemoveMessage({xf:'{{$sid}}'}); return false;" class="btn btn-danger"><b>X</b>  </a>
                         @include('components.form-loading',['id' => 'rsm-'.$sid])
                     </td>
 				  </tr>
