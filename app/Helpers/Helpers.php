@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Helpers;
 
 use App\Helpers\Contracts\HelperContract;
@@ -8,7 +9,7 @@ use App\Models\Brands;
 use App\Models\CartItems;
 use App\Models\Settings;
 use Crypt;
-use Carbon\Carbon; 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Senders;
 use App\Models\Plugins;
@@ -29,44 +30,47 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schedule;
 
 class Helper //implements HelperContract
-{    
+{
 
-            public $emailConfig = [
-                           'ss' => 'smtp.gmail.com',
-                           'se' => 'uwantbrendacolson@gmail.com',
-                           'sp' => '587',
-                           'su' => 'uwantbrendacolson@gmail.com',
-                           'spp' => 'kudayisi',
-                           'sa' => 'yes',
-                           'sec' => 'tls'
-                       ];     
-                        
-             public $signals = ['okays'=> ["login-status" => "Sign in successful",            
-                     "add-sender-status" => "Sender added!",
-                     "update-profile-status" => "Profile updated!",
-                     "new-tracking-status" => "Tracking added!",
-                     "tracking-status" => "Tracking updated!",
-                     "remove-tracking-status" => "Tracking removed!",
-                     "contact-status" => "Message sent! Our customer service representatives will get back to you shortly.",
-                     ],
-                     'errors'=> ["login-status-error" => "There was a problem signing in, please contact support.",
-					 "add-sender-status-error" => "There was a problem adding sender.",
-					 "update-status-error" => "There was a problem updating the account, please contact support.",
-					 "contact-status-error" => "There was a problem sending your message, please contact support.",
-                     "tracking-status-error" => "Tracking info does not exist!",
-                    ]
-                   ];
- 
-             public $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-             public $nums = '0123456789';
+    public $emailConfig = [
+        'ss' => 'smtp.gmail.com',
+        'se' => 'uwantbrendacolson@gmail.com',
+        'sp' => '587',
+        'su' => 'uwantbrendacolson@gmail.com',
+        'spp' => 'kudayisi',
+        'sa' => 'yes',
+        'sec' => 'tls'
+    ];
+
+    public $signals = [
+        'okays' => [
+            "login-status" => "Sign in successful",
+            "add-sender-status" => "Sender added!",
+            "update-profile-status" => "Profile updated!",
+            "new-tracking-status" => "Tracking added!",
+            "tracking-status" => "Tracking updated!",
+            "remove-tracking-status" => "Tracking removed!",
+            "contact-status" => "Message sent! Our customer service representatives will get back to you shortly.",
+        ],
+        'errors' => [
+            "login-status-error" => "There was a problem signing in, please contact support.",
+            "add-sender-status-error" => "There was a problem adding sender.",
+            "update-status-error" => "There was a problem updating the account, please contact support.",
+            "contact-status-error" => "There was a problem sending your message, please contact support.",
+            "tracking-status-error" => "Tracking info does not exist!",
+        ]
+    ];
+
+    public $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    public $nums = '0123456789';
 
 
 
-        public $psSecretKey = "sk_test_6fd50bf759cd1e058c01d3b186cbd16cae2ab05b";
-        
+    public $psSecretKey = "sk_test_6fd50bf759cd1e058c01d3b186cbd16cae2ab05b";
 
-     
-   
+
+
+
 
     public $contactInfo = [
         'email' => "info@epic-trade.com",
@@ -82,41 +86,41 @@ class Helper //implements HelperContract
             'title' => "Buying",
             'data' => [
                 [
-                  'question' => "How do you buy predictions?",
-                  'answer' => "<p>To buy predictions, you have to <a href='signup'>Sign up</a> first. After that, you then fund your wallet with points.</p>"
-                              ."<p>After funding your account, navigate to <a href='/'>home page</a>. </p>"
-                              ."<p>On the home page, predictions are displayed in 2 major places; <b>Winning Tips</b> and <b>other Tips</b> sections.</p>"
-                              ."<p>Each of the 2 sections above are <i>slides</i>, allowing you to browse through all the available predictions for each day, with ease!</p>"
-                              ."<p>Predictions are grouped by seller. Click on the desired seller's card. You would then be redirected to the <b>seller's profile page</b>.</p>"
-                              ."<p>On the seller's page, you would find useful information about the seller; the seller's win ratio, ongoing predictions and predictions for previous days.</p>"
-                              ."<p>You would see a <b>Buy now</b> button beside an available prediction. Click on it to complete the transaction!</p>"
+                    'question' => "How do you buy predictions?",
+                    'answer' => "<p>To buy predictions, you have to <a href='signup'>Sign up</a> first. After that, you then fund your wallet with points.</p>"
+                        . "<p>After funding your account, navigate to <a href='/'>home page</a>. </p>"
+                        . "<p>On the home page, predictions are displayed in 2 major places; <b>Winning Tips</b> and <b>other Tips</b> sections.</p>"
+                        . "<p>Each of the 2 sections above are <i>slides</i>, allowing you to browse through all the available predictions for each day, with ease!</p>"
+                        . "<p>Predictions are grouped by seller. Click on the desired seller's card. You would then be redirected to the <b>seller's profile page</b>.</p>"
+                        . "<p>On the seller's page, you would find useful information about the seller; the seller's win ratio, ongoing predictions and predictions for previous days.</p>"
+                        . "<p>You would see a <b>Buy now</b> button beside an available prediction. Click on it to complete the transaction!</p>"
                 ],
                 [
                     'question' => "How do you fund your wallet, to buy predictions?",
                     'answer' => "<p>To fund wallet, first navigate to your <a href='dashboard'>Dashboard</a>. After that, you then fund your wallet with points.</p>"
-                                ."<p>Under the <b>Quick Links</b>, click on Fund wallet. <i class='fa fa-info-circle'></i> <b>1 prediction</b> costs <b>1 point</b>. 1 point = <b>&#8358;200</b>.</p>"
-                                ."<p><i class='fa fa-info-circle'></i> The minimum amount of points that you can buy is 5 points (<b>&#8358;1,000</b>).</p>"
-                                ."<p>On the page, tell us how many points you want, then click on <b>Click here to fund wallet</b>.</p>"
-                                ."<p>If successful, a modal would be displayed, showing you instructions on how to make payment.</p>"
-                                ."<p>Once admins confirm your payment, your wallet would be credited with points!</p>"
+                        . "<p>Under the <b>Quick Links</b>, click on Fund wallet. <i class='fa fa-info-circle'></i> <b>1 prediction</b> costs <b>1 point</b>. 1 point = <b>&#8358;200</b>.</p>"
+                        . "<p><i class='fa fa-info-circle'></i> The minimum amount of points that you can buy is 5 points (<b>&#8358;1,000</b>).</p>"
+                        . "<p>On the page, tell us how many points you want, then click on <b>Click here to fund wallet</b>.</p>"
+                        . "<p>If successful, a modal would be displayed, showing you instructions on how to make payment.</p>"
+                        . "<p>Once admins confirm your payment, your wallet would be credited with points!</p>"
                 ],
                 [
                     'question' => "What happens when you buy prediction and it casts?",
                     'answer' => "<p>Though we don't guarantee the success of any prediction,  we firmly believe in our <b>verified sellers</b>; some have confidently given us <b>80% success rate</b> on their predictions!</p>"
-                                ."<p>But this is football, <b>anything can happen</b>. If you purchase a prediction and the game is lost, 1 point is returned from escrow and refunded back to your wallet.</p>"
+                        . "<p>But this is football, <b>anything can happen</b>. If you purchase a prediction and the game is lost, 1 point is returned from escrow and refunded back to your wallet.</p>"
                 ],
                 [
                     'question' => "Where can you find predictions that you have purchased?",
                     'answer' => "<p>When you purchase a prediction, they can be accessed from either your <a href='dashboard'>dashboard</a> or <a href='my-predictions'>My Predictions</a> pages.</p>"
-                               ."<p>On both pages, the predictions are displayed in a smart table. This table allows you to search for your predictions using any keyword (date, club name, free or not, etc).</p>"
-                               ."<p>These tables are divided into 2 tabs; 
+                        . "<p>On both pages, the predictions are displayed in a smart table. This table allows you to search for your predictions using any keyword (date, club name, free or not, etc).</p>"
+                        . "<p>These tables are divided into 2 tabs; 
                                  <ol>
                                    <li><b>Predictions Purchased</b>: Here you'll find all the predictions that you've bought with points.</li>
                                    <li><b>Predictions for Sale</b>: Here you'll find all the predictions that you've posted for sale, along with the ones for free.</li>
                                  </ol>
                                .</p>"
                 ],
-           ]
+            ]
         ],
         [
             'title' => "Selling",
@@ -124,46 +128,46 @@ class Helper //implements HelperContract
                 [
                     'question' => "what do you need to know to start selling predictions?",
                     'answer' => "<p>If you're interested in selling predictions on <a href='/'>our platform</a>, here are a couple of things you must be aware of:</p>"
-                               ."<p>1. <b>Free Game</b>: Each day you post predictions for sale, you must also post at least 1 free prediction. <b>We will not display the predictions of sellers who fail to do this</b>.</p>"
-                               ."<p>2. <b>Pricing and Commissions</b>: <ul>"
-                               ."<li><p >Buyers are charged <b>1 point</b> per prediction.</p></li>"
-                               ."<li><p >1 point is equivalent to <b>&#8358;200</b>.</p></li>"
-                               ."<li><p ><a href='/'>Safebets NG</a> deducts 50% (<b>&#8358;100</b>) per sale, as commission for selling on our platform.</p></li>"
-                              
-                               ."</ul></p>"
-                               ."<p>3. <b>Prediction Outcomes</b>: <ul>"
-                                ."<li><p >If a prediction is won, all your buyers points would be transferred from escrow to your wallet</p></li>"
-                                ."<li><p >If a prediction is lost, all your buyers points would be transferred from escrow back to their individual wallets</p></li>"
-                               ."</ul></p>"
+                        . "<p>1. <b>Free Game</b>: Each day you post predictions for sale, you must also post at least 1 free prediction. <b>We will not display the predictions of sellers who fail to do this</b>.</p>"
+                        . "<p>2. <b>Pricing and Commissions</b>: <ul>"
+                        . "<li><p >Buyers are charged <b>1 point</b> per prediction.</p></li>"
+                        . "<li><p >1 point is equivalent to <b>&#8358;200</b>.</p></li>"
+                        . "<li><p ><a href='/'>Safebets NG</a> deducts 50% (<b>&#8358;100</b>) per sale, as commission for selling on our platform.</p></li>"
+
+                        . "</ul></p>"
+                        . "<p>3. <b>Prediction Outcomes</b>: <ul>"
+                        . "<li><p >If a prediction is won, all your buyers points would be transferred from escrow to your wallet</p></li>"
+                        . "<li><p >If a prediction is lost, all your buyers points would be transferred from escrow back to their individual wallets</p></li>"
+                        . "</ul></p>"
                 ],
                 [
-                  'question' => "how do you sell predictions?",
-                  'answer' => "<p>To post a prediction for sale, first navigate to your <a href='dashboard'>Dashboard</a>. After that, you then post your prediction.</p>"
-                              ."<p>Under the <b>Quick Links</b>, click on <b>Sell Predictions</b>. Alternatively, you can go to <a href='predictions'>My Predictions</a> page, and click on <b>Sell Predictions</b>.</p>"
-                              ."<p><i class='fa fa-info-circle'></i> Uploading of predictions are done <b>manually and one-by-one, via the form provided</b>. This was done to reduce the number of 'unsure' predictions on our platform. Better to post 3 sure predictions than to load our buyers with over 20+ random ones!</p>"
-                              ."<p>On the page, fill the form provided with the details of the prediction , then click on <b>Add prediction</b> to submit.</p>"
-               ],
-               [
-                'question' => "how do you track sales for each prediction?",
-                'answer' => "<p>You can track sales on each prediction from the <b>My Predictions</b> page</p>."
-                            ."<p>Go to <a href='my-predictions'>My Predictions</a> page.</p>"
-                            ."<p>On the list for each prediction, the total number of users who purchased your predictions would be displayed (in real-time, so its always updated).</p>"
-               ],
-               [
+                    'question' => "how do you sell predictions?",
+                    'answer' => "<p>To post a prediction for sale, first navigate to your <a href='dashboard'>Dashboard</a>. After that, you then post your prediction.</p>"
+                        . "<p>Under the <b>Quick Links</b>, click on <b>Sell Predictions</b>. Alternatively, you can go to <a href='predictions'>My Predictions</a> page, and click on <b>Sell Predictions</b>.</p>"
+                        . "<p><i class='fa fa-info-circle'></i> Uploading of predictions are done <b>manually and one-by-one, via the form provided</b>. This was done to reduce the number of 'unsure' predictions on our platform. Better to post 3 sure predictions than to load our buyers with over 20+ random ones!</p>"
+                        . "<p>On the page, fill the form provided with the details of the prediction , then click on <b>Add prediction</b> to submit.</p>"
+                ],
+                [
+                    'question' => "how do you track sales for each prediction?",
+                    'answer' => "<p>You can track sales on each prediction from the <b>My Predictions</b> page</p>."
+                        . "<p>Go to <a href='my-predictions'>My Predictions</a> page.</p>"
+                        . "<p>On the list for each prediction, the total number of users who purchased your predictions would be displayed (in real-time, so its always updated).</p>"
+                ],
+                [
                     'question' => "how do you withdraw your sales?",
                     'answer' => "<p>To withdraw funds from <a href='/'>Safebets NG</a>, a few requirements must be met: <ul>"
-                               ."<li><p >1. You must complete your KYC before you can withdraw.</p></li>"
-                               ."<li><p >To complete your KYC, Send an email titled <b>safebets kyc</b> to <a href='mailto:support@safebets.com.ng'>support@safebets.com.ng</a></b> using <b>your login email</b>.</p></li>"
-                               ."<li><p ><b>Email must contain a copy of your ID.</b> Acceptable IDs:<b> Voters Card, NIN</b>. <i>Name on ID must match name on dashboard</i>.</p></li>"
-                               ."<li><p >2. Minimum amount to withdraw <b>&#8358;2,000.00</b>.</p></li>"
-                               ."</ul></p>"
-                               ."<p>Navigate to your <a href='dashboard'>Dashboard</a>.</p>"
-                               ."<p>Under the <b>Quick Links</b>, click on Withdraw.</p>"
-                               ."<p>Enter the amount you want to withdraw. Also provide a Whatsapp number where admins can reach you, to process your withdrawal.</p>"
-                               ."<p>Click on <b>Withdraw funds</b></p>"
-                               ."<p></p>"
-               ],
-           ]
+                        . "<li><p >1. You must complete your KYC before you can withdraw.</p></li>"
+                        . "<li><p >To complete your KYC, Send an email titled <b>safebets kyc</b> to <a href='mailto:support@safebets.com.ng'>support@safebets.com.ng</a></b> using <b>your login email</b>.</p></li>"
+                        . "<li><p ><b>Email must contain a copy of your ID.</b> Acceptable IDs:<b> Voters Card, NIN</b>. <i>Name on ID must match name on dashboard</i>.</p></li>"
+                        . "<li><p >2. Minimum amount to withdraw <b>&#8358;2,000.00</b>.</p></li>"
+                        . "</ul></p>"
+                        . "<p>Navigate to your <a href='dashboard'>Dashboard</a>.</p>"
+                        . "<p>Under the <b>Quick Links</b>, click on Withdraw.</p>"
+                        . "<p>Enter the amount you want to withdraw. Also provide a Whatsapp number where admins can reach you, to process your withdrawal.</p>"
+                        . "<p>Click on <b>Withdraw funds</b></p>"
+                        . "<p></p>"
+                ],
+            ]
         ]
     ];
 
@@ -249,14 +253,14 @@ class Helper //implements HelperContract
 
     public $testProducts = [
         [
-           'id' => '1',
-           'slug' => 'jacket-suiting-blazer',
-           'category' => 'women',
-           'title' => 'Jacket Suiting Blazer',
-           'images' => [['url' => 'images/products/thumbnails/item1.jpg']],
+            'id' => '1',
+            'slug' => 'jacket-suiting-blazer',
+            'category' => 'women',
+            'title' => 'Jacket Suiting Blazer',
+            'images' => [['url' => 'images/products/thumbnails/item1.jpg']],
             'description' => '',
-           'price' => '40',
-           'status' => 'ok'
+            'price' => '40',
+            'status' => 'ok'
         ],
         [
             'id' => '2',
@@ -267,8 +271,8 @@ class Helper //implements HelperContract
             'description' => '',
             'price' => '18.5',
             'status' => 'ok'
-         ],
-         [
+        ],
+        [
             'id' => '3',
             'slug' => 'womens-lauren-dress',
             'category' => 'women',
@@ -277,8 +281,8 @@ class Helper //implements HelperContract
             'description' => '',
             'price' => '30',
             'status' => 'ok'
-         ],
-         [
+        ],
+        [
             'id' => '4',
             'slug' => 'jacket-lauren-blazer',
             'category' => 'women',
@@ -287,8 +291,8 @@ class Helper //implements HelperContract
             'description' => '',
             'price' => '40',
             'status' => 'ok'
-         ],
-         [
+        ],
+        [
             'id' => '5',
             'slug' => 'jacket-suiting-blazer-2',
             'category' => 'women',
@@ -297,8 +301,8 @@ class Helper //implements HelperContract
             'description' => '',
             'price' => '18.5',
             'status' => 'ok'
-         ],
-         [
+        ],
+        [
             'id' => '6',
             'slug' => 'women-spahyr-dress',
             'category' => 'women',
@@ -307,115 +311,115 @@ class Helper //implements HelperContract
             'description' => '',
             'price' => '30',
             'status' => 'ok'
-         ],
-       
+        ],
+
     ];
 
     public $whyChooseUsArr = [
         [
-          'icon' => "desktop",
-          'title' => "Latest Products",
-          'desc' => "We strive to surprise and delight you every day, with curated collections of computers, accessories and electronics that are relevant to everyday life."
+            'icon' => "desktop",
+            'title' => "Latest Products",
+            'desc' => "We strive to surprise and delight you every day, with curated collections of computers, accessories and electronics that are relevant to everyday life."
         ],
         [
-          'icon' => "credit-card",
-          'title' => "Affordable Prices",
-          'desc' => "Stop sacrificing quality for price. Experience products manfactred with premium craftsmanship that actually fits your budget. ✨ Discover why savvy buyers are switching. Shop now!"
+            'icon' => "credit-card",
+            'title' => "Affordable Prices",
+            'desc' => "Stop sacrificing quality for price. Experience products manfactred with premium craftsmanship that actually fits your budget. ✨ Discover why savvy buyers are switching. Shop now!"
         ],
         [
-          'icon' => "truck",
-          'title' => "Free Shipping",
-          'desc' => "Free shipping available all over the United States (<i>on orders of $500 or more</i>). Spend more and skip the shipping fees!"
+            'icon' => "truck",
+            'title' => "Free Shipping",
+            'desc' => "Free shipping available all over the United States (<i>on orders of $500 or more</i>). Spend more and skip the shipping fees!"
         ],
     ];
 
 
-    
+
     public $deletedUser = [
-      'id' => '',
-      'fname' => 'User',
-      'lname' => 'Deleted',
-      'phone' => 'default',
-      'email' => 'default@safebets.com.ng',
-      'username' => 'deleted',
-      'wallet' => [],
-      'gender' => '',
-      'role' => 'deleted',
-      'avatar' => '',
-      'status' => 'deleted',
-      'verified' => 'no',
-      'complete_signup' => 'no',
+        'id' => '',
+        'fname' => 'User',
+        'lname' => 'Deleted',
+        'phone' => 'default',
+        'email' => 'default@safebets.com.ng',
+        'username' => 'deleted',
+        'wallet' => [],
+        'gender' => '',
+        'role' => 'deleted',
+        'avatar' => '',
+        'status' => 'deleted',
+        'verified' => 'no',
+        'complete_signup' => 'no',
     ];
 
     public $DEFAULT_DATE_FORMAT = "jS F, Y";
 
 
-   
-/***********************************************************************************/
-       function isValidUser($u)
-       {
-         $ret = false;
 
-         if(isset($u) && $u->status === 'ok')
-         {
-           $ret = true;
-         }
-         return $ret;
-       }
+    /***********************************************************************************/
+    function isValidUser($u)
+    {
+        $ret = false;
 
-       function getValidUser()
-       {
+        if (isset($u) && $u->status === 'ok') {
+            $ret = true;
+        }
+        return $ret;
+    }
+
+    function getValidUser()
+    {
         //function to check for valid user (auth and role based)
         $ret = ['user' => null, 'check' => false];
         $check = Auth::check();
-        
-        if($check)
-        {
+
+        if ($check) {
             $temp = Auth::user();
 
-            if($this->isValidUser($temp)){
+            if ($this->isValidUser($temp)) {
                 $ret['check'] = $check;
                 $ret['user'] = $temp;
             }
         }
 
         return $ret;
-       }
+    }
 
-         function getFaqs()
-         {
-            return $this->faqs;
-         }
-         
+    function getFaqs()
+    {
+        return $this->faqs;
+    }
 
-           function symfonySendMail($data){
-            
-              $email = (new Email())
-               ->from(new Address($data['se'],$data['sn']))
-               ->to($data['to'])
-               //->cc('cc@example.com')
-               //->bcc('bcc@example.com')
-               //->replyTo('fabien@example.com')
-               //->priority(Email::PRIORITY_HIGH)
-               ->subject($data['subject'])
-               //->text('Sending emails is fun again!')
-               ->html($data['htmlContent']);
-               $dsn = "smtp://{$data['su']}:{$data['spp']}@{$data['ss']}:{$data['sp']}";
-              
-              $transport = Transport::fromDsn($dsn);
-              $mailer = new Mailer($transport);
-              $mailer->send($email);
-           }
 
-           function getEmailContent($emailData = [ 'type' => '', 'data' => [] ])
-           {
-             $ret = '';
-             $type = $emailData['type']; $data = $emailData['data'];
+    function symfonySendMail($data)
+    {
 
-             if( $type === 'forgot-password' && (isset($data['username']) && isset($data['link'])) )
-             {
-                $username = $data['username']; $link = $data['link'];
-                $ret = <<<EOD
+        $email = (new Email())
+            ->from(new Address($data['se'], $data['sn']))
+            ->to($data['to'])
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            //->priority(Email::PRIORITY_HIGH)
+            ->subject($data['subject'])
+            //->text('Sending emails is fun again!')
+            ->html($data['htmlContent']);
+        $dsn = "smtp://{$data['su']}:{$data['spp']}@{$data['ss']}:{$data['sp']}";
+
+        $transport = Transport::fromDsn($dsn);
+        $mailer = new Mailer($transport);
+        $mailer->send($email);
+    }
+
+    function getEmailContent($emailData = ['type' => '', 'data' => []])
+    {
+        $ret = '';
+        $type = $emailData['type'];
+        $data = $emailData['data'];
+
+        if ($type === 'forgot-password' && (isset($data['username']) && isset($data['link']))) {
+            $username = $data['username'];
+            $link = $data['link'];
+            $ret = <<<EOD
                 <div style="padding: 10px;">
                 <h4 style="">Hello $username!</h4>
                 <p style="">Please click the button below to reset password:</p>
@@ -424,14 +428,17 @@ class Helper //implements HelperContract
                 <a href="$link" style="">$link</a>
              </div>
 EOD;
-             }
-             else if($type === 'event-reminder' && (isset($data['evt']) && isset($data['body'])))
-             {
-               $evt = $data['evt']; $title = $evt['title']; $pic = $evt['pic'];
-               $location = $evt['location']; $sd = $evt['start_date']; $ed = $evt['end_date'];
-               $body = $data['body']; $url = url('event').'?xf='.$evt['slug'];
+        } else if ($type === 'event-reminder' && (isset($data['evt']) && isset($data['body']))) {
+            $evt = $data['evt'];
+            $title = $evt['title'];
+            $pic = $evt['pic'];
+            $location = $evt['location'];
+            $sd = $evt['start_date'];
+            $ed = $evt['end_date'];
+            $body = $data['body'];
+            $url = url('event') . '?xf=' . $evt['slug'];
 
-               $ret = <<<EOD
+            $ret = <<<EOD
                 <div style="padding: 10px;">
                 <h4 style="">Reminder on our event: $title</h4>
                 
@@ -457,14 +464,13 @@ EOD;
                 </div>
              </div>
 EOD;
+        } else if ($type === 'donation-alert' && (isset($data['fname']) && isset($data['lname']) && isset($data['email']) && isset($data['amount']))) {
+            $f = $data['fname'];
+            $l = $data['lname'];
+            $e = $data['email'];
+            $a = number_format($data['amount'], 2);
 
-             }
-             else if($type === 'donation-alert' && (isset($data['fname']) && isset($data['lname']) && isset($data['email']) && isset($data['amount'])))
-             {
-               $f = $data['fname']; $l = $data['lname']; $e = $data['email'];
-               $a = number_format($data['amount'],2);
-
-               $ret = <<<EOD
+            $ret = <<<EOD
                 <div style="padding: 10px;">
                 <h4 style="">Donation received on the website:</h4>
                
@@ -483,14 +489,14 @@ EOD;
                 </div>
              </div>
 EOD;
+        } else if ($type === 'sales-alert' && (isset($data['username']) && isset($data['ticket']))) {
+            $username = $data['username'];
+            $t = $data['ticket'];
+            $home = $p['home_club']['club_name'];
+            $away = $p['away_club']['club_name'];
+            $prediction = $p['prediction_category'];
 
-             }
-             else if( $type === 'sales-alert' && (isset($data['username']) && isset($data['ticket'])) )
-             {
-                $username = $data['username']; $t = $data['ticket'];
-                $home = $p['home_club']['club_name']; $away = $p['away_club']['club_name'];  $prediction = $p['prediction_category'];
-
-                $ret = <<<EOD
+            $ret = <<<EOD
                 <div style="padding: 10px;">
                 <h4 style="">Someone just bought your bet slip!</h4>
                 <p style="">Username: <b>$username</b></p>
@@ -508,11 +514,9 @@ EOD;
                 </p>
              </div>
 EOD;
-             }
-             else if($type === 'verify-school-signup' && (isset($data['link']) && isset($data['name'])))
-             {
-                $name = $data['name']; 
-                $ret = <<<EOD
+        } else if ($type === 'verify-school-signup' && (isset($data['link']) && isset($data['name']))) {
+            $name = $data['name'];
+            $ret = <<<EOD
                 <div style="padding: 10px;">
                 <h4 style="">Welcome to AdmissionBOOX!</h4>
                 <p style="">Hello $name,<br> We are excited to get you started. First, you need to verify your account. Just click the button below:</p>
@@ -521,12 +525,12 @@ EOD;
                 <a href="$link" style="">$link</a>
              </div>
 EOD;
-             }
-
-             else if($type === 'contact-school' && (isset($data['contactName']) && isset($data['contactEmail'])) && isset($data['contactMessage']) && isset($data['schoolName']))
-             {
-                $name = $data['contactName']; $email = $data['contactEmail']; $msg = $data['contactMessage']; $schoolName = $data['schoolName'];
-                $ret = <<<EOD
+        } else if ($type === 'contact-school' && (isset($data['contactName']) && isset($data['contactEmail'])) && isset($data['contactMessage']) && isset($data['schoolName'])) {
+            $name = $data['contactName'];
+            $email = $data['contactEmail'];
+            $msg = $data['contactMessage'];
+            $schoolName = $data['schoolName'];
+            $ret = <<<EOD
                 <div style="padding: 10px;">
                    <h4 style="">New message for $schoolName</h4>
                    <p style="">Name: <strong>$name,</strong></p>
@@ -536,1500 +540,1442 @@ EOD;
                    </blockquote>
                 </div>
 EOD;
-             }
+        }
 
-             return $ret;
-           }
+        return $ret;
+    }
 
-           function cloudinaryUploadImage($file)
-           {
-             $url = Cloudinary::uploadFile($file->getRealPath())->getSecurePath();
-             return $url;
-           }
+    function cloudinaryUploadImage($file)
+    {
+        $url = Cloudinary::uploadFile($file->getRealPath())->getSecurePath();
+        return $url;
+    }
 
-           function getCloudinaryImageFromUrl($url)
-           {
-            $ret = "";
-             if(strlen($url) > 0)
-             {
-                $urlArr = explode('/',$url);
-                if(isset($urlArr[7]) && strlen($urlArr[7] > 0))
-                {
-                   $filename = $urlArr[7];
-                   $filenameArr = explode('.',$filename);
-                   $ret = $filenameArr[0];
-                }
-             }
-             
-             
-             return $ret;
-           }
-
-           function getCloudinaryImage($public_id)
-           {
-            $url = Cloudinary::getUrl($public_id);
-            return $url;
-           }
-
-           function cloudinaryRemoveImage($public_id)
-           {
-              try {
-                // Delete image from Cloudinary using its public ID
-                Cloudinary::destroy($public_id);
-              } catch (\Exception $e) {
-                // Handle exception if deletion from Cloudinary fails
-                return $e->__toString();
-              }
-           }
-           
- 
-          function createUser($data)
-          {
-           
-              $ret = User::create(['fname' => $data['fname'], 
-                                                     'lname' => $data['lname'], 
-                                                     'email' => $data['email'], 
-                                                     'username' => $data['username'], 
-                                                     'phone' => $data['phone'], 
-                                                     'role' => $data['role'], 
-                                                     'bday' => $data['bday'], 
-                                                     'tier' => $data['tier'], 
-                                                     'avatar' => $data['avatar'], 
-                                                     'gender' => $data['gender'], 
-                                                     'status' => $data['status'], 
-                                                    'verified' => $data['verified'], 
-                                                    'complete_signup' => $data['complete_signup'], 
-                                                     'password' => bcrypt($data['password']), 
-                                                     'remember_token' => "default",
-                                                     'reset_code' => "default"
-                                                     ]);
-                                                     
-               return $ret;
-          }
-           
-           function getUser($email)
-           {
-           	$ret = [];
-               $u = User::where('email',$email)
-                        ->orWhere('username',$email)
-			            ->orWhere('id',$email)->first();
- 
-              if($u != null)
-               {
-                   	$temp['fname'] = $u->fname; 
-                       $temp['lname'] = $u->lname; 
-                       $temp['phone'] = $u->phone;
-                       $temp['email'] = $u->email; 
-                       $temp['username'] = $u->username; 
-                       $temp['gender'] = $u->gender; 
-                       $temp['role'] = $u->role; 
-                       $temp['bday'] = $u->bday; 
-                       $temp['tier'] = $u->tier; 
-                       $temp['avatar'] = $u->avatar; 
-                       $temp['status'] = $u->status; 
-                       $temp['verified'] = $u->verified; 
-                       $temp['complete_signup'] = $u->complete_signup; 
-                       $temp['id'] = $u->id; 
-                       $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);  
-                       $ret = $temp; 
-               }                          
-                                                      
-                return $ret;
-           }
-		   
-		   function getUsers($id="all")
-           {
-           	$ret = [];
-               if($id == "all") $uu = User::where('role','admin')->orWhere('role','user')->orderBy('created_at','desc')->get();
-               else if($id == "admins")$uu = User::where('role','admin')->orWhere('role','su')->orderBy('created_at','desc')->get();
-               else $uu = User::where('role',$id)->orderBy('created_at','desc')->get();
- 
-              if($uu != null)
-               {
-				  foreach($uu as $u)
-				    {
-                       $temp = $this->getUser($u->id);
-                       array_push($ret,$temp); 
-				    }
-               }                          
-                                                      
-                return $ret;
-           }	  
-
-           function updateUser($data)
-           {  
-              $ret = 'error'; 
-         
-              if(isset($data['email']))
-               {
-               	$u = User::where('email', $data['email'])
-                         ->orWhere('username', $data['email'])
-                          ->orWhere('id', $data['email'])->first();
- 
-                        if($u != null)
-                        {
-							$payload = [];
-                            if(isset($data['fname'])) $payload['fname'] = $data['fname'];
-                            if(isset($data['lname'])) $payload['lname'] = $data['lname'];
-                            if(isset($data['password'])) $payload['password'] = $data['password'];
-                            if(isset($data['gender'])) $payload['gender'] = $data['gender'];
-                            if(isset($data['role'])) $payload['role'] = $data['role'];
-                            if(isset($data['bday'])) $payload['bday'] = $data['bday'];
-                            if(isset($data['tier'])) $payload['tier'] = $data['tier'];
-                            if(isset($data['username'])) $payload['username'] = $data['username'];
-                            if(isset($data['avatar'])) $payload['avatar'] = $data['avatar'];
-                            if(isset($data['status'])) $payload['status'] = $data['status'];
-                            if(isset($data['verified'])) $payload['verified'] = $data['verified'];
-                            if(isset($data['complete_signup'])) $payload['complete_signup'] = $data['complete_signup'];
-                           
-                        	$u->update($payload);
-                             $ret = "ok";
-                        }                                    
-               }                                 
-                  return $ret;                               
-           }
-
-           function removeUser($id)
-           {
-               $p = User::where('id',$id)->first();
-
-               if($p != null) $p->delete();
-           }
-
-           function createPlugin($data)
-           {
-               $ret = Plugins::create([
-                   'name' => $data['name'],
-                   'value' => $data['value'],
-                   'status' => $data['status']
-               ]);
-
-               return $ret;
-           }
-
-           function getPlugins($data=['mode' => 'all'])
-           {
-               $ret = [];
-               if($data['mode'] === 'all') $plugins = Plugins::where('id','>','0')->orderBy('created_at','desc')->get();
-               else if($data['mode'] === 'active') $plugins = Plugins::where('status','ok')->orderBy('created_at','desc')->get();
-               else $plugins = Plugins::where('status',$data['mode'])->orderBy('created_at','desc')->get();
-
-               if($plugins != null)
-               {
-                  foreach($plugins as $p)
-                  {
-                      $temp = $this->getPlugin($p->id);
-                      array_push($ret,$temp);
-                  }
-               }
-
-               return $ret;
-           }
-
-           function getPlugin($id)
-           {
-               $ret = [];
-               $p = Plugins::where('id',$id)->first();
-
-               if($p != null)
-               {
-                   $ret['id'] = $p->id;
-                   $ret['name'] = $p->name;
-                   $ret['value'] = $p->value;
-                   $ret['status'] = $p->status;
-                   $ret['date'] = $p->created_at->format($this->DEFAULT_DATE_FORMAT);  
-               }
-
-               return $ret;
-           }
-
-           function updatePlugin($data)
-           {
-            $ret = [];
-            $p = Plugins::where('id',$data['id'])->first();
-            
-            if($p != null)
-            {
-                $p->update([
-                    'name' => $data['name'],
-                    'value' => $data['value'],
-                    'status' => $data['status']
-                ]);
+    function getCloudinaryImageFromUrl($url)
+    {
+        $ret = "";
+        if (strlen($url) > 0) {
+            $urlArr = explode('/', $url);
+            if (isset($urlArr[7]) && strlen($urlArr[7] > 0)) {
+                $filename = $urlArr[7];
+                $filenameArr = explode('.', $filename);
+                $ret = $filenameArr[0];
             }
-           }
+        }
 
-           function removePlugin($id)
-           {
-               $p = Plugins::where('id',$id)->first();
 
-               if($p != null) $p->delete();
-           }
+        return $ret;
+    }
 
-           function createSetting($data)
-           {
-               $ret = Settings::create([
-                   'name' => $data['name'],
-                   'value' => $data['value'],
-                   'status' => $data['status']
-               ]);
+    function getCloudinaryImage($public_id)
+    {
+        $url = Cloudinary::getUrl($public_id);
+        return $url;
+    }
 
-               return $ret;
-           }
+    function cloudinaryRemoveImage($public_id)
+    {
+        try {
+            // Delete image from Cloudinary using its public ID
+            Cloudinary::destroy($public_id);
+        } catch (\Exception $e) {
+            // Handle exception if deletion from Cloudinary fails
+            return $e->__toString();
+        }
+    }
 
-           function getSettings($data=['mode' => 'all'])
-           {
-               $ret = [];
-               if($data['mode'] === 'all') $settings = Settings::where('id','>','0')->orderBy('created_at','desc')->get();
-               else $settings = Settings::where('status',$data['mode'])->orderBy('created_at','desc')->get();
 
-               if($settings != null)
-               {
-                  foreach($settings as $s)
-                  {
-                      $temp = $this->getSetting($s->id);
-                      array_push($ret,$temp);
-                  }
-               }
+    function createUser($data)
+    {
 
-               return $ret;
-           }
+        $ret = User::create([
+            'fname' => $data['fname'],
+            'lname' => $data['lname'],
+            'email' => $data['email'],
+            'username' => $data['username'],
+            'phone' => $data['phone'],
+            'role' => $data['role'],
+            'bday' => $data['bday'],
+            'tier' => $data['tier'],
+            'avatar' => $data['avatar'],
+            'gender' => $data['gender'],
+            'status' => $data['status'],
+            'verified' => $data['verified'],
+            'complete_signup' => $data['complete_signup'],
+            'password' => bcrypt($data['password']),
+            'remember_token' => "default",
+            'reset_code' => "default"
+        ]);
 
-           function getSetting($id)
-           {
-               $ret = [];
-               $p = Settings::where('id',$id)
-                            ->orWhere('name',$id)->first();
+        return $ret;
+    }
 
-               if($p != null)
-               {
-                   $ret['id'] = $p->id;
-                   $ret['name'] = $p->name;
-                   $ret['value'] = $p->value;
-                   $ret['status'] = $p->status;
-                   $ret['date'] = $p->created_at->format($this->DEFAULT_DATE_FORMAT);  
-               }
+    function getUser($email)
+    {
+        $ret = [];
+        $u = User::where('email', $email)
+            ->orWhere('username', $email)
+            ->orWhere('id', $email)->first();
 
-               return $ret;
-           }
+        if ($u != null) {
+            $temp['fname'] = $u->fname;
+            $temp['lname'] = $u->lname;
+            $temp['phone'] = $u->phone;
+            $temp['email'] = $u->email;
+            $temp['username'] = $u->username;
+            $temp['gender'] = $u->gender;
+            $temp['role'] = $u->role;
+            $temp['bday'] = $u->bday;
+            $temp['tier'] = $u->tier;
+            $temp['avatar'] = $u->avatar;
+            $temp['status'] = $u->status;
+            $temp['verified'] = $u->verified;
+            $temp['complete_signup'] = $u->complete_signup;
+            $temp['id'] = $u->id;
+            $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);
+            $ret = $temp;
+        }
 
-           function updateSetting($data)
-           {
-            $ret = [];
-            $p = Settings::where('id',$data['xf'])->first();
-            
-            if($p != null)
-            {
+        return $ret;
+    }
+
+    function getUsers($id = "all")
+    {
+        $ret = [];
+        if ($id == "all") $uu = User::where('role', 'admin')->orWhere('role', 'user')->orderBy('created_at', 'desc')->get();
+        else if ($id == "admins") $uu = User::where('role', 'admin')->orWhere('role', 'su')->orderBy('created_at', 'desc')->get();
+        else $uu = User::where('role', $id)->orderBy('created_at', 'desc')->get();
+
+        if ($uu != null) {
+            foreach ($uu as $u) {
+                $temp = $this->getUser($u->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+    function updateUser($data)
+    {
+        $ret = 'error';
+
+        if (isset($data['email'])) {
+            $u = User::where('email', $data['email'])
+                ->orWhere('username', $data['email'])
+                ->orWhere('id', $data['email'])->first();
+
+            if ($u != null) {
                 $payload = [];
-                if(isset($data['name'])) $payload['name'] = $data['name'];
-                if(isset($data['value'])) $payload['value'] = $data['value'];
-                if(isset($data['status'])) $payload['status'] = $data['status'];
+                if (isset($data['fname'])) $payload['fname'] = $data['fname'];
+                if (isset($data['lname'])) $payload['lname'] = $data['lname'];
+                if (isset($data['password'])) $payload['password'] = $data['password'];
+                if (isset($data['gender'])) $payload['gender'] = $data['gender'];
+                if (isset($data['role'])) $payload['role'] = $data['role'];
+                if (isset($data['bday'])) $payload['bday'] = $data['bday'];
+                if (isset($data['tier'])) $payload['tier'] = $data['tier'];
+                if (isset($data['username'])) $payload['username'] = $data['username'];
+                if (isset($data['avatar'])) $payload['avatar'] = $data['avatar'];
+                if (isset($data['status'])) $payload['status'] = $data['status'];
+                if (isset($data['verified'])) $payload['verified'] = $data['verified'];
+                if (isset($data['complete_signup'])) $payload['complete_signup'] = $data['complete_signup'];
 
-                $p->update($payload);
+                $u->update($payload);
+                $ret = "ok";
             }
-           }
+        }
+        return $ret;
+    }
 
-           function removeSetting($id)
-           {
-               $p = Settings::where('id',$id)->first();
+    function removeUser($id)
+    {
+        $p = User::where('id', $id)->first();
 
-               if($p != null) $p->delete();
-           }
-          
-           function hasKey($arr,$key) 
-           {
-           	$ret = false; 
-               if( isset($arr[$key]) && $arr[$key] != "" && $arr[$key] != null ) $ret = true; 
-               return $ret; 
-           }
+        if ($p != null) $p->delete();
+    }
 
-           function getPasswordResetCode($user)
-           {
-           	$u = $user; 
-               
-               if($u != null)
-               {
-               	//We have the user, create the code
-                   $code = bcrypt(rand(125,999999)."rst".$u->id);
-               	$u->update(['reset_code' => $code]);
-               }
-               
-               return $code; 
-           }
-           
-           function verifyPasswordResetCode($code)
-           {
-           	$u = User::where('reset_code',$code)->first();
-               
-               if($u != null)
-               {
-               	//We have the user, delete the code
-               	$u->update(['reset_code' => 'default']);
-               }
-               
-               return $u; 
-           }	
-           
-           
-           function createSender($data)
-           {
-               $ret = Senders::create([
-                   'ss' => $data['ss'],
-                   'sp' => $data['sp'],
-                   'sa' => $data['sa'],
-                   'sec' => $data['sec'],
-                   'su' => $data['su'],
-                   'spp' => $data['spp'],
-                   'sn' => $data['sn'],
-                   'se' => $data['se'],
-                   'current' => $data['current'],
-                   'type' => $data['type'],
-                   'status' => $data['status']
-               ]);
+    function createPlugin($data)
+    {
+        $ret = Plugins::create([
+            'name' => $data['name'],
+            'value' => $data['value'],
+            'status' => $data['status']
+        ]);
 
-               return $ret;
-           }
+        return $ret;
+    }
 
-           function getSenders()
-           {
-               $ret = [];
-               $senders = Senders::where('id','>','0')->orderBy('created_at','desc')->get();
+    function getPlugins($data = ['mode' => 'all'])
+    {
+        $ret = [];
+        if ($data['mode'] === 'all') $plugins = Plugins::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+        else if ($data['mode'] === 'active') $plugins = Plugins::where('status', 'ok')->orderBy('created_at', 'desc')->get();
+        else $plugins = Plugins::where('status', $data['mode'])->orderBy('created_at', 'desc')->get();
 
-               if($senders != null)
-               {
-                  foreach($senders as $s)
-                  {
-                      $temp = $this->getSender($s->id);
-                      array_push($ret,$temp);
-                  }
-               }
-
-               return $ret;
-           }
-
-
-
-           function getSender($id)
-           {
-               $ret = [];
-               $s = Senders::where('id',$id)->first();
-
-               if($s != null)
-               {
-                   $ret['id'] = $s->id;
-                   $ret['ss'] = $s->ss;
-                   $ret['sp'] = $s->sp;
-                   $ret['sa'] = $s->sa;
-                   $ret['sec'] = $s->sec;
-                   $ret['su'] = $s->su;
-                   $ret['spp'] = $s->spp;
-                   $ret['sn'] = $s->sn;
-                   $ret['se'] = $s->se;
-                   $ret['current'] = $s->current;
-                   $ret['status'] = $s->status;
-                   $ret['date'] = $s->created_at->format($this->DEFAULT_DATE_FORMAT);
-               }
-
-               return $ret;
-           }
-
-           function getCurrentSender()
-           {
-            $ret = [];
-            $s = Senders::where('current','yes')->first();
-
-            if($s != null)
-            {
-                $ret = $this->getSender($s->id);
+        if ($plugins != null) {
+            foreach ($plugins as $p) {
+                $temp = $this->getPlugin($p->id);
+                array_push($ret, $temp);
             }
+        }
 
-            return $ret;
-           }
+        return $ret;
+    }
 
-           function clearCurrentSender()
-           {
-            $ret = [];
-            $list = Senders::where('current','yes')->get();
+    function getPlugin($id)
+    {
+        $ret = [];
+        $p = Plugins::where('id', $id)->first();
 
-            if($list != null)
-            {
-                foreach($list as $s) $s->update(['current' => 'no']);
+        if ($p != null) {
+            $ret['id'] = $p->id;
+            $ret['name'] = $p->name;
+            $ret['value'] = $p->value;
+            $ret['status'] = $p->status;
+            $ret['date'] = $p->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function updatePlugin($data)
+    {
+        $ret = [];
+        $p = Plugins::where('id', $data['id'])->first();
+
+        if ($p != null) {
+            $p->update([
+                'name' => $data['name'],
+                'value' => $data['value'],
+                'status' => $data['status']
+            ]);
+        }
+    }
+
+    function removePlugin($id)
+    {
+        $p = Plugins::where('id', $id)->first();
+
+        if ($p != null) $p->delete();
+    }
+
+    function createSetting($data)
+    {
+        $ret = Settings::create([
+            'name' => $data['name'],
+            'value' => $data['value'],
+            'status' => $data['status']
+        ]);
+
+        return $ret;
+    }
+
+    function getSettings($data = ['mode' => 'all'])
+    {
+        $ret = [];
+        if ($data['mode'] === 'all') $settings = Settings::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+        else $settings = Settings::where('status', $data['mode'])->orderBy('created_at', 'desc')->get();
+
+        if ($settings != null) {
+            foreach ($settings as $s) {
+                $temp = $this->getSetting($s->id);
+                array_push($ret, $temp);
             }
+        }
 
-            return $ret;
-           }
+        return $ret;
+    }
 
-           function updateSender($data)
-           {
-            $ret = [];
-            $a = Senders::where('id',$data['xf'])->first();
-            
-            if($a != null)
-            {
+    function getSetting($id)
+    {
+        $ret = [];
+        $p = Settings::where('id', $id)
+            ->orWhere('name', $id)->first();
+
+        if ($p != null) {
+            $ret['id'] = $p->id;
+            $ret['name'] = $p->name;
+            $ret['value'] = $p->value;
+            $ret['status'] = $p->status;
+            $ret['date'] = $p->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function updateSetting($data)
+    {
+        $ret = [];
+        $p = Settings::where('id', $data['xf'])->first();
+
+        if ($p != null) {
+            $payload = [];
+            if (isset($data['name'])) $payload['name'] = $data['name'];
+            if (isset($data['value'])) $payload['value'] = $data['value'];
+            if (isset($data['status'])) $payload['status'] = $data['status'];
+
+            $p->update($payload);
+        }
+    }
+
+    function removeSetting($id)
+    {
+        $p = Settings::where('id', $id)->first();
+
+        if ($p != null) $p->delete();
+    }
+
+    function hasKey($arr, $key)
+    {
+        $ret = false;
+        if (isset($arr[$key]) && $arr[$key] != "" && $arr[$key] != null) $ret = true;
+        return $ret;
+    }
+
+    function getPasswordResetCode($user)
+    {
+        $u = $user;
+
+        if ($u != null) {
+            //We have the user, create the code
+            $code = bcrypt(rand(125, 999999) . "rst" . $u->id);
+            $u->update(['reset_code' => $code]);
+        }
+
+        return $code;
+    }
+
+    function verifyPasswordResetCode($code)
+    {
+        $u = User::where('reset_code', $code)->first();
+
+        if ($u != null) {
+            //We have the user, delete the code
+            $u->update(['reset_code' => 'default']);
+        }
+
+        return $u;
+    }
+
+
+    function createSender($data)
+    {
+        $ret = Senders::create([
+            'ss' => $data['ss'],
+            'sp' => $data['sp'],
+            'sa' => $data['sa'],
+            'sec' => $data['sec'],
+            'su' => $data['su'],
+            'spp' => $data['spp'],
+            'sn' => $data['sn'],
+            'se' => $data['se'],
+            'current' => $data['current'],
+            'type' => $data['type'],
+            'status' => $data['status']
+        ]);
+
+        return $ret;
+    }
+
+    function getSenders()
+    {
+        $ret = [];
+        $senders = Senders::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+
+        if ($senders != null) {
+            foreach ($senders as $s) {
+                $temp = $this->getSender($s->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+
+
+    function getSender($id)
+    {
+        $ret = [];
+        $s = Senders::where('id', $id)->first();
+
+        if ($s != null) {
+            $ret['id'] = $s->id;
+            $ret['ss'] = $s->ss;
+            $ret['sp'] = $s->sp;
+            $ret['sa'] = $s->sa;
+            $ret['sec'] = $s->sec;
+            $ret['su'] = $s->su;
+            $ret['spp'] = $s->spp;
+            $ret['sn'] = $s->sn;
+            $ret['se'] = $s->se;
+            $ret['current'] = $s->current;
+            $ret['status'] = $s->status;
+            $ret['date'] = $s->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function getCurrentSender()
+    {
+        $ret = [];
+        $s = Senders::where('current', 'yes')->first();
+
+        if ($s != null) {
+            $ret = $this->getSender($s->id);
+        }
+
+        return $ret;
+    }
+
+    function clearCurrentSender()
+    {
+        $ret = [];
+        $list = Senders::where('current', 'yes')->get();
+
+        if ($list != null) {
+            foreach ($list as $s) $s->update(['current' => 'no']);
+        }
+
+        return $ret;
+    }
+
+    function updateSender($data)
+    {
+        $ret = [];
+        $a = Senders::where('id', $data['xf'])->first();
+
+        if ($a != null) {
+            $payload = [];
+            if (isset($data['status'])) $payload['status'] = $data['status'];
+            if (isset($data['current'])) $payload['current'] = $data['current'];
+
+            $a->update($payload);
+        }
+    }
+
+    function removeSender($id)
+    {
+        $s = Senders::where('id', $id)->first();
+
+        if ($s != null) $s->delete();
+    }
+
+    function createAd($data)
+    {
+        $ret = Ads::create([
+            'name' => $data['name'],
+            'value' => $data['value'],
+            'image' => $data['image'],
+            'status' => $data['status']
+        ]);
+
+        return $ret;
+    }
+
+    function getAds($data = ['mode' => 'all'])
+    {
+        $ret = [];
+        if ($data['mode'] === 'all') $ads = Ads::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+        else $ads = Ads::where('status', $data['mode'])->orderBy('created_at', 'desc')->get();
+
+        if ($ads != null) {
+            foreach ($ads as $a) {
+                $temp = $this->getAd($a->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+    function getAd($id)
+    {
+        $ret = [];
+        $a = Ads::where('id', $id)->first();
+
+        if ($a != null) {
+            $ret['id'] = $a->id;
+            $ret['name'] = $a->name;
+            $ret['image'] = $a->image;
+            $ret['value'] = $a->value;
+            $ret['status'] = $a->status;
+            $ret['date'] = $a->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function updateAd($data)
+    {
+        $ret = [];
+        $a = Ads::where('id', $data['id'])->first();
+
+        if ($a != null) {
+            $a->update([
+                'status' => $data['status']
+            ]);
+        }
+    }
+
+    function removeAd($id)
+    {
+        $a = Ads::where('id', $id)->first();
+
+        if ($a != null) $a->delete();
+    }
+
+
+
+    function createBanner($data)
+    {
+        $ret = Banners::create([
+            'title' => $data['title'],
+            'subtitle' => $data['subtitle'],
+            'image' => $data['image'],
+            'points' => $data['points'],
+            'description' => $data['description'],
+            'btn_url_1' => $data['btn_url_1'],
+            'btn_text_1' => $data['btn_text_1'],
+            'btn_url_2' => $data['btn_url_2'],
+            'btn_text_2' => $data['btn_text_2'],
+            'status' => $data['status']
+        ]);
+
+        return $ret;
+    }
+
+    function getBanners()
+    {
+        $ret = [];
+        $banners = Banners::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+
+        if ($banners != null) {
+
+            foreach ($banners as $b) {
+                $temp = $this->getBanner($b->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+    function getBanner($id = "")
+    {
+
+        $ret = [];
+        $a = Banners::where('id', $id)->first();
+
+        if ($a != null) {
+            $ret['id'] = $a->id;
+            $ret['title'] = $a->title;
+            $ret['subtitle'] = $a->subtitle;
+            $imgArr = explode('|', $a->image);
+            shuffle($imgArr);
+            $ret['image'] = $imgArr[0];
+            $ret['points'] = $a->points;
+            $ret['description'] = $a->description;
+            $ret['btn_url_1'] = $a->btn_url_1;
+            $ret['btn_text_1'] = $a->btn_text_1;
+            $ret['btn_url_2'] = $a->btn_url_2;
+            $ret['btn_text_2'] = $a->btn_text_2;
+            $ret['status'] = $a->status;
+            $ret['date'] = $a->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function updateBanner($data)
+    {
+        $ret = 'error';
+
+        if (isset($data['xf'])) {
+            $w = Banners::where('id', $data['xf'])->first();
+
+            if ($w != null) {
                 $payload = [];
-                if(isset($data['status'])) $payload['status'] = $data['status'];
-                if(isset($data['current'])) $payload['current'] = $data['current'];
+                if (isset($data['status'])) $payload['status'] = $data['status'];
 
-                $a->update($payload);
+                $w->update($payload);
+                $ret = "ok";
             }
-           }
+        }
+        return $ret;
+    }
 
-           function removeSender($id)
-           {
-               $s = Senders::where('id',$id)->first();
+    function removeBanner($id)
+    {
+        $a = Banners::where('id', $id)->first();
 
-               if($s != null) $s->delete();
-           }
+        if ($a != null) $a->delete();
+    }
 
-           function createAd($data)
-           {
-               $ret = Ads::create([
-                   'name' => $data['name'],
-                   'value' => $data['value'],
-                   'image' => $data['image'],
-                   'status' => $data['status']
-               ]);
+    function isValidPassword($data = ['user_id' => '', 'pass' => ''])
+    {
+        $ret = false;
+        $u = User::where('id', $data['user_id'])->first();
 
-               return $ret;
-           }
+        if ($u !== null) {
+            $ret = bcrypt($data['pass']) === $u->password;
+        }
 
-           function getAds($data=['mode' => 'all'])
-           {
-               $ret = [];
-               if($data['mode'] === 'all') $ads = Ads::where('id','>','0')->orderBy('created_at','desc')->get();
-               else $ads = Ads::where('status',$data['mode'])->orderBy('created_at','desc')->get();
+        return $ret;
+    }
 
-               if($ads != null)
-               {
-                  foreach($ads as $a)
-                  {
-                      $temp = $this->getAd($a->id);
-                      array_push($ret,$temp);
-                  }
-               }
+    function deleteAccount($user_id)
+    {
 
-               return $ret;
-           }
+        $u = User::where('id', $user_id)->first();
 
-           function getAd($id)
-           {
-               $ret = [];
-               $a = Ads::where('id',$id)->first();
+        if ($u !== null) {
+            //replace all references of user info with $deletedUser 
+            $payload = $this->deletedUser;
+            $payload['id'] = $user_id;
+            $u->update($payload);
+        }
+    }
 
-               if($a != null)
-               {
-                   $ret['id'] = $a->id;
-                   $ret['name'] = $a->name;
-                   $ret['image'] = $a->image;
-                   $ret['value'] = $a->value;
-                   $ret['status'] = $a->status;
-                   $ret['date'] = $a->created_at->format($this->DEFAULT_DATE_FORMAT);  
-               }
+    function getDays()
+    {
+        $ret = [
+            'today' => Carbon::today()->format($this->DEFAULT_DATE_FORMAT),
+            'yesterday' => Carbon::yesterday()->format($this->DEFAULT_DATE_FORMAT),
+            'tomorrow' => Carbon::tomorrow()->format($this->DEFAULT_DATE_FORMAT),
+        ];
 
-               return $ret;
-           }
+        return $ret;
+    }
 
-           function updateAd($data)
-           {
-            $ret = [];
-            $a = Ads::where('id',$data['id'])->first();
-            
-            if($a != null)
-            {
-                $a->update([
-                    'status' => $data['status']
-                ]);
+
+    /***********************************************************************************
+     * Add custom helper functions here
+     ***********************************************************************************/
+
+    //PRODUCTS
+    function createProduct($data)
+    {
+        $ret = Products::create([
+            'title' => $data['title'],
+            'slug' => $data['slug'],
+            'category' => $data['category'],
+            'brand' => $data['brand'],
+            'description' => $data['description'],
+            'price' => $data['price'],
+            'status' => $data['status'],
+        ]);
+
+        return $ret;
+    }
+
+    function getProducts($options = [])
+    {
+        $ret = [];
+        $data = null;
+
+        if (isset($options['status'])) {
+            $data = Products::where('status', $options['status'])->orderBy('created_at', 'desc')->get();
+        } else {
+            $data = Products::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+        }
+
+
+
+        if ($data != null) {
+
+            foreach ($data as $c) {
+                $temp = $this->getProduct($c->id, $options);
+                array_push($ret, $temp);
             }
-           }
+        }
 
-           function removeAd($id)
-           {
-               $a = Ads::where('id',$id)->first();
+        return $ret;
+    }
 
-               if($a != null) $a->delete();
-           }
+    function getProduct($id = "", $options = [])
+    {
 
-           
+        $ret = [];
+        $c = Products::where('id', $id)
+            ->orWhere('slug', $id)->first();
 
-           function createBanner($data)
-           {
-               $ret = Banners::create([
-                   'title' => $data['title'],
-                   'subtitle' => $data['subtitle'],
-                   'image' => $data['image'],
-                   'points' => $data['points'],
-                   'description' => $data['description'],
-                   'btn_url_1' => $data['btn_url_1'],
-                   'btn_text_1' => $data['btn_text_1'],
-                   'btn_url_2' => $data['btn_url_2'],
-                   'btn_text_2' => $data['btn_text_2'],
-                   'status' => $data['status']
-               ]);
+        if ($c != null) {
+            $ret['id'] = $c->id;
+            $ret['title'] = $c->title;
+            $ret['slug'] = $c->slug;
+            $ret['description'] = $c->description;
+            $ret['images'] = $this->getProductImages($c->slug);
+            $ret['price'] = $c->price;
+            $discount = floatval($ret['price']) * (15 / 100);
+            $ret['formerPrice'] = (floatval($ret['price']) - 1) + $discount;
+            $ret['newPrice'] = floatval($ret['price']) - 1;
+            $ret['category'] = $this->getCategory($c->category);
+            $ret['brand'] = $this->getBrand($c->brand);
+            $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
 
-               return $ret;
-           }
+        return $ret;
+    }
 
-           function getBanners()
-           {
-             $ret = [];
-            $banners = Banners::where('id','>','0')->orderBy('created_at','desc')->get();
-            
-             if($banners != null)
-              {
-               
-                   foreach($banners as $b)
-                   {
-                       $temp = $this->getBanner($b->id);
-                       array_push($ret,$temp);
-                   }
-              }
+    function updateProduct($data)
+    {
+        $ret = 'error';
 
-            return $ret;
-           }
- 
-           function getBanner($id="")
-           {
+        if (isset($data['xf'])) {
+            $c = Products::where('id', $data['xf'])
+                ->orWhere('slug', $data['xf'])->first();
 
-             $ret = [];
-               $a = Banners::where('id',$id)->first();
+            if ($c != null) {
+                $payload = [];
+                if (isset($data['status'])) $payload['status'] = $data['status'];
 
-               if($a != null)
-               {
-                $ret['id'] = $a->id;
-                $ret['title'] = $a->title;
-                $ret['subtitle'] = $a->subtitle;
-                $imgArr = explode('|',$a->image);
-                shuffle($imgArr);
-                $ret['image'] = $imgArr[0];
-                $ret['points'] = $a->points;
-                $ret['description'] = $a->description;
-                $ret['btn_url_1'] = $a->btn_url_1;
-                $ret['btn_text_1'] = $a->btn_text_1;
-                $ret['btn_url_2'] = $a->btn_url_2;
-                $ret['btn_text_2'] = $a->btn_text_2;
-                $ret['status'] = $a->status;
-                $ret['date'] = $a->created_at->format($this->DEFAULT_DATE_FORMAT);  
-               }
-
-               return $ret;
-           }
-
-           function updateBanner($data)
-           {  
-             $ret = 'error'; 
-
-             if(isset($data['xf']))
-              {
-                 $w = Banners::where('id', $data['xf'])->first();
-
-                 if($w != null)
-                 {
-                    $payload = [];
-                    if(isset($data['status'])) $payload['status'] = $data['status'];
-                
-                    $w->update($payload);
-                    $ret = "ok";
-                }                                    
-             }                                 
-              return $ret;                               
-            } 
-
-           function removeBanner($id)
-           {
-               $a = Banners::where('id',$id)->first();
-
-               if($a != null) $a->delete();
-           }
-
-           function isValidPassword($data=['user_id'=> '','pass' => ''])
-           {
-              $ret = false;
-              $u = User::where('id',$data['user_id'])->first();
-
-              if($u !== null)
-              {
-                $ret = bcrypt($data['pass']) === $u->password;
-              }
-
-              return $ret;
-           }
-
-           function deleteAccount($user_id)
-           {
-
-            $u = User::where('id',$user_id)->first();
-
-            if($u !== null)
-            {
-               //replace all references of user info with $deletedUser 
-               $payload = $this->deletedUser;
-               $payload['id'] = $user_id;
-               $u->update($payload);
+                $c->update($payload);
+                $ret = "ok";
             }
-           }
-
-           function getDays()
-           {
-            $ret = [
-                'today' => Carbon::today()->format($this->DEFAULT_DATE_FORMAT),
-                'yesterday' => Carbon::yesterday()->format($this->DEFAULT_DATE_FORMAT),
-                'tomorrow' => Carbon::tomorrow()->format($this->DEFAULT_DATE_FORMAT),
-            ];
-
-            return $ret;
-           }
-          
-
-/***********************************************************************************
- * Add custom helper functions here
-***********************************************************************************/
-
-//PRODUCTS
-function createProduct($data)
-{
-    $ret = Products::create([
-        'title' => $data['title'],
-        'slug' => $data['slug'],
-        'category' => $data['category'],
-        'brand' => $data['brand'],
-        'description' => $data['description'],
-        'price' => $data['price'],
-        'status' => $data['status'],
-    ]);
-
-    return $ret;
-}
-
-function getProducts($options = [])
-{
-  $ret = []; $data = null;
-
-  if(isset($options['status']))
-  {
-    $data = Products::where('status',$options['status'])->orderBy('created_at','desc')->get();
-  }
-  else
-  {
-     $data = Products::where('id','>','0')->orderBy('created_at','desc')->get();
-  }
-
-
- 
-  if($data != null)
-   {
-    
-        foreach($data as $c)
-        {
-            $temp = $this->getProduct($c->id,$options);
-            array_push($ret,$temp);
         }
-   }
-
- return $ret;
-}
-
-function getProduct($id="",$options=[])
-{
-
-  $ret = [];
-    $c = Products::where('id',$id)
-         ->orWhere('slug',$id)->first();
-
-    if($c != null)
-    {
-     $ret['id'] = $c->id;
-     $ret['title'] = $c->title;
-     $ret['slug'] = $c->slug;
-     $ret['description'] = $c->description;
-     $ret['images'] = $this->getProductImages($c->slug);
-     $ret['price'] = $c->price;
-     $discount = floatval($ret['price']) * (15/100);
-     $ret['formerPrice'] = (floatval($ret['price']) - 1) + $discount;
-     $ret['newPrice'] = floatval($ret['price']) - 1;
-     $ret['category'] = $this->getCategory($c->category);
-     $ret['brand'] = $this->getBrand($c->brand);
-     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+        return $ret;
     }
 
-    return $ret;
-}
-
-function updateProduct($data)
-{  
-  $ret = 'error'; 
-
-  if(isset($data['xf']))
-   {
-      $c = Products::where('id', $data['xf'])
-                   ->orWhere('slug',$data['xf'])->first();
-
-      if($c != null)
-      {
-         $payload = [];
-         if(isset($data['status'])) $payload['status'] = $data['status'];
-     
-         $c->update($payload);
-         $ret = "ok";
-     }                                    
-  }                                 
-   return $ret;                               
- } 
-
- function getSliderProducts()
- {
-    $ret = [
-        'popular' => [],
-		'specials' => [],
-		'featured' => [],
-    ];
-    $products = $this->getProducts();
-    $pc = count($products);
-
-    if($pc < 6)
+    function getSliderProducts()
     {
-         for($i = 0; $i < $pc; $i++)
-         {
-            //Popular
-            array_push($ret['popular'],$products[$i]);
+        $ret = [
+            'popular' => [],
+            'specials' => [],
+            'featured' => [],
+        ];
+        $products = $this->getProducts();
+        $pc = count($products);
 
-            //Specials
-            array_push($ret['specials'],$products[$i]);
+        if ($pc < 6) {
+            for ($i = 0; $i < $pc; $i++) {
+                //Popular
+                array_push($ret['popular'], $products[$i]);
 
-            //Featured
-            array_push($ret['featured'],$products[$i]);
-         }
+                //Specials
+                array_push($ret['specials'], $products[$i]);
 
-         for($i=$pc; $i < count($this->testProducts); $i++)
-         {
-             //Popular
-             array_push($ret['popular'],$this->testProducts[$i]);
+                //Featured
+                array_push($ret['featured'], $products[$i]);
+            }
 
-             //Specials
-             array_push($ret['specials'],$this->testProducts[$i]);
- 
-             //Featured
-             array_push($ret['featured'],$this->testProducts[$i]);
-         }
-    }
-    else
-    {
-        shuffle($products);
-        for($i = 0; $i < 6; $i++)
-         {
-            //Popular
-            array_push($ret['popular'],$products[$i]);
+            for ($i = $pc; $i < count($this->testProducts); $i++) {
+                //Popular
+                array_push($ret['popular'], $this->testProducts[$i]);
 
-            //Specials
-            array_push($ret['specials'],$products[$i]);
+                //Specials
+                array_push($ret['specials'], $this->testProducts[$i]);
 
-            //Featured
-            array_push($ret['featured'],$products[$i]);
-         }
-    }
-   return $ret;
- }
+                //Featured
+                array_push($ret['featured'], $this->testProducts[$i]);
+            }
+        } else {
+            shuffle($products);
+            for ($i = 0; $i < 6; $i++) {
+                //Popular
+                array_push($ret['popular'], $products[$i]);
 
- function getProductsByCategory($slug='')
- {
-    $ret = [];
-    $data = Products::where('category',$slug)->orderBy('created_at','desc')->get();
+                //Specials
+                array_push($ret['specials'], $products[$i]);
 
-    if($data != null)
-    {
-     
-         foreach($data as $c)
-         {
-             $temp = $this->getProduct($c->id);
-             array_push($ret,$temp);
-         }
-    }
-
-    return $ret;
- }
-
- function getProductsByBrand($slug='')
- {
-    $ret = [];
-    $data = Products::where('brand',$slug)->orderBy('created_at','desc')->get();
-
-    if($data != null)
-    {
-     
-         foreach($data as $c)
-         {
-             $temp = $this->getProduct($c->id);
-             array_push($ret,$temp);
-         }
-    }
-
-    return $ret;
- }
-
- function getBxSliderProducts()
- {
-    $allProducts = $this->getProducts(); $pc = count($allProducts);
-    $ret = []; $temp = [];
-    $groupCount =  $pc >= 4 ? 4 : $pc;
-     shuffle($allProducts);
-
-    for($i = 0; $i < $groupCount; $i++)
-    {
-       $temp = $allProducts[$i];
-       array_push($ret,$temp);
-    }
-
-    return $ret;
-
- }
-
-function removeProduct($id)
-{
-    $a = Products::where('id', $id)
-    ->orWhere('slug',$id)->first();
-
-    if($a != null) $a->delete();
-}
-
-//PRODUCT IMAGES
-function createProductImage($data)
-{
-    $ret = ProductImages::create([
-        'product_slug' => $data['product_slug'],
-        'url' => $data['url'],
-    ]);
-
-    return $ret;
-}
-
-function getProductImages($product="",$options = [])
-{
-  $ret = []; $data = null;
-
-     $data = ProductImages::where('product_slug',$product)->orderBy('created_at','desc')->get();
-
-
- 
-  if($data != null)
-   {
-    
-        foreach($data as $c)
-        {
-            $temp = $this->getProductImage($c->id,$options);
-            array_push($ret,$temp);
+                //Featured
+                array_push($ret['featured'], $products[$i]);
+            }
         }
-   }
-
- return $ret;
-}
-
-function getProductImage($id="",$options=[])
-{
-
-  $ret = [];
-    $c = ProductImages::where('id',$id)->first();
-
-    if($c != null)
-    {
-     $ret['id'] = $c->id;
-     $ret['product_slug'] = $c->product_slug;
-     $ret['url'] = $c->url;
-     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+        return $ret;
     }
 
-    return $ret;
-}
+    function getProductsByCategory($slug = '')
+    {
+        $ret = [];
+        $data = Products::where('category', $slug)->orderBy('created_at', 'desc')->get();
 
+        if ($data != null) {
 
-function removeProductImage($id)
-{
-    $a = ProductImages::where('id', $id);
-
-    if($a != null) $a->delete();
-}
-
-//PRODUCT LIKES
-function createProductLike($data)
-{
-    $ret = ProductLikes::create([
-        'product_slug' => $data['product_slug'],
-        'user_id' => $data['user_id'],
-    ]);
-
-    return $ret;
-}
-
-function getProductLikes($product="",$options = [])
-{
-  $ret = []; $data = null;
-
-     $data = ProductLikes::where('product_slug',$product)->orderBy('created_at','desc')->get();
-
-
- 
-  if($data != null)
-   {
-    
-        foreach($data as $c)
-        {
-            $temp = $this->getProductLike($c->id,$options);
-            array_push($ret,$temp);
+            foreach ($data as $c) {
+                $temp = $this->getProduct($c->id);
+                array_push($ret, $temp);
+            }
         }
-   }
 
- return $ret;
-}
-
-function getProductLike($id="",$options=[])
-{
-
-  $ret = [];
-    $c = ProductLikes::where('id',$id)->first();
-
-    if($c != null)
-    {
-     $ret['id'] = $c->id;
-     $ret['product_slug'] = $c->product_slug;
-     $ret['user_id'] = $c->user_id;
-     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+        return $ret;
     }
 
-    return $ret;
-}
+    function getProductsByBrand($slug = '')
+    {
+        $ret = [];
+        $data = Products::where('brand', $slug)->orderBy('created_at', 'desc')->get();
 
-function hasLikedProduct($options=['user_id' => '','slug' => ''])
-{
-    $ret = "false";
+        if ($data != null) {
 
-    $l = ProductLikes::where('user_id',$options['user_id'])
-                     ->where('product_slug',$options['slug'])->first();
-    if($l !== null) $ret = "true";
-    return $ret;
-}
-
-
-function removeProductLike($id)
-{
-    $a = ProductLikes::where('id', $id);
-
-    if($a != null) $a->delete();
-}
-
-//CATEGORIES
-function createCategory($data)
-{
-    $ret = Categories::create([
-        'title' => $data['title'],
-        'slug' => $data['slug'],
-        'img' => $data['img'],
-    ]);
-
-    return $ret;
-}
-
-function getCategories()
-{
-  $ret = [];
- $data = Categories::where('id','>','0')->orderBy('created_at','desc')->get();
- 
-  if($data != null)
-   {
-    
-        foreach($data as $c)
-        {
-            $temp = $this->getCategory($c->id);
-            array_push($ret,$temp);
+            foreach ($data as $c) {
+                $temp = $this->getProduct($c->id);
+                array_push($ret, $temp);
+            }
         }
-   }
 
- return $ret;
-}
-
-function getCategory($id="")
-{
-
-  $ret = [];
-    $c = Categories::where('id',$id)
-         ->orWhere('slug',$id)->first();
-
-    if($c != null)
-    {
-     $ret['id'] = $c->id;
-     $ret['title'] = $c->title;
-     $ret['slug'] = $c->slug;
-     $ret['img'] = $c->img;
-     $ret['product_count'] = Products::where('category',$c->slug)->count();
-     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+        return $ret;
     }
 
-    return $ret;
-}
+    function getBxSliderProducts()
+    {
+        $allProducts = $this->getProducts();
+        $pc = count($allProducts);
+        $ret = [];
+        $temp = [];
+        $groupCount =  $pc >= 4 ? 4 : $pc;
+        shuffle($allProducts);
 
-
-function removeCategory($id)
-{
-    $a = Categories::where('id',$id)
-    ->orWhere('slug',$id)->first();
-
-    if($a != null) $a->delete();
-}
-
-//BRANDS
-function createBrand($data)
-{
-    $ret = Brands::create([
-        'title' => $data['title'],
-        'slug' => $data['slug'],
-        'img' => $data['img'],
-    ]);
-
-    return $ret;
-}
-
-function getBrands()
-{
-  $ret = [];
- $data = Brands::where('id','>','0')->orderBy('created_at','desc')->get();
- 
-  if($data != null)
-   {
-    
-        foreach($data as $c)
-        {
-            $temp = $this->getBrand($c->id);
-            array_push($ret,$temp);
+        for ($i = 0; $i < $groupCount; $i++) {
+            $temp = $allProducts[$i];
+            array_push($ret, $temp);
         }
-   }
 
- return $ret;
-}
-
-function getBrand($id="")
-{
-
-  $ret = [];
-    $c = Brands::where('id',$id)
-         ->orWhere('slug',$id)->first();
-
-    if($c != null)
-    {
-     $ret['id'] = $c->id;
-     $ret['title'] = $c->title;
-     $ret['slug'] = $c->slug;
-     $ret['img'] = $c->img;
-     $ret['product_count'] = Products::where('brand',$c->slug)->count();
-     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+        return $ret;
     }
 
-    return $ret;
-}
+    function removeProduct($id)
+    {
+        $a = Products::where('id', $id)
+            ->orWhere('slug', $id)->first();
 
-function removeBrand($id)
-{
-    $a = Brands::where('id',$id)
-    ->orWhere('slug',$id)->first();
+        if ($a != null) $a->delete();
+    }
 
-    if($a != null) $a->delete();
-}
+    //PRODUCT IMAGES
+    function createProductImage($data)
+    {
+        $ret = ProductImages::create([
+            'product_slug' => $data['product_slug'],
+            'url' => $data['url'],
+        ]);
 
-//CARTS
-function createCartItem($data)
-{
-    $ret = CartItems::create([
-        'user_id' => $data['user_id'],
-        'product_slug' => $data['product_slug'],
-        'qty' => $data['qty'],
-    ]);
+        return $ret;
+    }
 
-    return $ret;
-}
+    function getProductImages($product = "", $options = [])
+    {
+        $ret = [];
+        $data = null;
 
-function getCartItems($id,$options=['type' => 'user'])
-{
-  $ret = []; $data = null;
+        $data = ProductImages::where('product_slug', $product)->orderBy('created_at', 'desc')->get();
 
-  if($options['type'] === 'user') $data = CartItems::where('user_id',$id)->orderBy('created_at','desc')->get();
- 
-  if($data != null)
-   {
-    
-        foreach($data as $c)
-        {
-            $temp = $this->getCartItem($c->id);
-            array_push($ret,$temp);
+
+
+        if ($data != null) {
+
+            foreach ($data as $c) {
+                $temp = $this->getProductImage($c->id, $options);
+                array_push($ret, $temp);
+            }
         }
-   }
 
- return $ret;
-}
-
-function getCartItem($id="")
-{
-
-  $ret = [];
-    $c = CartItems::where('id',$id)->first();
-
-    if($c != null)
-    {
-     $ret['id'] = $c->id;
-     $ret['user_id'] = $c->user_id;
-     $ret['product'] = $this->getProduct($c->product_slug);
-     $ret['qty'] = $c->qty;
-     $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);  
+        return $ret;
     }
 
-    return $ret;
-}
+    function getProductImage($id = "", $options = [])
+    {
 
-function removeCartItem($id)
-{
-    $c = CartItems::where('id',$id)->first();
+        $ret = [];
+        $c = ProductImages::where('id', $id)->first();
 
-    if($c != null) $c->delete();
-}
+        if ($c != null) {
+            $ret['id'] = $c->id;
+            $ret['product_slug'] = $c->product_slug;
+            $ret['url'] = $c->url;
+            $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
 
-function createSiteMessage($data)
-{
- 
-    $ret = SiteMessages::create(['name' => $data['name'],
-                                          'email' => $data['email'], 
-                                           'subject' => $data['subject'],
-                                           'body' => $data['body'],
-                                           ]);
-                                           
-     return $ret;
-}
- 
- function getSiteMessage($id)
- {
-     $ret = [];
-     $u = SiteMessages::where('id',$id)->first();
+        return $ret;
+    }
 
-    if($u != null)
-     {
-          $temp['name'] = $u->name; 
+
+    function removeProductImage($id)
+    {
+        $a = ProductImages::where('id', $id);
+
+        if ($a != null) $a->delete();
+    }
+
+    //PRODUCT LIKES
+    function createProductLike($data)
+    {
+        $ret = ProductLikes::create([
+            'product_slug' => $data['product_slug'],
+            'user_id' => $data['user_id'],
+        ]);
+
+        return $ret;
+    }
+
+    function getProductLikes($product = "", $options = [])
+    {
+        $ret = [];
+        $data = null;
+
+        $data = ProductLikes::where('product_slug', $product)->orderBy('created_at', 'desc')->get();
+
+
+
+        if ($data != null) {
+
+            foreach ($data as $c) {
+                $temp = $this->getProductLike($c->id, $options);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+    function getProductLike($id = "", $options = [])
+    {
+
+        $ret = [];
+        $c = ProductLikes::where('id', $id)->first();
+
+        if ($c != null) {
+            $ret['id'] = $c->id;
+            $ret['product_slug'] = $c->product_slug;
+            $ret['user_id'] = $c->user_id;
+            $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function hasLikedProduct($options = ['user_id' => '', 'slug' => ''])
+    {
+        $ret = "false";
+
+        $l = ProductLikes::where('user_id', $options['user_id'])
+            ->where('product_slug', $options['slug'])->first();
+        if ($l !== null) $ret = "true";
+        return $ret;
+    }
+
+
+    function removeProductLike($id)
+    {
+        $a = ProductLikes::where('id', $id);
+
+        if ($a != null) $a->delete();
+    }
+
+    //CATEGORIES
+    function createCategory($data)
+    {
+        $ret = Categories::create([
+            'title' => $data['title'],
+            'slug' => $data['slug'],
+            'img' => $data['img'],
+        ]);
+
+        return $ret;
+    }
+
+    function getCategories()
+    {
+        $ret = [];
+        $data = Categories::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+
+        if ($data != null) {
+
+            foreach ($data as $c) {
+                $temp = $this->getCategory($c->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+    function getCategory($id = "")
+    {
+
+        $ret = [];
+        $c = Categories::where('id', $id)
+            ->orWhere('slug', $id)->first();
+
+        if ($c != null) {
+            $ret['id'] = $c->id;
+            $ret['title'] = $c->title;
+            $ret['slug'] = $c->slug;
+            $ret['img'] = $c->img;
+            $ret['product_count'] = Products::where('category', $c->slug)->count();
+            $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+
+    function removeCategory($id)
+    {
+        $a = Categories::where('id', $id)
+            ->orWhere('slug', $id)->first();
+
+        if ($a != null) $a->delete();
+    }
+
+    //BRANDS
+    function createBrand($data)
+    {
+        $ret = Brands::create([
+            'title' => $data['title'],
+            'slug' => $data['slug'],
+            'img' => $data['img'],
+        ]);
+
+        return $ret;
+    }
+
+    function getBrands()
+    {
+        $ret = [];
+        $data = Brands::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+
+        if ($data != null) {
+
+            foreach ($data as $c) {
+                $temp = $this->getBrand($c->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+    function getBrand($id = "")
+    {
+
+        $ret = [];
+        $c = Brands::where('id', $id)
+            ->orWhere('slug', $id)->first();
+
+        if ($c != null) {
+            $ret['id'] = $c->id;
+            $ret['title'] = $c->title;
+            $ret['slug'] = $c->slug;
+            $ret['img'] = $c->img;
+            $ret['product_count'] = Products::where('brand', $c->slug)->count();
+            $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function removeBrand($id)
+    {
+        $a = Brands::where('id', $id)
+            ->orWhere('slug', $id)->first();
+
+        if ($a != null) $a->delete();
+    }
+
+    //CARTS
+    function createCartItem($data)
+    {
+        $ret = CartItems::create([
+            'user_id' => $data['user_id'],
+            'product_slug' => $data['product_slug'],
+            'qty' => $data['qty'],
+        ]);
+
+        return $ret;
+    }
+
+    function getCartItems($id, $options = ['type' => 'user'])
+    {
+        $ret = [];
+        $data = null;
+
+        if ($options['type'] === 'user') $data = CartItems::where('user_id', $id)->orderBy('created_at', 'desc')->get();
+
+        if ($data != null) {
+
+            foreach ($data as $c) {
+                $temp = $this->getCartItem($c->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+    function getCartItem($id = "")
+    {
+
+        $ret = [];
+        $c = CartItems::where('id', $id)->first();
+
+        if ($c != null) {
+            $ret['id'] = $c->id;
+            $ret['user_id'] = $c->user_id;
+            $ret['product'] = $this->getProduct($c->product_slug);
+            $ret['qty'] = $c->qty;
+            $ret['date'] = $c->created_at->format($this->DEFAULT_DATE_FORMAT);
+        }
+
+        return $ret;
+    }
+
+    function removeCartItem($id)
+    {
+        $c = CartItems::where('id', $id)->first();
+
+        if ($c != null) $c->delete();
+    }
+
+    function createSiteMessage($data)
+    {
+
+        $ret = SiteMessages::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'subject' => $data['subject'],
+            'body' => $data['body'],
+        ]);
+
+        return $ret;
+    }
+
+    function getSiteMessage($id)
+    {
+        $ret = [];
+        $u = SiteMessages::where('id', $id)->first();
+
+        if ($u != null) {
+            $temp['name'] = $u->name;
             $temp['email'] = $u->email;
             $temp['subject'] = $u->subject;
             $temp['body'] = $u->body;
-             $temp['id'] = $u->id; 
-             $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);  
-             $ret = $temp; 
-     }                          
-                                            
-      return $ret;
- }
- 
- function getSiteMessages($id="all")
- {
-     $ret = [];
-     if($id == "all") $uu = SiteMessages::where('id','>','0')->orderBy('created_at','desc')->get();
+            $temp['id'] = $u->id;
+            $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);
+            $ret = $temp;
+        }
 
-    if($uu != null)
-     {
-        foreach($uu as $u)
-          {
-             $temp = $this->getSiteMessage($u->id);
-             array_push($ret,$temp); 
-          }
-     }                          
-                                            
-      return $ret;
- }	  
+        return $ret;
+    }
 
- 
+    function getSiteMessages($id = "all")
+    {
+        $ret = [];
+        if ($id == "all") $uu = SiteMessages::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
 
- function removeSiteMessage($id)
- {
-     $p = SiteMessages::where('id',$id)->first();
+        if ($uu != null) {
+            foreach ($uu as $u) {
+                $temp = $this->getSiteMessage($u->id);
+                array_push($ret, $temp);
+            }
+        }
 
-     if($p != null) $p->delete();
- }
+        return $ret;
+    }
 
 
- function createShippingDetails($data)
-{
- 
-    $ret = ShippingDetails::create(['user_id' => $data['user_id'],
-                                          'address' => $data['address'], 
-                                           'city' => $data['city'],
-                                           'state' => $data['state'],
-                                           'zip' => $data['zip'],
-                                           ]);
-                                           
-     return $ret;
-}
- 
- function getShippingDetail($id)
- {
-     $ret = [];
-     $u = ShippingDetails::where('id',$id)->first();
 
-    if($u != null)
-     {
-          $temp['user_id'] = $u->user_id; 
+    function removeSiteMessage($id)
+    {
+        $p = SiteMessages::where('id', $id)->first();
+
+        if ($p != null) $p->delete();
+    }
+
+
+    function createShippingDetails($data)
+    {
+
+        $ret = ShippingDetails::create([
+            'user_id' => $data['user_id'],
+            'address' => $data['address'],
+            'city' => $data['city'],
+            'state' => $data['state'],
+            'zip' => $data['zip'],
+        ]);
+
+        return $ret;
+    }
+
+    function getShippingDetail($id)
+    {
+        $ret = [];
+        $u = ShippingDetails::where('id', $id)->first();
+
+        if ($u != null) {
+            $temp['user_id'] = $u->user_id;
             $temp['address'] = $u->address;
             $temp['city'] = $u->city;
             $temp['state'] = $u->v;
-             $temp['zip'] = $u->zip; 
-             $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);  
-             $ret = $temp; 
-     }                          
-                                            
-      return $ret;
- }
- 
- function getShippingDetails($id="all")
- {
-     $ret = [];
-     if($id == "all") $uu = ShippingDetails::where('id','>','0')->orderBy('created_at','desc')->get();
-     else $uu = ShippingDetails::where('user_id',$id)->orderBy('created_at','desc')->get();
+            $temp['zip'] = $u->zip;
+            $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);
+            $ret = $temp;
+        }
 
-    if($uu != null)
-     {
-        foreach($uu as $u)
-          {
-             $temp = $this->getShippingDetail($u->id);
-             array_push($ret,$temp); 
-          }
-     }                          
-                                            
-      return $ret;
- }	  
+        return $ret;
+    }
 
- 
+    function getShippingDetails($id = "all")
+    {
+        $ret = [];
+        if ($id == "all") $uu = ShippingDetails::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+        else $uu = ShippingDetails::where('user_id', $id)->orderBy('created_at', 'desc')->get();
 
- function removeShippingDetails($id)
- {
-     $p = ShippingDetails::where('id',$id)->first();
+        if ($uu != null) {
+            foreach ($uu as $u) {
+                $temp = $this->getShippingDetail($u->id);
+                array_push($ret, $temp);
+            }
+        }
 
-     if($p != null) $p->delete();
- }
+        return $ret;
+    }
+
+
+
+    function removeShippingDetails($id)
+    {
+        $p = ShippingDetails::where('id', $id)->first();
+
+        if ($p != null) $p->delete();
+    }
 
 
 
 
-/*******************************************************************************
- * Reusable Funtions
- ******************************************************************************/
-		  
-           function getCurrentBanner()
-           {
-             $ret = $this->getBanners();
+    /*******************************************************************************
+     * Reusable Funtions
+     ******************************************************************************/
 
-             shuffle($ret);
-             $temp = [];
-             if(count($ret) > 0) $temp = $ret[0];
-             return $temp;
-           }
+    function getCurrentBanner()
+    {
+        $ret = $this->getBanners();
 
-          
+        shuffle($ret);
+        $temp = [];
+        if (count($ret) > 0) $temp = $ret[0];
+        return $temp;
+    }
 
-         
-            function bomb($payload=[
-                'sender' => '',
-                'subject' => '',
-                'to' => '',
-                'body' => '',
-                'sname' => ''
-            ])
-{
-  $v = isset($payload['subject']) && isset($payload['sname']) && isset($payload['email']) && isset($payload['body']);
-$ret = 'error';
+    function getIpAdress()
+    {
+        $ret = '';
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ret = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            // If there are multiple IPs (comma-separated), take the first one
+            $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+            $ret = trim($ips[0]);
+        } else {
+            $ret = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ret;
+    }
 
-  if($v)
-  { 
-     $emailContent = $payload['body'];
 
-        $emailPayload = $payload['sender'] === 'current' ? $this->getCurrentSender() : $this->getSender($payload['sender']);
-     
-          $emailPayload['to'] = $payload['email'];
+
+
+    function bomb($payload = [
+        'sender' => '',
+        'subject' => '',
+        'to' => '',
+        'body' => '',
+        'sname' => ''
+    ])
+    {
+        $v = isset($payload['subject']) && isset($payload['sname']) && isset($payload['email']) && isset($payload['body']);
+        $ret = 'error';
+
+        if ($v) {
+            $emailContent = $payload['body'];
+
+            $emailPayload = $payload['sender'] === 'current' ? $this->getCurrentSender() : $this->getSender($payload['sender']);
+
+            $emailPayload['to'] = $payload['email'];
             $emailPayload['htmlContent'] = $emailContent;
             $emailPayload['subject'] = $payload['subject'];
             $emailPayload['sn'] = $payload['sname'];
-      
-           $this->symfonySendMail($emailPayload);
-      
-      $ret = 'ok';
-  }
 
-   return $ret;
-}
- 
-function paginateData($data=[],$itemsPerPage=5)
-{
-    $ret = [];
-    $numPages = $this->numPages($data,$itemsPerPage);
-    $ctr = 0;
+            $this->symfonySendMail($emailPayload);
 
-    if($numPages > 0)
-    {
-       for($i = 0; $i < $numPages; $i++)
-       {
-          $temp = [];
-          for($j = 0; $j < $itemsPerPage; $j++)
-          {
-             array_push($temp,$data[$ctr]);
-             if($ctr >= count($data)) break;
-             ++$ctr;
-          }
-          array_push($ret,$temp);
-       }
+            $ret = 'ok';
+        }
+
+        return $ret;
     }
-    
-    return $ret;
-}
-           
-          
 
+    function paginateData($data = [], $itemsPerPage = 5)
+    {
+        $ret = [];
+        $numPages = $this->numPages($data, $itemsPerPage);
+        $ctr = 0;
 
-       
-/*************************************************************************************** */
-
-           function generateRandomNumber($length=2,$type='alphanumeric')
-           {
-            $container = $this->chars;
-            if($type === 'numeric') $container = $this->nums;
-            $result = ''; $temp = []; $temp3 = [];
-            for ($i = $length; $i > 0; --$i)
-            {
-               $temp2 = rand(1,strlen($container)-1);
-               if(strlen($container) > $temp2)
-               {
-                $result .= $container[$temp2];
-               } 
-            }
-            return $result;
-          }
-
-
-
-          function numPages($data,$itemsPerPage=9)
-           {
-             return ceil(count($data) / $itemsPerPage);
-           }
-
-
-          function prevPage($data,$currentPage)
-          {
-            $ret = [];
-
-            if ($currentPage > 1) {
-                --$currentPage;
-                $ret = $this->changePage($data,$currentPage);
-            }
-            return $ret;
-          }
-
-          function nextPage($data,$currentPage)
-          {
-            $ret = [];
-
-            if ($currentPage < $this->numPages($data)) {
-                ++$currentPage;
-                $ret = $this->changePage($data,$currentPage);
-            }
-            return $ret;
-          }
-
-          function changePage($data=[],$currentPage=1,$itemsPerPage=9)
-          {
-            $ret = []; $numPages = $this->numPages($data);
-           
-
-            if ($currentPage < 1) $currentPage = 1;
-            if ($currentPage > $numPages) $currentPage = $numPages;
-
-            $temp = [];
-
-            if($currentPage > 0)
-            {
-                for($i = ($currentPage - 1) * $itemsPerPage; $i < ($currentPage * $itemsPerPage) && $i < count($data); $i++)
-                {
-                    
-                    array_push($ret,$data[$i]);
+        if ($numPages > 0) {
+            for ($i = 0; $i < $numPages; $i++) {
+                $temp = [];
+                for ($j = 0; $j < $itemsPerPage; $j++) {
+                    array_push($temp, $data[$ctr]);
+                    if ($ctr >= count($data)) break;
+                    ++$ctr;
                 }
+                array_push($ret, $temp);
             }
-            
-            return $ret;
-          }
+        }
 
-          
+        return $ret;
+    }
 
-          function calculateRating($reviews)
-          {
-            //dd($reviews);
-            $ret = [
-                'rating' => 0,
-                'environment' => 0,
-                'service' => 0,
-                'price' => 0
-            ];
 
-            foreach($reviews as $r)
-            {
-               $ret['environment'] += $r['environment'];
-               $ret['service'] += $r['service'];
-               $ret['price'] += $r['price'];
+
+
+
+    /*************************************************************************************** */
+
+    function generateRandomNumber($length = 2, $type = 'alphanumeric')
+    {
+        $container = $this->chars;
+        if ($type === 'numeric') $container = $this->nums;
+        $result = '';
+        $temp = [];
+        $temp3 = [];
+        for ($i = $length; $i > 0; --$i) {
+            $temp2 = rand(1, strlen($container) - 1);
+            if (strlen($container) > $temp2) {
+                $result .= $container[$temp2];
             }
+        }
+        return $result;
+    }
 
-            $ret['rating'] = (($ret['environment'] + $ret['service'] + $ret['price']) / 20) / 3; 
-            
-            return $ret;
-          }
 
-         
 
-         
+    function numPages($data, $itemsPerPage = 9)
+    {
+        return ceil(count($data) / $itemsPerPage);
+    }
 
-           function callAPI($data) 
-           {
-           	//form query string
-               
-              $validation = isset($data['url']) || isset($data['method']) || 
-              ($data['method'] === "POST" && isset($data['body']));
 
-			   if($validation)
-			   { 
-			     $client = new Client([
-                 // Base URI is used with relative requests
-                 'base_uri' => 'http://httpbin.org',
-                 // You can set any number of default request options.
-                 //'timeout'  => 2.0,
-                 ]);
+    function prevPage($data, $currentPage)
+    {
+        $ret = [];
 
-                 $headers = isset($data['headers']) ? $data['headers'] : [];
+        if ($currentPage > 1) {
+            --$currentPage;
+            $ret = $this->changePage($data, $currentPage);
+        }
+        return $ret;
+    }
 
-                 if($data['method'] === 'POST'){
-                    $res = $client->request($data['method'], $data['url'],[
-                        'json' => $data['body'],
-                        'headers' => $headers
-                    ]);
-                 }
-                 else{
-                    $res = $client->request(
-                        $data['method'], $data['url'],[
-                            'headers' => $headers
-                        ]);
-                 }
-			     
-			  
-                 $ret = $res->getBody()->getContents(); 
-			 
-			     $rett = json_decode($ret);
-			    }
-                else{
-				    $ret = json_encode(["status" => "ok","message" => "Validation"]);
-			   }
-			    
-              return $ret; 
-           }
+    function nextPage($data, $currentPage)
+    {
+        $ret = [];
 
-           function getSenders2(){
-            $ret = $this->callAPI([
-                'method' => 'GET',
-                'url' => 'http://x1.infinityfreeapp.com/api/senders.php?type=senders'
+        if ($currentPage < $this->numPages($data)) {
+            ++$currentPage;
+            $ret = $this->changePage($data, $currentPage);
+        }
+        return $ret;
+    }
+
+    function changePage($data = [], $currentPage = 1, $itemsPerPage = 9)
+    {
+        $ret = [];
+        $numPages = $this->numPages($data);
+
+
+        if ($currentPage < 1) $currentPage = 1;
+        if ($currentPage > $numPages) $currentPage = $numPages;
+
+        $temp = [];
+
+        if ($currentPage > 0) {
+            for ($i = ($currentPage - 1) * $itemsPerPage; $i < ($currentPage * $itemsPerPage) && $i < count($data); $i++) {
+
+                array_push($ret, $data[$i]);
+            }
+        }
+
+        return $ret;
+    }
+
+
+
+    function calculateRating($reviews)
+    {
+        //dd($reviews);
+        $ret = [
+            'rating' => 0,
+            'environment' => 0,
+            'service' => 0,
+            'price' => 0
+        ];
+
+        foreach ($reviews as $r) {
+            $ret['environment'] += $r['environment'];
+            $ret['service'] += $r['service'];
+            $ret['price'] += $r['price'];
+        }
+
+        $ret['rating'] = (($ret['environment'] + $ret['service'] + $ret['price']) / 20) / 3;
+
+        return $ret;
+    }
+
+
+
+
+
+    function callAPI($data)
+    {
+        //form query string
+
+        $validation = isset($data['url']) || isset($data['method']) ||
+            ($data['method'] === "POST" && isset($data['body']));
+
+        if ($validation) {
+            $client = new Client([
+                // Base URI is used with relative requests
+                'base_uri' => 'http://httpbin.org',
+                // You can set any number of default request options.
+                //'timeout'  => 2.0,
             ]);
 
-            return $ret;
-           }
-		          
+            $headers = isset($data['headers']) ? $data['headers'] : [];
+
+            if ($data['method'] === 'POST') {
+                $res = $client->request($data['method'], $data['url'], [
+                    'json' => $data['body'],
+                    'headers' => $headers
+                ]);
+            } else {
+                $res = $client->request(
+                    $data['method'],
+                    $data['url'],
+                    [
+                        'headers' => $headers
+                    ]
+                );
+            }
+
+
+            $ret = $res->getBody()->getContents();
+
+            $rett = json_decode($ret);
+        } else {
+            $ret = json_encode(["status" => "ok", "message" => "Validation"]);
+        }
+
+        return $ret;
+    }
+
+    function getSenders2()
+    {
+        $ret = $this->callAPI([
+            'method' => 'GET',
+            'url' => 'http://x1.infinityfreeapp.com/api/senders.php?type=senders'
+        ]);
+
+        return $ret;
+    }
 }
-?>

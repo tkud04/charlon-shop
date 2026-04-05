@@ -183,9 +183,10 @@ class CartsController extends Controller {
 		#dd($items);
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
+		$ip = $this->helpers->getIpAdress();
 		$sliderData = $this->helpers->getSliderProducts();
 		array_push($c,'sliderData');
-		array_push($c,'items','fee','pmodes','shippingInfo');
+		array_push($c,'items','fee','pmodes','shippingInfo','ip');
 	    return view('main.cart.checkout',compact($c));	
 		
     }

