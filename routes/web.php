@@ -58,6 +58,7 @@ Route::get('bye', [LoginController::class,'getLogout']);
 
 Route::get('dashboard', [MainController::class,'getDashboard']);
 Route::get('profile', [MainController::class,'getProfile']);
+Route::get('orders', [MainController::class,'getOrders']);
 
 
 Route::get('cart', [CartsController::class,'getCart']);
@@ -82,7 +83,7 @@ Route::get('product-category', [AdminCategoriesController::class,'getProductCate
 Route::get('brands2', [AdminBrandsController::class,'getBrands']);
 Route::get('add-brand', [AdminBrandsController::class,'getAddBrand']);
 
-Route::get('orders', [AdminOrdersController::class,'getOrders']);
+Route::get('orders2', [AdminOrdersController::class,'getOrders']);
 
 Route::get('add-plugin', [AdminPluginsController::class,'getAddPlugin']);
 Route::get('plugins', [AdminPluginsController::class,'getPlugins']);

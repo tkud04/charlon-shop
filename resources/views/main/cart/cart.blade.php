@@ -24,11 +24,14 @@ $title = "Cart";
 
 
 @section('content')
+@include('components.generic-banner',[
+'title' => $title,
+'description' => "View items in your cart and checkout"
+])
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <h2 style="margin-bottom: 20px;">Shopping Cart</h2>
-
 
 <div class="">
 <table class="table cart-table">
@@ -44,7 +47,7 @@ $title = "Cart";
 				<tbody>
 				<?php
                   $v = (isset($items) && count($items) > 0);
-                  $total = 0;
+                  $total = 0; 
                   if($v)
                   {
                     foreach($items as $item)
@@ -144,12 +147,12 @@ $title = "Cart";
                     <dt class="col-md-3">Zone 1</dt>
                     <dd class="col-md-9">
                       <p>States: California, New York, Nevada, Florida</p>
-                      <p>Price: $80</p>
+                      <p>Price: $30</p>
                     </dd>
                     <dt class="col-md-3">Others</dt>
                     <dd class="col-md-9">
                       <p>States: other states in the USA</p>
-                      <p>Price: $50</p>
+                      <p>Price: $30</p>
                     </dd>
                    </dl>
                 </div>
@@ -168,11 +171,11 @@ $title = "Cart";
             <tbody>
                 <tr>
                     <td class="total-table-title">Subtotal:</td>
-                    <td>${{number_format($itemTotal,2)}}</td>
+                    <td>${{number_format($total,2)}}</td>
                 </tr>
                 <tr>
                     <td class="total-table-title">Shipping:</td>
-                    <td>$250.00</td>
+                    <td>$30.00</td>
                 </tr>
                 <tr>
                     <td class="total-table-title">TAX (0%):</td>
@@ -182,7 +185,7 @@ $title = "Cart";
             <tfoot>
                 <tr>
                     <td>Total:</td>
-                    <td>${{number_format($itemTotal + 250,2)}}</td>
+                    <td>${{number_format($total + 30,2)}}</td>
                 </tr>
             </tfoot>
         </table>

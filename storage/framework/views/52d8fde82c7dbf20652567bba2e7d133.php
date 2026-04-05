@@ -2,11 +2,11 @@
 $void = 'javascript:void(0)';
 $title = "Checkout";
 ?>
-@extends('layout')
 
-@section('title',$title)
 
-@section('styles')
+<?php $__env->startSection('title',$title); ?>
+
+<?php $__env->startSection('styles'); ?>
 <style>
   .black {
     color: black;
@@ -20,14 +20,14 @@ $title = "Checkout";
     font-size: 20px;
   }
 </style>
-@stop
+<?php $__env->stopSection(); ?>
 
 
-@section('content')
-@include('components.generic-banner',[
+<?php $__env->startSection('content'); ?>
+<?php echo $__env->make('components.generic-banner',[
 'title' => $title,
 'description' => "Confirm yor order to continue"
-])
+], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <?php
 $si = [
@@ -54,24 +54,24 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <h2 class="checkout-title">Your personal details</h2>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">First Name*</span></span> <input type="text" value="{{$user->fname}}" required="" class="form-control input-lg" placeholder="Your First Name" disabled></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Last Name*</span></span> <input type="text" value="{{$user->lname}}" required="" class="form-control input-lg" placeholder="Your Last Lame" disabled></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-email"></span><span class="input-text">Email*</span></span> <input type="text" value="{{$user->email}}" required="" class="form-control input-lg" placeholder="Your Email" disabled></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">First Name*</span></span> <input type="text" value="<?php echo e($user->fname); ?>" required="" class="form-control input-lg" placeholder="Your First Name" disabled></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Last Name*</span></span> <input type="text" value="<?php echo e($user->lname); ?>" required="" class="form-control input-lg" placeholder="Your Last Lame" disabled></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-email"></span><span class="input-text">Email*</span></span> <input type="text" value="<?php echo e($user->email); ?>" required="" class="form-control input-lg" placeholder="Your Email" disabled></div>
 
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <h2 class="checkout-title">Your Address</h2>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-address"></span><span class="input-text">Address*</span></span> <input id="a" type="text" value="{{$si['address']}}" class="form-control input-lg" placeholder="Your Address"></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-city"></span><span class="input-text">City*</span></span> <input id="c" type="text" value="{{$si['city']}}" required="" class="form-control input-lg" placeholder="Your City"></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-region"></span><span class="input-text">Region/State*</span></span> <input id="s" value="{{$si['state']}}" type="text" required="" class="form-control input-lg" placeholder="Your region or state"></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-address"></span><span class="input-text">Address*</span></span> <input id="a" type="text" value="<?php echo e($si['address']); ?>" class="form-control input-lg" placeholder="Your Address"></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-city"></span><span class="input-text">City*</span></span> <input id="c" type="text" value="<?php echo e($si['city']); ?>" required="" class="form-control input-lg" placeholder="Your City"></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-region"></span><span class="input-text">Region/State*</span></span> <input id="s" value="<?php echo e($si['state']); ?>" type="text" required="" class="form-control input-lg" placeholder="Your region or state"></div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-postcode"></span><span class="input-text">Post Code*</span></span>
-                      <inpu id="z" type="text" required="" value="{{$si['zip']}}" class="form-control input-lg" placeholder="Your Post Code">
+                      <inpu id="z" type="text" required="" value="<?php echo e($si['zip']); ?>" class="form-control input-lg" placeholder="Your Post Code">
                     </div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-country"></span><span class="input-text">Country*</span></span>
                       <input type="text" required="" class="form-control input-lg" value="USA" disabled>
                     </div>
 
-                    <div class="input-group custom-checkbox md-margin"><input type="checkbox" checked disabled> <span class="checbox-container"><i class="fa fa-check"></i></span>Clicking <i>Confirm Order</i> signifies that you have read and agree to our <a href="{{url('terms')}}">Terms of Use</a> and <a href="{{url('privacy')}}">Privacy Policy</a>.</div>
+                    <div class="input-group custom-checkbox md-margin"><input type="checkbox" checked disabled> <span class="checbox-container"><i class="fa fa-check"></i></span>Clicking <i>Confirm Order</i> signifies that you have read and agree to our <a href="<?php echo e(url('terms')); ?>">Terms of Use</a> and <a href="<?php echo e(url('privacy')); ?>">Privacy Policy</a>.</div>
                   </div>
                 </div>
               </div>
@@ -92,24 +92,24 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
                   <div class="col-md-4"></div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <h2 class="checkout-title">Card details</h2>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">First Name*</span></span> <input type="text" value="{{$user->fname}}" required="" class="form-control input-lg" placeholder="Your First Name" disabled></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Last Name*</span></span> <input type="text" value="{{$user->lname}}" required="" class="form-control input-lg" placeholder="Your Last Lame" disabled></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-email"></span><span class="input-text">Email*</span></span> <input type="text" value="{{$user->email}}" required="" class="form-control input-lg" placeholder="Your Email" disabled></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">First Name*</span></span> <input type="text" value="<?php echo e($user->fname); ?>" required="" class="form-control input-lg" placeholder="Your First Name" disabled></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Last Name*</span></span> <input type="text" value="<?php echo e($user->lname); ?>" required="" class="form-control input-lg" placeholder="Your Last Lame" disabled></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-email"></span><span class="input-text">Email*</span></span> <input type="text" value="<?php echo e($user->email); ?>" required="" class="form-control input-lg" placeholder="Your Email" disabled></div>
 
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <h2 class="checkout-title">Billing Address</h2>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-address"></span><span class="input-text">Address*</span></span> <input id="a" type="text" value="{{$si['address']}}" class="form-control input-lg" placeholder="Your Address"></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-city"></span><span class="input-text">City*</span></span> <input id="c" type="text" value="{{$si['city']}}" required="" class="form-control input-lg" placeholder="Your City"></div>
-                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-region"></span><span class="input-text">Region/State*</span></span> <input id="s" value="{{$si['state']}}" type="text" required="" class="form-control input-lg" placeholder="Your region or state"></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-address"></span><span class="input-text">Address*</span></span> <input id="a" type="text" value="<?php echo e($si['address']); ?>" class="form-control input-lg" placeholder="Your Address"></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-city"></span><span class="input-text">City*</span></span> <input id="c" type="text" value="<?php echo e($si['city']); ?>" required="" class="form-control input-lg" placeholder="Your City"></div>
+                    <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-region"></span><span class="input-text">Region/State*</span></span> <input id="s" value="<?php echo e($si['state']); ?>" type="text" required="" class="form-control input-lg" placeholder="Your region or state"></div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-postcode"></span><span class="input-text">Post Code*</span></span>
-                      <inpu id="z" type="text" required="" value="{{$si['zip']}}" class="form-control input-lg" placeholder="Your Post Code">
+                      <inpu id="z" type="text" required="" value="<?php echo e($si['zip']); ?>" class="form-control input-lg" placeholder="Your Post Code">
                     </div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-country"></span><span class="input-text">Country*</span></span>
                       <input type="text" required="" class="form-control input-lg" value="USA" disabled>
                     </div>
 
-                    <div class="input-group custom-checkbox md-margin"><input type="checkbox" checked disabled> <span class="checbox-container"><i class="fa fa-check"></i></span>Clicking <i>Confirm Order</i> signifies that you have read and agree to our <a href="{{url('terms')}}">Terms of Use</a> and <a href="{{url('privacy')}}">Privacy Policy</a>.</div>
+                    <div class="input-group custom-checkbox md-margin"><input type="checkbox" checked disabled> <span class="checbox-container"><i class="fa fa-check"></i></span>Clicking <i>Confirm Order</i> signifies that you have read and agree to our <a href="<?php echo e(url('terms')); ?>">Terms of Use</a> and <a href="<?php echo e(url('privacy')); ?>">Privacy Policy</a>.</div>
                   </div>
                 </div>
               </div>
@@ -160,18 +160,18 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
 
                           <tr>
                             <td class="item-name-col">
-                              <figure><a href="{{$vu}}"><img src="{{$img}}" alt="{{$ptitle}}"></a></figure>
-                              <header class="item-name"><a href="{{$vu}}">{{$ptitle}}</a></header>
-                              <p class="item-code">{{$pid}}</p>
+                              <figure><a href="<?php echo e($vu); ?>"><img src="<?php echo e($img); ?>" alt="<?php echo e($ptitle); ?>"></a></figure>
+                              <header class="item-name"><a href="<?php echo e($vu); ?>"><?php echo e($ptitle); ?></a></header>
+                              <p class="item-code"><?php echo e($pid); ?></p>
                             </td>
                             <td class="item-price-col">
-                              <span class="item-price-special">${{number_format($p['price'],2)}}</span>
+                              <span class="item-price-special">$<?php echo e(number_format($p['price'],2)); ?></span>
                             </td>
                             <td class="item-price-col">
-                              <span class="item-price-special">x{{$qty}}</span>
+                              <span class="item-price-special">x<?php echo e($qty); ?></span>
                             </td>
                             <td class="item-total-col">
-                              <span class="item-price-special">${{number_format($itemTotal,2)}}</span>
+                              <span class="item-price-special">$<?php echo e(number_format($itemTotal,2)); ?></span>
 
                             </td>
                           </tr>
@@ -197,9 +197,9 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
 </div>
 
 
-@stop
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 <script>
   const confirmCheckout = (payload = {
     a,
@@ -276,4 +276,5 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
 
   });
 </script>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/tobikudayisi/repos/charlon-shop/resources/views/main/cart/checkout.blade.php ENDPATH**/ ?>

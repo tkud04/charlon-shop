@@ -111,13 +111,7 @@ $title = $product['title'];
                                                 <a class="addthis_button_compact"></a>
                                                 <a class="addthis_counter addthis_bubble_style"></a>
                                             </div>
-                                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                                            <script type="text/javascript">
-                                                var addthis_config = {
-                                                    data_track_addressbar: !0
-                                                };
-                                            </script>
-                                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b2197865ea0183"></script>
+                                            
                                         </div>
                                     </div>
                                 </div>

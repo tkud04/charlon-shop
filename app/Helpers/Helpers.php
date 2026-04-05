@@ -16,6 +16,7 @@ use App\Models\Categories;
 use App\Models\ProductImages;
 use App\Models\ProductLikes;
 use App\Models\Products;
+use App\Models\ShippingDetails;
 use App\Models\SiteMessages;
 use GuzzleHttp\Client;
 use Symfony\Component\Mailer\Mailer;
@@ -1738,6 +1739,66 @@ function createSiteMessage($data)
  function removeSiteMessage($id)
  {
      $p = SiteMessages::where('id',$id)->first();
+
+     if($p != null) $p->delete();
+ }
+
+
+ function createShippingDetails($data)
+{
+ 
+    $ret = ShippingDetails::create(['user_id' => $data['user_id'],
+                                          'address' => $data['address'], 
+                                           'city' => $data['city'],
+                                           'state' => $data['state'],
+                                           'zip' => $data['zip'],
+                                           ]);
+                                           
+     return $ret;
+}
+ 
+ function getShippingDetail($id)
+ {
+     $ret = [];
+     $u = ShippingDetails::where('id',$id)->first();
+
+    if($u != null)
+     {
+          $temp['user_id'] = $u->user_id; 
+            $temp['address'] = $u->address;
+            $temp['city'] = $u->city;
+            $temp['state'] = $u->v;
+             $temp['zip'] = $u->zip; 
+             $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);  
+             $ret = $temp; 
+     }                          
+                                            
+      return $ret;
+ }
+ 
+ function getShippingDetails($id="all")
+ {
+     $ret = [];
+     if($id == "all") $uu = ShippingDetails::where('id','>','0')->orderBy('created_at','desc')->get();
+     else $uu = ShippingDetails::where('user_id',$id)->orderBy('created_at','desc')->get();
+
+    if($uu != null)
+     {
+        foreach($uu as $u)
+          {
+             $temp = $this->getShippingDetail($u->id);
+             array_push($ret,$temp); 
+          }
+     }                          
+                                            
+      return $ret;
+ }	  
+
+ 
+
+ function removeShippingDetails($id)
+ {
+     $p = ShippingDetails::where('id',$id)->first();
 
      if($p != null) $p->delete();
  }

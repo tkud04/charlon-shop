@@ -741,6 +741,24 @@ const rffc = async (payload={xf:''},successCallback,errorCallback) => {
  
 }
 
+const checkout = async (payload={a:'',c:'',s:'',z:'',cc:''},successCallback,errorCallback) => {
+  const url = 'api/checkout';
+
+  await fetchWithJson(
+    {
+      url,
+      method: 'POST',
+      data: [
+        {key: 'xf',value: `${payload.xf}`},
+        {key: 'qty',value: `${payload.q}`},
+      ],
+    },
+    successCallback,
+    errorCallback
+  );
+ 
+}
+
 const afp = async (payload=new FormData(),successCallback,errorCallback) => {
   const url = 'api/add-fp';
 

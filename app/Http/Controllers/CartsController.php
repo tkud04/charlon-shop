@@ -164,11 +164,11 @@ class CartsController extends Controller {
 		{
 			$user = $vu['user'];
 		}
-		/*else
+		else
 		{
 			$u = '/';
 			return redirect()->intended($u);
-		}*/
+		}
 
 		$signals = $this->helpers->signals;
 		$ads = $this->helpers->getAds();
@@ -176,15 +176,16 @@ class CartsController extends Controller {
 		$plugins = $this->helpers->getPlugins(['mode' => 'active']);
 		$c = $this->compactValues;
 		$pmodes = $this->helpers->paymentModes;
+		$shippingInfo = $this->helpers->getShippingDetails($user->id);
 
-		$items = $this->helpers->getCartItems();
+		$items = $this->helpers->getCartItems($user->id);
 		$fee = 0;
 		#dd($items);
 		$contactDetails = $this->helpers->contactDetails;
         array_push($c,'contactDetails');
 		$sliderData = $this->helpers->getSliderProducts();
 		array_push($c,'sliderData');
-		array_push($c,'items','fee','pmodes');
+		array_push($c,'items','fee','pmodes','shippingInfo');
 	    return view('main.cart.checkout',compact($c));	
 		
     }
