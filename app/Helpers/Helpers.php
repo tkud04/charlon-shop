@@ -178,7 +178,7 @@ class Helper //implements HelperContract
     ];
 
     public $contactDetails = [
-        'address' => "Test Address<br> Lagos State, NG<br>",
+        'address' => "149 Avenida Del Mar,<br> San Clemente, CA<br>",
         'phone' => "08012345678",
         'email' => "info@ukporunique.com",
     ];

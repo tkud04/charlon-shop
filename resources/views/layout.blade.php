@@ -75,7 +75,7 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                     <li>
                       <a href="{{url('cart')}}" title="My Cart">
                         <span class="top-icon top-icon-cart"></span>
-                        <span class="hide-for-xs">My Cart</span>
+                        <span class="hide-for-xs">My Orders</span>
                       </a>
                     </li>
                     @if($isAdmin)
@@ -335,7 +335,7 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
                 <h3>SHOP</h3>
                 <ul class="links">
                   <li>
-                    <a href="{{url('new')}}">New products</a>
+                    <a href="{{url('/')}}">New products</a>
                   </li>
                   <li>
                     <a href="{{url('categories')}}">Categories</a>
@@ -370,7 +370,7 @@ $isAdminPage = (isset($iap) && $iap === true) || (isset($mode) && $mode === 'adm
               </div>
               <div class="clearfix visible-sm"></div>
               <div class="col-md-3 col-sm-12 col-xs-12 widget">
-                <h3>FACEBOOK LIKE BOX</h3>
+                <h3>FACEBOOK FEED</h3>
                 <div class="facebook-likebox">
                  
                 </div>

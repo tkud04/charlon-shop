@@ -33,9 +33,18 @@ if(isset($user))
     <div class="row">
       <form>
         <div class="col-md-6 col-sm-12 col-xs-12">
-          <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Name*</span></span> <input type="text" name="contact-name" id="n" value="{{$n}}" required="" class="form-control input-lg" placeholder="Your Name"></div>
-          <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-email"></span><span class="input-text">Email*</span></span> <input type="email" name="contact-email" id="e" value="{{$e}}" required="" class="form-control input-lg" placeholder="Your Email"></div>
-          <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-subject"></span><span class="input-text">Subject*</span></span> <input type="text" name="contact-subject" id="s" required="" class="form-control input-lg" placeholder="Subject"></div>
+          <div class="input-group">
+            <span class="input-group-addon"><span class="input-icon input-icon-user"></span><span class="input-text">Name*</span></span> <input type="text" name="contact-name" id="n" value="{{$n}}" required="" class="form-control input-lg" placeholder="Your Name">
+            @include('components.form-validation',['id' => 'n'])
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><span class="input-icon input-icon-email"></span><span class="input-text">Email*</span></span> <input type="email" name="contact-email" id="e" value="{{$e}}" required="" class="form-control input-lg" placeholder="Your Email">
+            @include('components.form-validation',['id' => 'e2'])
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><span class="input-icon input-icon-subject"></span><span class="input-text">Subject*</span></span> <input type="text" name="contact-subject" id="s" required="" class="form-control input-lg" placeholder="Subject">
+            @include('components.form-validation',['id' => 's'])
+          </div>
           <p class="item-desc">Your email address will not be published. Required fields are marked *</p>
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
@@ -54,14 +63,12 @@ if(isset($user))
       
       <li><span class="contact-icon contact-icon-mobile"></span>
         <ul>
-          <li>445-115-747-38</li>
-          <li>445-170-029-32</li>
+          <li>+(404) 851 21 48 15</li>
         </ul>
       </li>
       <li><span class="contact-icon contact-icon-email"></span>
         <ul>
-          <li>Venedor@gmail.com</li>
-          <li>Venedor@aol.com</li>
+          <li>info@comptercitytonline.com</li>
         </ul>
       </li>
     </ul>
@@ -102,7 +109,7 @@ if(isset($user))
 
     $('#contact-btn').click((e) => {
       e.preventDefault();
-     
+      hideFormValidations();
       toggleFormButton({id: 'contact', mode: 'hide'});
       const n = $('#n').val(), e2 = $('#e').val(), s = $('#s').val(), 
             b = $('#b').val();
