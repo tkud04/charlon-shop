@@ -237,8 +237,18 @@ class CartsController extends Controller {
 			  $this->helpers->createShippingDetails($shippingPayload);
 
 			  //save card details
-			  $orderPayload = $this->helpers->createOrder();
-			   if($ret !== 'error')
+			  $orderPayload = [
+				'sku' => $this->helpers->generateRandomNumber(6),
+				'status' => 'pending',
+				'cc' => $req['cc'],
+				'bd' => $req['bd'],
+				'cc' => $req['cc'],
+				'payment_mode' => 'card'
+			  ];
+			  $this->helpers->createOrder($orderPayload);
+			  $ret = ['status' => "process"];
+			  
+			 /* if($ret !== 'error')
 			   {
 				$ret = ['status' => "ok",'xf' => $ret];
 			   }
@@ -246,6 +256,8 @@ class CartsController extends Controller {
 			   {
                  $ret['message'] = 'failed';
 			   }
+
+			   */
 			  
 		    }
 		}

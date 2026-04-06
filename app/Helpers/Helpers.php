@@ -1782,12 +1782,12 @@ EOD;
     function getOrders($id = "all")
     {
         $ret = [];
-        if ($id == "all") $uu = ShippingDetails::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
-        else $uu = ShippingDetails::where('user_id', $id)->orderBy('created_at', 'desc')->get();
+        if ($id == "all") $uu = Orders::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+        else $uu = Orders::where('user_id', $id)->orderBy('created_at', 'desc')->get();
 
         if ($uu != null) {
             foreach ($uu as $u) {
-                $temp = $this->getShippingDetail($u->id);
+                $temp = $this->getOrder($u->id);
                 array_push($ret, $temp);
             }
         }
@@ -1799,7 +1799,7 @@ EOD;
 
     function removeOrder($id)
     {
-        $p = ShippingDetails::where('id', $id)->first();
+        $p = Orders::where('id', $id)->first();
 
         if ($p != null) $p->delete();
     }
