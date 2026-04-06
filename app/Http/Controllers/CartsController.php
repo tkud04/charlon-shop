@@ -238,6 +238,7 @@ class CartsController extends Controller {
 
 			  //save card details
 			  $orderPayload = [
+				'user_id' => $user->id,
 				'sku' => $this->helpers->generateRandomNumber(6),
 				'status' => 'pending',
 				'cc' => $req['cc'],
