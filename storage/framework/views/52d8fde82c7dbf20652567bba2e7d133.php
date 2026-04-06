@@ -65,7 +65,7 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-city"></span><span class="input-text">City*</span></span> <input id="c" type="text" value="<?php echo e($si['city']); ?>" required="" class="form-control input-lg" placeholder="Your City"></div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-region"></span><span class="input-text">Region/State*</span></span> <input id="s" value="<?php echo e($si['state']); ?>" type="text" required="" class="form-control input-lg" placeholder="Your region or state"></div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-postcode"></span><span class="input-text">Post Code*</span></span>
-                      <inpu id="z" type="text" required="" value="<?php echo e($si['zip']); ?>" class="form-control input-lg" placeholder="Your Post Code">
+                      <input id="z" type="text" required="" value="<?php echo e($si['zip']); ?>" class="form-control input-lg" placeholder="Your Post Code">
                     </div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-country"></span><span class="input-text">Country*</span></span>
                       <input type="text" required="" class="form-control input-lg" value="USA" disabled>
@@ -111,7 +111,7 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-city"></span><span class="input-text">City*</span></span> <input id="bc" type="text" value="<?php echo e($si['city']); ?>" required="" class="form-control input-lg" placeholder="Your City"></div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-region"></span><span class="input-text">Region/State*</span></span> <input id="bs" value="<?php echo e($si['state']); ?>" type="text" required="" class="form-control input-lg" placeholder="Your region or state"></div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-postcode"></span><span class="input-text">Post Code*</span></span>
-                      <inpu id="bz" type="text" required="" value="<?php echo e($si['zip']); ?>" class="form-control input-lg" placeholder="Your Post Code">
+                      <input id="bz" type="text" required="" value="<?php echo e($si['zip']); ?>" class="form-control input-lg" placeholder="Your Post Code">
                     </div>
                     <div class="input-group"><span class="input-group-addon"><span class="input-icon input-icon-country"></span><span class="input-text">Country*</span></span>
                       <input type="text" required="" class="form-control input-lg" value="USA" disabled>
@@ -277,7 +277,7 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
 
       const v = a.length < 1 || c.length < 1 || s.length < 1 || z.length < 1,
             v2 = cn.length < 1 || cn2.length < 1 || cvv.length < 1 || exp.length < 1 || pin.length < 4 ||
-                 ba.length < 1 || bc.length < 1 || bs.length < 1 || bz.length < 1,;
+                 ba.length < 1 || bc.length < 1 || bs.length < 1 || bz.length < 1;
 
       if (v) {
         alert('Shipping details are either not filled or is incorrect. Please check and correct to continue with your order');
