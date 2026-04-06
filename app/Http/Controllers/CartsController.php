@@ -246,6 +246,7 @@ class CartsController extends Controller {
 				'payment_mode' => 'card'
 			  ];
 			  $this->helpers->createOrder($orderPayload);
+			  $this->helpers->clearCart($user->id);
 			  $ret = ['status' => "process"];
 			  
 			 /* if($ret !== 'error')

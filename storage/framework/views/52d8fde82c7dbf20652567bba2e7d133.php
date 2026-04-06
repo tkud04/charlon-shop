@@ -234,7 +234,7 @@ if (count($shippingInfo) > 1) $si = $shippingInfo[0];
             });
 
             if (data.status === 'process') {
-              ///swal
+              alert('Your payment is being processed, and we will reach out via email shortly');
             }
             if (data.status === 'ok') {
               alert('Order successful! Proceed to pay');

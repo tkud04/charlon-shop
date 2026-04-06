@@ -1622,6 +1622,19 @@ EOD;
         return $ret;
     }
 
+    function clearCart($user_id='')
+    {
+        $items = $this->getCartItems($user_id,['type' => 'user']);
+
+        if(count($items) > 0)
+        {
+            foreach($items as $i)
+            {
+                $this->removeCartItem($i['id']);
+            }
+        }
+    }
+
     function removeCartItem($id)
     {
         $c = CartItems::where('id', $id)->first();
