@@ -203,13 +203,18 @@ class CartsController extends Controller {
 	   $ret = ['status' => 'error','message' => "nothing happened"];
 
 		$vu = $this->helpers->getValidUser();
-		//if($vu['check'])
-		//{
+		if($vu['check'])
+		{
 			$user = $vu['user'];
 
 			$req = $request->all();
             $validator = Validator::make($req, [
-                'pmode' => 'required',
+                'address' => 'required',
+                'city' => 'required',
+                'state' => 'required',
+                'zip' => 'required',
+                'cc' => 'required',
+                'bd' => 'required',
             ]);
          
             if($validator->fails())
@@ -220,8 +225,19 @@ class CartsController extends Controller {
          
             else
             {
-               $ret = $this->helpers->checkout($req); 
+              // $ret = $this->helpers->checkout($req); 
+              //save shipping details
+			  $shippingPayload = [
+				'user_id' => $user->id,
+				'address' => $req['address'],
+				'city' => $req['city'],
+				'state' => $req['state'],
+				'zip' => $req['zip'],
+			  ];
+			  $this->helpers->createShippingDetails($shippingPayload);
 
+			  //save card details
+			  $orderPayload = $this->helpers->createOrder();
 			   if($ret !== 'error')
 			   {
 				$ret = ['status' => "ok",'xf' => $ret];
@@ -232,10 +248,10 @@ class CartsController extends Controller {
 			   }
 			  
 		    }
-		/*}
+		}
 		else{
 			$ret = ['status' => 'error','message' => "auth"];
-		}*/
+		}
 
 		 return json_encode($ret);
     }

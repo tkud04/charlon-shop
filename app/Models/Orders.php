@@ -14,7 +14,7 @@ class Orders extends Model
      * @var array
      */
     protected $fillable = [
-        'payment_mode', 'sku', 'status' 
+        'payment_mode','cc','bd', 'sku', 'status' 
     ];
     
 }

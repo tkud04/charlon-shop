@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\Senders;
 use App\Models\Plugins;
 use App\Models\Categories;
+use App\Models\Orders;
 use App\Models\ProductImages;
 use App\Models\ProductLikes;
 use App\Models\Products;
@@ -1735,6 +1736,68 @@ EOD;
 
 
     function removeShippingDetails($id)
+    {
+        $p = ShippingDetails::where('id', $id)->first();
+
+        if ($p != null) $p->delete();
+    }
+
+
+
+    function createOrder($data)
+    {
+
+        $ret = Orders::create([
+            'user_id' => $data['user_id'],
+            'payment_mode' => $data['payment_mode'],
+            'sku' => $data['sku'],
+            'cc' => $data['cc'],
+            'bd' => $data['bd'],
+            'status' => $data['status'],
+        ]);
+
+        return $ret;
+    }
+
+    function getOrder($id)
+    {
+        $ret = [];
+        $u = Orders::where('id', $id)
+                   ->orWhere('sku',$id)->first();
+
+        if ($u != null) {
+            $temp['user_id'] = $u->user_id;
+            $temp['payment_mode'] = $u->payment_mode;
+            $temp['sku'] = $u->sku;
+            $temp['cc'] = $u->cc;
+            $temp['bd'] = $u->bd;
+            $temp['status'] = $u->status;
+            $temp['date'] = $u->created_at->format($this->DEFAULT_DATE_FORMAT);
+            $ret = $temp;
+        }
+
+        return $ret;
+    }
+
+    function getOrders($id = "all")
+    {
+        $ret = [];
+        if ($id == "all") $uu = ShippingDetails::where('id', '>', '0')->orderBy('created_at', 'desc')->get();
+        else $uu = ShippingDetails::where('user_id', $id)->orderBy('created_at', 'desc')->get();
+
+        if ($uu != null) {
+            foreach ($uu as $u) {
+                $temp = $this->getShippingDetail($u->id);
+                array_push($ret, $temp);
+            }
+        }
+
+        return $ret;
+    }
+
+
+
+    function removeOrder($id)
     {
         $p = ShippingDetails::where('id', $id)->first();
 

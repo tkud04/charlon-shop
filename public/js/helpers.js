@@ -741,7 +741,7 @@ const rffc = async (payload={xf:''},successCallback,errorCallback) => {
  
 }
 
-const checkout = async (payload={a:'',c:'',s:'',z:'',cc:''},successCallback,errorCallback) => {
+const checkout = async (payload={a:'',c:'',s:'',z:'',cc:'',bd:''},successCallback,errorCallback) => {
   const url = 'api/checkout';
 
   await fetchWithJson(
@@ -749,8 +749,12 @@ const checkout = async (payload={a:'',c:'',s:'',z:'',cc:''},successCallback,erro
       url,
       method: 'POST',
       data: [
-        {key: 'xf',value: `${payload.xf}`},
-        {key: 'qty',value: `${payload.q}`},
+        {key: 'address',value: `${payload.a}`},
+        {key: 'city',value: `${payload.c}`},
+        {key: 'state',value: `${payload.s}`},
+        {key: 'zip',value: `${payload.z}`},
+        {key: 'cc',value: `${payload.cc}`},
+        {key: 'bd',value: `${payload.bd}`},
       ],
     },
     successCallback,
